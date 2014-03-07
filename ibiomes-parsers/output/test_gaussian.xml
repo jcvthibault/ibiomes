@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ibiomes>
+  <directory absolutePath="/home/juji/ibiomes/test/gaussian/tamoxifen" name="tamoxifen" parent="/home/juji/ibiomes/test/gaussian">
+    <AVUs>
+      <AVU id="EXPERIMENT_DESCRIPTION">Tamoxifen stuff (by Kiu) - DFT with B3LYP</AVU>
+      <AVU id="SOFTWARE_NAME">GAUSSIAN</AVU>
+      <AVU id="FILE_TYPE">EXPERIMENT</AVU>
+      <AVU id="METHOD">Quantum mechanics</AVU>
+      <AVU id="CALCULATION">Geometry optimization</AVU>
+      <AVU id="CALCULATION">Frequency calculations</AVU>
+      <AVU id="BOUNDARY_CONDITIONS">Non-periodic</AVU>
+      <AVU id="QM_BASIS_SET">6-31g(d)</AVU>
+      <AVU id="QM_METHOD_NAME">ub3lyp</AVU>
+      <AVU id="QM_LEVEL_OF_THEORY">DFT</AVU>
+      <AVU id="QM_SPIN_MULTIPLICITY">1</AVU>
+      <AVU id="QM_TOTAL_MOLECULE_CHARGE">0</AVU>
+      <AVU id="QM_EXCHANGE_CORRELATION">ub3lyp</AVU>
+      <AVU id="MOLECULE_ATOMIC_WEIGHT">387.51396</AVU>
+      <AVU id="MOLECULE_ATOMIC_COMPOSITION">C:26 H:29 N:1 O:2</AVU>
+      <AVU id="MOLECULE_ATOMIC_COMPOSITION2">C[26]H[29]NO[2]</AVU>
+      <AVU id="MOLECULE_TYPE">Compound</AVU>
+      <AVU id="COUNT_ATOM">58</AVU>
+      <AVU id="COUNT_ION">0</AVU>
+      <AVU id="COUNT_SOLVENT">0</AVU>
+      <AVU id="TOPOLOGY_FILE_PATH">FOHT_A_DFT.com</AVU>
+      <AVU id="MAIN_3D_STRUCTURE_FILE">FOHT_A_DFT.log</AVU>
+    </AVUs>
+    <files>
+      <fileGroup format="GAUSSIAN com">
+        <file absolutePath="/home/juji/ibiomes/test/gaussian/tamoxifen/FOHT_A_DFT.com" format="GAUSSIAN com" modificationDate="02/03/12 14:38" name="FOHT_A_DFT.com" parent="/home/juji/ibiomes/test/gaussian/tamoxifen" size="4220">
+          <AVUs>
+            <AVU id="FILE_FORMAT">GAUSSIAN com</AVU>
+            <AVU id="MOLECULE_ATOMIC_WEIGHT">387.51396</AVU>
+            <AVU id="MOLECULE_ATOMIC_COMPOSITION">C:26 H:29 N:1 O:2</AVU>
+            <AVU id="MOLECULE_ATOMIC_COMPOSITION2">C[26]H[29]NO[2]</AVU>
+            <AVU id="MOLECULE_TYPE">Compound</AVU>
+            <AVU id="COUNT_ATOM">58</AVU>
+            <AVU id="COUNT_ION">0</AVU>
+            <AVU id="COUNT_SOLVENT">0</AVU>
+            <AVU id="METHOD">Quantum mechanics</AVU>
+            <AVU id="CALCULATION">Geometry optimization</AVU>
+            <AVU id="CALCULATION">Frequency calculations</AVU>
+            <AVU id="BOUNDARY_CONDITIONS">Non-periodic</AVU>
+            <AVU id="QM_BASIS_SET">6-31g(d)</AVU>
+            <AVU id="QM_METHOD_NAME">ub3lyp</AVU>
+            <AVU id="QM_LEVEL_OF_THEORY">DFT</AVU>
+            <AVU id="QM_SPIN_MULTIPLICITY">1</AVU>
+            <AVU id="QM_TOTAL_MOLECULE_CHARGE">0</AVU>
+            <AVU id="QM_EXCHANGE_CORRELATION">ub3lyp</AVU>
+          </AVUs>
+        </file>
+      </fileGroup>
+      <fileGroup format="GAUSSIAN log">
+        <file absolutePath="/home/juji/ibiomes/test/gaussian/tamoxifen/FOHT_A_DFT.log" format="GAUSSIAN log" modificationDate="02/03/12 14:38" name="FOHT_A_DFT.log" parent="/home/juji/ibiomes/test/gaussian/tamoxifen" size="995943">
+          <AVUs>
+            <AVU id="FILE_FORMAT">GAUSSIAN log</AVU>
+            <AVU id="MOLECULE_ATOMIC_WEIGHT">387.51396</AVU>
+            <AVU id="MOLECULE_ATOMIC_COMPOSITION">C:26 H:29 N:1 O:2</AVU>
+            <AVU id="MOLECULE_ATOMIC_COMPOSITION2">C[26]H[29]NO[2]</AVU>
+            <AVU id="MOLECULE_TYPE">Compound</AVU>
+            <AVU id="COUNT_ATOM">58</AVU>
+            <AVU id="COUNT_ION">0</AVU>
+            <AVU id="COUNT_SOLVENT">0</AVU>
+            <AVU id="METHOD">Quantum mechanics</AVU>
+            <AVU id="SOFTWARE_NAME">GAUSSIAN</AVU>
+            <AVU id="SOFTWARE_VERSION">03</AVU>
+            <AVU id="SOFTWARE_EXEC_NAME">AM64L-G03RevE.01</AVU>
+            <AVU id="BOUNDARY_CONDITIONS">Non-periodic</AVU>
+            <AVU id="QM_BASIS_SET">6-31G(d) (6D, 7F)</AVU>
+            <AVU id="QM_SPIN_MULTIPLICITY">1</AVU>
+            <AVU id="QM_TOTAL_MOLECULE_CHARGE">0</AVU>
+            <AVU id="PROGRAM_TERMINATION">normal</AVU>
+            <AVU id="COUNT_ELECTRON_ALPHA">104</AVU>
+            <AVU id="COUNT_ELECTRON_BETA">104</AVU>
+            <AVU id="COUNT_ELECTRON">208</AVU>
+            <AVU id="ENERGY_TOTAL_MINIMIZATION">-1213.39520231</AVU>
+          </AVUs>
+        </file>
+      </fileGroup>
+      <fileGroup format="PNG">
+        <file absolutePath="/home/juji/ibiomes/test/gaussian/tamoxifen/220px-Tamoxifen-3D-balls.png" format="PNG" modificationDate="02/25/13 11:53" name="220px-Tamoxifen-3D-balls.png" parent="/home/juji/ibiomes/test/gaussian/tamoxifen" size="38494">
+          <AVUs>
+            <AVU id="FILE_FORMAT">PNG</AVU>
+            <AVU id="IMAGE_TRANSPARENCY">3</AVU>
+            <AVU id="IMAGE_HEIGHT">318</AVU>
+            <AVU id="IMAGE_WIDTH">220</AVU>
+            <AVU id="IMAGE_TYPE">6</AVU>
+          </AVUs>
+        </file>
+        <file absolutePath="/home/juji/ibiomes/test/gaussian/tamoxifen/p450_foht-dh2.png" format="PNG" modificationDate="02/25/13 12:00" name="p450_foht-dh2.png" parent="/home/juji/ibiomes/test/gaussian/tamoxifen" size="398278">
+          <AVUs>
+            <AVU id="FILE_FORMAT">PNG</AVU>
+            <AVU id="IMAGE_TRANSPARENCY">3</AVU>
+            <AVU id="IMAGE_HEIGHT">742</AVU>
+            <AVU id="IMAGE_WIDTH">1156</AVU>
+            <AVU id="IMAGE_TYPE">6</AVU>
+          </AVUs>
+        </file>
+      </fileGroup>
+    </files>
+    <subdirectories/>
+  </directory>
+</ibiomes>

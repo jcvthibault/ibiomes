@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.1" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
+    <tlib-version>1.0</tlib-version>
+    <short-name>ibiomes</short-name>
+    <uri>http://ibiomes.chpc.utah.edu/tlds</uri>
+    <function>
+        <name>fileSize</name>
+        <function-class>edu.utah.bmi.ibiomes.web.JSTLibraries</function-class>
+        <function-signature>java.lang.String friendlyFileSize(long)</function-signature>
+    </function>
+    <function>
+        <name>isImageFileFormat</name>
+        <function-class>edu.utah.bmi.ibiomes.metadata.IBIOMESFileGroup</function-class>
+        <function-signature>boolean isImageFile(java.lang.String)</function-signature>
+    </function>
+    <function>
+        <name>isAnalysisFileFormat</name>
+        <function-class>edu.utah.bmi.ibiomes.metadata.IBIOMESFileGroup</function-class>
+        <function-signature>boolean isAnalysisFile(java.lang.String)</function-signature>
+    </function>
+    <function>
+        <name>isJmolFileFormat</name>
+        <function-class>edu.utah.bmi.ibiomes.metadata.IBIOMESFileGroup</function-class>
+        <function-signature>boolean isJmolFile(java.lang.String)</function-signature>
+    </function>
+</taglib>

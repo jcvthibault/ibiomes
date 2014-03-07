@@ -1,0 +1,218 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:aop="http://www.springframework.org/schema/aop" 
+  xmlns:p="http://www.springframework.org/schema/p"
+  xmlns:mvc="http://www.springframework.org/schema/mvc"
+  xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+  xmlns:oxm="http://www.springframework.org/schema/oxm"
+  xmlns:util="http://www.springframework.org/schema/util"
+  xmlns:security="http://www.springframework.org/schema/security"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.1.xsd
+           http://www.springframework.org/schema/mvc
+           http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+           http://www.springframework.org/schema/jdbc
+		   http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd
+		   http://www.springframework.org/schema/oxm
+		   http://www.springframework.org/schema/oxm/spring-oxm-1.5.xsd
+		   http://www.springframework.org/schema/util
+		   http://www.springframework.org/schema/util/spring-util.xsd
+		   http://www.springframework.org/schema/security
+		   http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+	
+	<!-- views -->
+	
+  	<bean name="loginController" class="edu.utah.bmi.ibiomes.web.controller.LoginController">
+  		<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory"/>
+  	</bean>
+  	<bean name="logoutController" class="edu.utah.bmi.ibiomes.web.controller.LogoutController" />
+  		 
+  	<bean name="homeController" class="edu.utah.bmi.ibiomes.web.controller.HomeController">
+  		<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory"/>
+  	</bean>
+  	<bean name="collectionController" class="edu.utah.bmi.ibiomes.web.controller.CollectionController">
+  		<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory"/>
+  	</bean>
+  	<bean name="collectionEditController" class="edu.utah.bmi.ibiomes.web.controller.CollectionEditController">
+  		<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory"/>
+  	</bean>
+  	<bean name="fileController" class="edu.utah.bmi.ibiomes.web.controller.DataObjectController">
+		<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory"/>
+  	</bean>
+  	<bean name="fileEditController" class="edu.utah.bmi.ibiomes.web.controller.DataObjectEditController">
+		<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory"/>
+  	</bean>
+  	<bean name="searchController" class="edu.utah.bmi.ibiomes.web.controller.SearchController">
+  		<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory"/>
+  	</bean>
+  	<bean name="jmolController" class="edu.utah.bmi.ibiomes.web.controller.JMol">
+		<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory"/>
+  	</bean>
+  	<bean name="cartController" class="edu.utah.bmi.ibiomes.web.controller.DownloadManager">
+		<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory"/>
+  	</bean>
+  	<bean name="userController" class="edu.utah.bmi.ibiomes.web.controller.UserProfileController">
+  		<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory"/>
+  	</bean>
+  	<bean name="experimentSetController" class="edu.utah.bmi.ibiomes.web.controller.ExperimentSetController">
+  		<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory"/>
+  	</bean>
+  	<bean name="experimentSetManagerController" class="edu.utah.bmi.ibiomes.web.controller.ExperimentSetManagerController">
+  		<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory"/>
+  	</bean>
+  	
+	<!-- operations -->
+  	<bean name="/updateMetadata.do" class="edu.utah.bmi.ibiomes.web.controller.operation.UpdateMD">
+  		<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory"/>
+  	</bean> 
+  	<bean name="/updatePermissions.do" class="edu.utah.bmi.ibiomes.web.controller.operation.UpdateACL">
+  		<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory"/>
+  	</bean>   	
+	<bean name="/delete.do" class="edu.utah.bmi.ibiomes.web.controller.operation.Delete">
+  		<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory"/>
+  	</bean>   	
+	<bean name="/unregister.do" class="edu.utah.bmi.ibiomes.web.controller.operation.Unregister">
+  		<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory"/>
+  	</bean>
+  	<bean name="/mkdir.do" class="edu.utah.bmi.ibiomes.web.controller.operation.CreateCollection">
+  		<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory"/>
+  	</bean> 
+	<bean name="/fileaction.do" class="edu.utah.bmi.ibiomes.web.controller.operation.FileCollectionAction">
+  		<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory"/>
+  	</bean>   	
+	<bean name="/updateFormat.do" class="edu.utah.bmi.ibiomes.web.controller.operation.UpdateFileFormat">
+  		<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory"/>
+  	</bean>   	
+	<bean name="/updateTopology.do" class="edu.utah.bmi.ibiomes.web.controller.operation.UpdateTopologyFromFile">
+  		<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory"/>
+  	</bean>
+  	<bean name="/updateParameters.do" class="edu.utah.bmi.ibiomes.web.controller.operation.UpdateParametersFromFile">
+  		<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory"/>
+  	</bean> 
+  	
+	<bean name="/shoppingCart.do" class="edu.utah.bmi.ibiomes.web.controller.operation.ShoppingCart">
+  		<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory"/>
+  	</bean> 	
+	  	
+  	<bean name="exceptionController" class="edu.utah.bmi.ibiomes.web.controller.ExceptionController">
+  		<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory"/>
+  	</bean>
+  	
+  	<!-- ================================== Metadata dictionary =================================== -->
+  	
+  	<!-- <bean id="metadataDictionary" class="edu.utah.bmi.ibiomes.metadata.lookup.MetadataLookup" scope="singleton">
+        <constructor-arg index="0" type="org.springframework.core.io.FileSystemResource" value="${CATALINA_HOME}/webapps/ibiomes-web/config/metadata-attr"/>
+    </bean>
+ -->  	
+ 	<!-- ===================================== Load property files ================================== -->
+
+	<bean id="placeholderConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
+    	<property name="locations">
+		    <list>
+		        <value>file:${IBIOMES_HOME}/config/ibiomes-db.properties</value>
+		        <value>file:${IBIOMES_HOME}/config/ibiomes-web.properties</value>
+		    </list>
+		</property>
+    </bean>
+    
+	<!-- ======================================== MySQL ==================================== -->
+
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${dbDriverClassName}" />
+		<property name="url" value="${dbUrl}" />
+		<property name="username" value="${dbUsername}" />
+		<property name="password" value="${dbPassword}" />
+	</bean>
+
+	<bean id="metadataSqlConnector" class="edu.utah.bmi.ibiomes.metadata.MetadataSqlConnector">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<bean id="experimentSetSqlConnector" class="edu.utah.bmi.ibiomes.pub.set.ExperimentSetSqlConnector">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<!-- ======================================== iRODS ==================================== -->
+	
+	<bean id="irodsConnectionManager" class="org.irods.jargon.core.connection.IRODSSimpleProtocolManager"
+		factory-method="instance" init-method="initialize" destroy-method="destroy">
+	</bean>
+
+	<bean id="irodsSession"
+		class="org.irods.jargon.core.connection.IRODSSession" factory-method="instance">
+		<constructor-arg type="org.irods.jargon.core.connection.IRODSProtocolManager" ref="irodsConnectionManager" />
+	</bean>
+
+	<bean id="irodsAccessObjectFactory"
+		class="org.irods.jargon.core.pub.IRODSAccessObjectFactoryImpl">
+		<constructor-arg ref="irodsSession"></constructor-arg>
+	</bean>
+	
+	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+	
+	<!-- Default iRODS connection parameters (loaded from config file) -->
+	<bean id="defaultIrodsConnection" class="edu.utah.bmi.ibiomes.web.DefaultIrodsConnectionParameters">
+		<property name="enabled" value="${useDefaultIrodsCnx}" />
+		<property name="host" value="${irodsHost}" />
+		<property name="port" value="${irodsPort}" />
+		<property name="zone" value="${irodsZone}" />
+		<property name="defaultResource" value="${irodsDefaultResource}" />
+	</bean>
+	
+	<!-- URL to web service application (metadata catalog) -->
+	<bean id="webServiceURL" class="java.lang.String">
+		<constructor-arg type="java.lang.String" value="${webServiceURL}" />
+	</bean>
+	
+	<!-- ======================================== Simple URL handling ==================================== -->
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/login.do">loginController</prop>
+				<prop key="/logout.do">logoutController</prop>
+				<prop key="/error.do">exceptionController</prop>
+				<prop key="/index.do">homeController</prop>
+				<prop key="/user.do">userController</prop>
+				<prop key="/collection.do">collectionController</prop>
+				<prop key="/editcollection.do">collectionEditController</prop>
+				<prop key="/file.do">fileController</prop>
+				<prop key="/editfile.do">fileEditController</prop>
+				<prop key="/cart.do">cartController</prop>
+				<prop key="/search.do">searchController</prop>
+				<prop key="/jmol.do">jmolController</prop>
+				<prop key="/experimentsetmanager.do">experimentSetManagerController</prop>
+				<prop key="/experimentset.do">experimentSetController</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- ======================================== error handling ==================================== -->
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+	 	<property name="exceptionMappings">
+            <props>
+				<prop key="java.lang.Exception">exceptionController</prop>
+			</props>
+        </property>
+	</bean>
+    
+    <!-- ========================================  interceptor ==================================== -->
+	<mvc:interceptors>
+		<bean class="edu.utah.bmi.ibiomes.web.intercept.SessionClosingInterceptor">
+			<property name="irodsAccessObjectFactory" ref="irodsAccessObjectFactory" />
+		</bean>
+	</mvc:interceptors>
+	
+    <!-- ============================================================================ -->
+
+	<!-- Configure the multipart resolver -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+        p:maxUploadSize="1000000"/>
+    
+	<context:component-scan base-package="edu.utah.bmi.ibiomes.web.service" />
+	<mvc:annotation-driven />
+
+</beans>

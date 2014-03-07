@@ -1,0 +1,58 @@
+#Desired Clusters: 4
+#Clustering Algorithm: AverageLink
+#Distance Metric: RMS
+#Matrix Calculation Time: 0 seconds
+#Total Calculation Time: 0 seconds
+#Cluster 0 has average-distance-to-centroid 0.000001
+#DBI: 0.00000
+#pSF: nan
+#SSR/SST: nan
+###Distribution of Distances###
+#  [  -0.000,  -0.000] --    nan% (     0 out of      0)
+#  [  -0.000,  -0.000] --    nan% (     0 out of      0)
+#  [  -0.000,  -0.000] --    nan% (     0 out of      0)
+#  [  -0.000,  -0.000] --    nan% (     0 out of      0)
+#  [  -0.000,  -0.000] --    nan% (     0 out of      0)
+#  [  -0.000,  -0.000] --    nan% (     0 out of      0)
+#  [  -0.000,  -0.000] --    nan% (     0 out of      0)
+#  [  -0.000,  -0.000] --    nan% (     0 out of      0)
+#  [  -0.000,  -0.000] --    nan% (     0 out of      0)
+#  [  -0.000,  -0.000] --    nan% (     0 out of      0)
+#  [  -0.000,  -0.000] --    nan% (     0 out of      0)
+#  [  -0.000,  -0.000] --    nan% (     0 out of      0)
+#  [  -0.000,  -0.000] --    nan% (     0 out of      0)
+#  [  -0.000,  -0.000] --    nan% (     0 out of      0)
+#  [  -0.000,  -0.000] --    nan% (     0 out of      0)
+#  [  -0.000,  -0.000] --    nan% (     0 out of      0)
+#  [  -0.000,  -0.000] --    nan% (     0 out of      0)
+#  [  -0.000,  -0.000] --    nan% (     0 out of      0)
+#  [  -0.000,  -0.000] --    nan% (     0 out of      0)
+#  [  -0.000,  -0.000] --    nan% (     0 out of      0)
+#Clustering: 1 clusters
+X
+##################################################################################
+#Clustering: divide 1 points into 1 clusters
+#Cluster    0: has     1 points, occurence 1.000
+#Cluster    0 (0)      1   X
+#Consensus             1   0
+
+############################################################################################
+#                                     Condensed Map                                         
+#                                                                                                   
+#    1 points divided into 50 windows, each window contains 1 points.                 
+#              occurence == 0.0                                                            
+#       0.0 <= occurence <  0.1     .                                                      
+#       0.1 <= occurence <  0.2     1                                                      
+#       0.2 <= occurence <  0.3     2                                                      
+#       0.3 <= occurence <  0.4     3                                                      
+#       0.4 <= occurence <  0.5     4                                                      
+#       0.5 <= occurence <  0.6     5                                                      
+#       0.6 <= occurence <  0.7     6                                                      
+#       0.7 <= occurence <  0.8     7                                                      
+#       0.8 <= occurence <  0.9     8                                                      
+#       0.9 <= occurence <  1.0     9                                                      
+#       1.0 == occurence            X                                                      
+#                                                                                          
+#Clustering: divide 1 points into 1 clusters
+#Cluster    0: has     1 points, occurence 1.000
+#Cluster    0                                                     

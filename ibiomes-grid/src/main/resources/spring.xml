@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- ======================================== MySQL ==================================== -->
+
+	<bean id="placeholderConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
+    	<property name="locations">
+		    <list>
+		        <value>file:${IBIOMES_HOME}/config/ibiomes-db.properties</value>
+		    </list>
+		</property>
+    </bean>
+     
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${dbDriverClassName}" />
+		<property name="url" value="${dbUrl}" />
+		<property name="username" value="${dbUsername}" />
+		<property name="password" value="${dbPassword}" />
+	</bean>
+
+	<bean id="metadataSqlConnector" class="edu.utah.bmi.ibiomes.metadata.MetadataSqlConnector">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<bean id="experimentSetSqlConnector" class="edu.utah.bmi.ibiomes.pub.set.ExperimentSetSqlConnector">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+</beans>

@@ -1,0 +1,360 @@
+<rules>
+  <!-- ======================================================================================== -->
+  <!-- General rules (any directory) -->
+  <!-- ======================================================================================== -->
+  <rule type="file" match="*.pdb" format="PDB">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="*.csv" format="CSV">
+  	<metadata>
+	<avu attribute="data_delimiter">DATA_DELIMITER_COMMA</avu>
+  	</metadata>
+  </rule>
+  <rule type="file" match="((traj.*)|(*.(mdcrd|traj|inpcrd|coords|crds|x)))" format="AMBER trajectory" softwareContext="AMBER" description="Atomic trajectory/coordinates">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="*.(prmtop|topo|top|parm|parm7)" format="AMBER parmtop" softwareContext="AMBER" description="Paramete/topology file">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="*.(rst|restart|restrt|rst7|restrt7)(.*)?" format="AMBER restart" softwareContext="AMBER">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="*.(ptraj|trajin)" format="Ptraj script" description="Ptraj script">
+  	<metadata>
+	    <avu attribute="software_name">cpptraj</avu>
+  	</metadata>
+  </rule>
+  <rule type="file" match="leap.log" format="AMBER Leap log">
+        <metadata>
+        </metadata>
+  </rule>
+  <rule type="file" match="*.(png|jpg|jpeg|gif|tif)" class="analysis">
+  	<metadata></metadata>
+  </rule>
+  
+  <!-- ======================================================================================== -->
+  <!-- MD input parameters and output -->
+  <!-- ======================================================================================== -->
+  <rule type="file" match="(heat|equil)*.in" format="AMBER MD input" softwareContext="AMBER" description="Equilibration input parameters">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="(heat|equil)*.out" format="AMBER MD output" softwareContext="AMBER" description="Equilibration output">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="min*.in" format="AMBER MD input" softwareContext="AMBER" description="Minimization input parameters">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="min*.out" format="AMBER MD output" softwareContext="AMBER" description="Minimization output">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="md*.in" format="AMBER MD input" softwareContext="AMBER" description="Molecular dynamics input parameters (production)">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="md*.out" format="AMBER MD output" softwareContext="AMBER" description="Molecular dynamics output (production)">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="mdin.*" format="AMBER MD input" softwareContext="AMBER">
+  	<metadata></metadata>
+  </rule>
+  <rule type="file" match="mdout.*" format="AMBER MD output" softwareContext="AMBER">
+  	<metadata></metadata>
+  </rule>
+  	  
+  <!-- ======================================================================================== -->
+  <!-- Special PDB files -->
+  <!-- ======================================================================================== -->
+
+  <rule type="file" match="average.pdb" description="Average structure">
+    <metadata>
+    </metadata>
+  </rule>
+  <rule type="file" match="min*.pdb" description="Minimized structure">
+    <metadata>
+    </metadata>
+  </rule>
+
+  <!-- ======================================================================================== -->
+  <!-- TRAJECTORIES -->
+  <!-- ======================================================================================== -->
+  
+  <rule type="file" match="(heat|equil)*.(mdcrd|traj|inpcrd)(.*)?" description="Equilibration trajectory">
+   	<metadata>
+   	</metadata>
+  </rule>
+  
+  <rule type="file" match="(min)*.(mdcrd|traj|inpcrd)(.*)?" description="Minimized structures">
+   	<metadata>
+   	</metadata>
+  </rule>
+  <rule type="file" match="md*.(mdcrd|traj|inpcrd)(.*)?" description="Production MD trajectory">
+      <metadata>
+      </metadata>
+  </rule>
+  <!-- =========== PRODUCTION directory ========== -->
+  <rule type="directory" match="production" description="Production MD trajectories">
+  	<metadata>
+  	</metadata>
+  </rule>
+
+  <!-- ======================================================================================== -->
+  <!-- CLUSTERING -->
+  <!-- ======================================================================================== -->
+
+  <rule type="directory" match="cluster(ing)?" description="Clustering analysis">
+  	<metadata>
+  	</metadata>
+  </rule>
+  
+  <rule type="file" match="*cluster.avg.c*" class="analysis" format="PDB" description="Averaged structure based on clustering">
+    <metadata>
+      <avu attribute="software_name">cpptraj</avu>
+    </metadata>
+  </rule>
+  <rule type="file" match="*cluster.text" format="Text" description="Clustering output">
+    <metadata>
+      <avu attribute="software_name">cpptraj</avu>
+    </metadata>
+  </rule>
+  <rule type="file" match="*cluster.ptraj" format="Ptraj script" description="Clustering script">
+    <metadata>
+      <avu attribute="software_name">cpptraj</avu>
+    </metadata>
+  </rule> 
+  
+  <!-- ======================================================================================== -->
+  <!-- ANALYSIS data -->
+  <!-- ======================================================================================== -->
+  
+  <rule type="directory" match="analysis" description="Analysis results">
+  	<metadata>
+  	</metadata>
+  </rule>
+  
+  <rule type="file" match="summary(_avg|_rms)?.*" format="CSV">
+    <metadata>
+      <avu attribute="software_name">cpptraj</avu>
+    </metadata>
+  </rule>
+  
+  <!-- ========================== DENSITY ===================== -->
+  <rule type="file" match="summary.DENSITY(.csv)?" format="CSV" class="analysis" description="Evolution of density over time">
+    <metadata>
+      <avu attribute="data_labels">Time,Density</avu>
+      <avu attribute="data_units">ps,g/cm^3</avu>
+      <avu attribute="preferred_plot_type">line</avu>
+    </metadata>
+  </rule>
+  <rule type="file" match="summary_avg.DENSITY(.csv)?" format="CSV" description="Average density">
+    <metadata>
+      <avu attribute="data_labels">Time,Density</avu>
+      <avu attribute="data_units">ps,g/cm^3</avu>
+    </metadata>
+  </rule>
+  <rule type="file" match="summary_rms.DENSITY(.csv)?" format="CSV" description="Density RMSd">
+    <metadata>
+      <avu attribute="data_labels">Time,Density</avu>
+      <avu attribute="data_units">ps,g/cm^3</avu>
+    </metadata>
+  </rule>
+  
+  <!-- ========================== EKCMT ===================== -->
+  <rule type="file" match="summary.EKCMT(.csv)?" format="CSV" class="analysis" description="Evolution of the kinetic energy for the center of mass in translation over time">
+    <metadata>
+      <avu attribute="data_labels">Time,Ekcmt</avu>
+      <avu attribute="data_units">ps,KCal/mol</avu>
+      <avu attribute="preferred_plot_type">line</avu>
+    </metadata>
+  </rule>
+  <rule type="file" match="summary_avg.EKCMT(.csv)?" format="CSV" description="Average kinetic energy for the center of mass in translation">
+    <metadata>
+      <avu attribute="data_labels">Time,Ekcmt</avu>
+      <avu attribute="data_units">ps,KCal/mol</avu>
+    </metadata>
+  </rule>
+  <rule type="file" match="summary_rms.EKCMT(.csv)?" format="CSV" description="RMSd of kinetic energy for the center of mass in translation">
+    <metadata>
+      <avu attribute="data_labels">Time,Ekcmt</avu>
+      <avu attribute="data_units">ps,KCal/mol</avu>
+    </metadata>
+  </rule>
+  
+  <!-- ========================== EKTOT ===================== -->
+  <rule type="file" match="summary.EKTOT(.csv)?" format="CSV" class="analysis" description="Evolution of total kinetic energy over time">
+    <metadata>
+      <avu attribute="data_labels">Time,Ektot</avu>
+      <avu attribute="data_units">ps,KCal/mol</avu>
+      <avu attribute="preferred_plot_type">line</avu>
+    </metadata>
+  </rule>
+  <rule type="file" match="summary_avg.EKTOT(.csv)?" format="CSV" description="Average total kinetic energy">
+    <metadata>
+      <avu attribute="data_labels">Time,Ektot</avu>
+      <avu attribute="data_units">ps,KCal/mol</avu>
+    </metadata>
+  </rule>
+  <rule type="file" match="summary_rms.EKTOT(.csv)?" format="CSV" description="RMSd of total kinetic energy">
+    <metadata>
+      <avu attribute="data_labels">Time,Ektot</avu>
+      <avu attribute="data_units">ps,KCal/mol</avu>
+    </metadata>
+  </rule>
+
+  <!-- ========================== EPTOT ===================== -->
+  <rule type="file" match="summary.EPTOT(.csv)?" format="CSV" class="analysis" description="Evolution of potential energy over time">
+    <metadata>
+      <avu attribute="data_labels">Time,Eptot</avu>
+      <avu attribute="data_units">ps,KCal/mol</avu>
+      <avu attribute="preferred_plot_type">line</avu>
+    </metadata>
+  </rule>
+  <rule type="file" match="summary_avg.EPTOT(.csv)?" format="CSV" description="Average potential energy">
+    <metadata>
+      <avu attribute="data_labels">Time,Eptot</avu>
+      <avu attribute="data_units">ps,KCal/mol</avu>
+    </metadata>
+  </rule>
+  <rule type="file" match="summary_rms.EPTOT(.csv)?" format="CSV" description="RMSd of potential energy">
+    <metadata>
+      <avu attribute="data_labels">Time,Eptot</avu>
+      <avu attribute="data_units">ps,KCal/mol</avu>
+    </metadata>
+  </rule>
+  
+  <!-- ========================== ETOT ===================== -->
+  <rule type="file" match="summary.ETOT(.csv)?" format="CSV" class="analysis" description="Evolution of total energy over time">
+    <metadata>
+      <avu attribute="data_labels">Time,Etot</avu>
+      <avu attribute="data_units">ps,KCal/mol</avu>
+      <avu attribute="preferred_plot_type">line</avu>
+    </metadata>
+  </rule>
+  <rule type="file" match="summary_avg.ETOT(.csv)?" format="CSV" description="Average total energy">
+    <metadata>
+      <avu attribute="data_labels">Time,Etot</avu>
+      <avu attribute="data_units">ps,KCal/mol</avu>
+    </metadata>
+  </rule>
+  <rule type="file" match="summary_rms.ETOT(.csv)?" format="CSV" description="RMSd of total energy">
+    <metadata>
+      <avu attribute="data_labels">Time,Etot</avu>
+      <avu attribute="data_units">ps,KCal/mol</avu>
+    </metadata>
+  </rule>
+  
+  <!-- ========================== PRESSURE ===================== -->
+  <rule type="file" match="summary.PRES(.csv)?" format="CSV" class="analysis" description="Evolution of pressure over time">
+    <metadata>
+      <avu attribute="data_labels">Time,Pressure</avu>
+      <avu attribute="data_units">ps,bar</avu>
+      <avu attribute="preferred_plot_type">line</avu>
+    </metadata>
+  </rule>
+  <rule type="file" match="summary_avg.PRES(.csv)?" format="CSV" description="Average pressure">
+    <metadata>
+      <avu attribute="data_labels">Time,Pressure</avu>
+      <avu attribute="data_units">ps,bar</avu>
+    </metadata>
+  </rule>
+  <rule type="file" match="summary_rms.PRES(.csv)?" format="CSV" description="RMSd of pressure">
+    <metadata>
+      <avu attribute="data_labels">Time,Pressure</avu>
+      <avu attribute="data_units">ps,bar</avu>
+    </metadata>
+  </rule>
+  
+  <!-- ========================== TEMPERATURE ===================== -->
+  <rule type="file" match="summary.TEMP(.csv)?" format="CSV" class="analysis" description="Evolution of temperature over time">
+    <metadata>
+      <avu attribute="data_labels">Time,Temperature</avu>
+      <avu attribute="data_units">ps,K</avu>
+      <avu attribute="preferred_plot_type">line</avu>
+    </metadata>
+  </rule>
+  <rule type="file" match="summary_avg.TEMP(.csv)?" format="CSV" description="Average temperature">
+    <metadata>
+      <avu attribute="data_labels">Time,Temperature</avu>
+      <avu attribute="data_units">ps,K</avu>
+    </metadata>
+  </rule>
+  <rule type="file" match="summary_rms.TEMP(.csv)?" format="CSV" description="RMSd of temperature">
+    <metadata>
+      <avu attribute="data_labels">Time,Temperature</avu>
+      <avu attribute="data_units">ps,K</avu>
+    </metadata>
+  </rule>
+  
+  <!-- ========================== TSOLUTE ===================== -->
+  <rule type="file" match="summary.TSOLUTE(.csv)?" format="CSV" class="analysis" description="Evolution of solute temperature over time">
+    <metadata>
+      <avu attribute="data_labels">Time,Temperature</avu>
+      <avu attribute="data_units">ps,K</avu>
+      <avu attribute="preferred_plot_type">line</avu>
+    </metadata>
+  </rule>
+  <rule type="file" match="summary_avg.TSOLUTE(.csv)?" format="CSV" description="Average solute temperature">
+    <metadata>
+      <avu attribute="data_labels">Time,Temperature</avu>
+      <avu attribute="data_units">ps,K</avu>
+    </metadata>
+  </rule>
+  <rule type="file" match="summary_rms.TSOLUTE(.csv)?" format="CSV" description="RMSd of solute temperature">
+    <metadata>
+      <avu attribute="data_labels">Time,Temperature</avu>
+      <avu attribute="data_units">ps,K</avu>
+    </metadata>
+  </rule>
+  
+  <!-- ========================== TSOLVENT ===================== -->
+  <rule type="file" match="summary.TSOLVENT(.csv)?" format="CSV" class="analysis" description="Evolution of solvent temperature over time">
+    <metadata>
+      <avu attribute="data_labels">Time,Temperature</avu>
+      <avu attribute="data_units">ps,K</avu>
+      <avu attribute="preferred_plot_type">line</avu>
+    </metadata>
+  </rule>
+  <rule type="file" match="summary_avg.TSOLVENT(.csv)?" format="CSV" description="Average solvent temperature">
+    <metadata>
+      <avu attribute="data_labels">Time,Temperature</avu>
+      <avu attribute="data_units">ps,K</avu>
+    </metadata>
+  </rule>
+  <rule type="file" match="summary_rms.TSOLVENT(.csv)?" format="CSV" description="RMSd of solvent temperature">
+    <metadata>
+      <avu attribute="data_labels">Time,Temperature</avu>
+      <avu attribute="data_units">ps,K</avu>
+    </metadata>
+  </rule>
+  
+  <!-- ========================== VOLUME ===================== -->
+  <rule type="file" match="summary.VOLUME(.csv)?" format="CSV" class="analysis" description="Evolution of volume over time">
+    <metadata>
+      <avu attribute="data_labels">Time,Volume</avu>
+      <avu attribute="data_units">ps,A^3</avu>
+      <avu attribute="preferred_plot_type">line</avu>
+    </metadata>
+  </rule>
+  <rule type="file" match="summary_avg.VOLUME(.csv)?" format="CSV" description="Average volume">
+    <metadata>
+      <avu attribute="data_labels">Time,Volume</avu>
+      <avu attribute="data_units">ps,A^3</avu>
+    </metadata>
+  </rule>
+  <rule type="file" match="summary_rms.VOLUME(.csv)?" format="CSV" description="RMSd of volume">
+    <metadata>
+      <avu attribute="data_labels">Time,Volume</avu>
+      <avu attribute="data_units">ps,A^3</avu>
+    </metadata>
+  </rule>
+  
+  <!-- ======================================================================================== -->
+</rules>

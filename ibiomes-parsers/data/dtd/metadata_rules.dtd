@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT rules (rule*) >
+<!ELEMENT rule (metadata?) >
+<!ELEMENT metadata (avu*) >
+<!ELEMENT avu (#PCDATA) >
+<!ATTLIST rule type (file | directory | experiment ) #REQUIRED>
+<!ATTLIST rule match CDATA #REQUIRED>
+<!ATTLIST rule format CDATA #IMPLIED>
+<!ATTLIST rule class CDATA #IMPLIED>
+<!ATTLIST avu attribute CDATA #REQUIRED>

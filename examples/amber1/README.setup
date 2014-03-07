@@ -1,0 +1,54 @@
+
+Complex414.pdb (modified from original to have T in sequence!)
+
+-- copied to input0.pdb
+-- used old/input1.pdb to match :2 (after stripping molecule ID) to
+   get coordinates for missing initial guanine.  Saved to input1.pdb
+   and merged in :1 from 1.pdb
+-- removed terminal 5'-phosphate on modeled G
+-- residue swaps on chain 1 (:1-76)
+
+   :10 G2 is modeled as a G
+   :16 H2U -> U
+   :20 H2U -> U
+   :34 U -> U8U
+   :37 A -> T6A
+   :46 G7 -> G, deleted C7M
+   :47 H2U -> U
+   :48 C5 -> C
+   :49 C5 -> C
+   :54 U (should be T, kept as U)
+   :58 1MA -> A (deleted CM1)
+
+-- chain 2 missing first guanine.  Loaded up, matched @?' of residue 2
+   (renamed to XXX) and then moved by hand.  input2.pdb / 2.pdb
+
+-- deleted O3T in terminal adenines
+
+-- changed O2 in U8U to S2
+
+-- attempted initial GB minimization; *** in vdw.  Performed in-vacuo
+   minimization.  This worked; as restraints were built, noticed that
+   PSU was out of the "plane" so rebuilt initial geometry as follows:
+       -- overlayed lys_trna_aloop avg_4-5ns.pdb UUUT6A @C3',P
+       -- swapped T6A and PSU coordinates (input3.pdb)
+
+-- this created input4; here we rotated :27 C2' C1' C5 C6 to -125 deg,
+   :28 C2' C1' N1 CG to -56 deg.  Then translated up :28 to prevent
+   overlap.
+   :27-43 still looks bad (PSU-A) so check for fusion post
+   minimization.
+
+-- Further look noticed overlap (fusion) of :174 A with :175 G.
+   created input6.pdb from c414_vac.coords and hand fixed :174 via
+   excision and replacement with rotated residue...
+
+
+
+
+
+
+
+
+
+

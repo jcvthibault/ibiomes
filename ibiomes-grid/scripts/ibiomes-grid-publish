@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# COPY AND REGISTER EXPERIMENT TO IBIOMES REPO
+
+ARGS=("$@")
+NARGS=${#ARGS[@]} 
+IBIOMES_JAR=$IBIOMES_HOME/lib/ibiomes-grid-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+
+# check that Java version is 1.7+
+JAVA_VER=$(java -version 2>&1 | sed 's/java version "\(.*\)\.\(.*\)\..*"/\1\2/; 1q')
+if [ "$JAVA_VER" -lt 17 ]; then
+	echo "Java 1.7 is required. Please update and rerun."
+	exit
+fi
+
+java -classpath $IBIOMES_JAR edu.utah.bmi.ibiomes.cli.CommandPublishToGrid ${ARGS[@]:0}

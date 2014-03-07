@@ -1,0 +1,105 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>edu.utah.bmi.ibiomes</groupId>
+		<artifactId>ibiomes</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>ibiomes-grid</artifactId>
+	<packaging>jar</packaging>
+	<name>iBIOMES grid repository API</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<!-- ======================== iBIOMES local ======================= -->
+		<dependency>
+			<groupId>edu.utah.bmi.ibiomes</groupId>
+			<artifactId>ibiomes-parsers</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.utah.bmi.ibiomes</groupId>
+			<artifactId>ibiomes-catalog</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
+		<!-- ==================== iRODS (Jargon) ====================== -->
+		<dependency>
+			<groupId>org.irods.jargon</groupId>
+			<artifactId>jargon-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.irods.jargon</groupId>
+			<artifactId>jargon-data-utils</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.irods.jargon</groupId>
+			<artifactId>jargon-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.irods.jargon</groupId>
+			<artifactId>jargon-httpstream</artifactId>
+		</dependency>
+		
+		<!-- ======================== OWL API (for SKOS API) ======================= -->
+		
+		<!-- <dependency>
+		    <groupId>net.sourceforge.owlapi</groupId>
+		    <artifactId>owlapi-distribution</artifactId>
+		    <version>3.4.5</version>
+		</dependency> -->
+		
+		<!-- ==================== MISC ====================== -->
+
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>2.1.3</version>
+		</dependency>
+		
+		<!-- ==================== MySQL ====================== -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.6</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+		        <version>2.4</version>
+		        <configuration>
+		          <descriptorRefs>
+		            <descriptorRef>jar-with-dependencies</descriptorRef>
+		          </descriptorRefs>
+		          <excludes>
+		            <exclude>*.properties</exclude>
+		          </excludes>
+		        </configuration>
+		        <executions>
+				    <execution>
+				      <phase>package</phase>
+				      <goals>
+				        <goal>single</goal>
+				      </goals>
+				    </execution>
+				 </executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

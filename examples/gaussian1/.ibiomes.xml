@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ibiomes>
+  <directory absolutePath="/home/juji/workspace/iBIOMESTestData/gaussian/fosfina" name="fosfina" parent="/home/juji/workspace/iBIOMESTestData/gaussian">
+    <AVUs>
+      <AVU id="SOFTWARE_NAME">GAUSSIAN</AVU>
+      <AVU id="FILE_TYPE">COLLECTION</AVU>
+      <AVU id="METHOD">Quantum mechanics</AVU>
+      <AVU id="QM_BASIS_SET">lanl2dz</AVU>
+      <AVU id="QM_LEVEL_OF_THEORY">DFT</AVU>
+      <AVU id="QM_SPIN_MULTIPLICITY">1</AVU>
+      <AVU id="QM_TOTAL_MOLECULE_CHARGE">0</AVU>
+      <AVU id="CALCULATION">Geometry optimization</AVU>
+      <AVU id="QM_EXCHANGE_CORRELATION">m062x</AVU>
+      <AVU id="MOLECULE_ATOMIC_WEIGHT">262.28537</AVU>
+      <AVU id="MOLECULE_ATOMIC_COMPOSITION">C:18 H:15 P:1</AVU>
+      <AVU id="MOLECULE_ATOMIC_COMPOSITION2">C[18]H[15]P</AVU>
+      <AVU id="MOLECULE_TYPE">Chemical compound</AVU>
+      <AVU id="COUNT_ATOM">34</AVU>
+      <AVU id="COUNT_ION">0</AVU>
+      <AVU id="COUNT_WATER">0</AVU>
+      <AVU id="TOPOLOGY_FILE_PATH">fosfina.gjf</AVU>
+      <AVU id="MAIN_3D_STRUCTURE_FILE">fosfina.log</AVU>
+    </AVUs>
+    <files>
+      <fileGroup format="GAUSSIAN com">
+        <file absolutePath="/home/juji/workspace/iBIOMESTestData/gaussian/fosfina/fosfina.gjf" format="GAUSSIAN com" modificationDate="07/17/12 10:50" name="fosfina.gjf" parent="/home/juji/workspace/iBIOMESTestData/gaussian/fosfina" size="2609">
+          <AVUs>
+            <AVU id="FILE_FORMAT">GAUSSIAN com</AVU>
+            <AVU id="MOLECULE_ATOMIC_WEIGHT">262.28537</AVU>
+            <AVU id="MOLECULE_ATOMIC_COMPOSITION">C:18 H:15 P:1</AVU>
+            <AVU id="MOLECULE_ATOMIC_COMPOSITION2">C[18]H[15]P</AVU>
+            <AVU id="MOLECULE_TYPE">Chemical compound</AVU>
+            <AVU id="COUNT_ATOM">34</AVU>
+            <AVU id="COUNT_ION">0</AVU>
+            <AVU id="COUNT_WATER">0</AVU>
+            <AVU id="METHOD">Quantum mechanics</AVU>
+            <AVU id="QM_BASIS_SET">lanl2dz</AVU>
+            <AVU id="QM_LEVEL_OF_THEORY">DFT</AVU>
+            <AVU id="QM_SPIN_MULTIPLICITY">1</AVU>
+            <AVU id="QM_TOTAL_MOLECULE_CHARGE">0</AVU>
+            <AVU id="CALCULATION">Geometry optimization</AVU>
+            <AVU id="QM_EXCHANGE_CORRELATION">m062x</AVU>
+          </AVUs>
+        </file>
+      </fileGroup>
+      <fileGroup format="GAUSSIAN log">
+        <file absolutePath="/home/juji/workspace/iBIOMESTestData/gaussian/fosfina/fosfina.log" format="GAUSSIAN log" modificationDate="07/17/12 10:54" name="fosfina.log" parent="/home/juji/workspace/iBIOMESTestData/gaussian/fosfina" size="448963">
+          <AVUs>
+            <AVU id="FILE_FORMAT">GAUSSIAN log</AVU>
+            <AVU id="METHOD">Quantum mechanics</AVU>
+            <AVU id="QM_BASIS_SET">LANL2DZ (5D, 7F)</AVU>
+            <AVU id="QM_SPIN_MULTIPLICITY">1</AVU>
+            <AVU id="QM_TOTAL_MOLECULE_CHARGE">0</AVU>
+            <AVU id="PROGRAM_TERMINATION">normal</AVU>
+            <AVU id="SOFTWARE_NAME">GAUSSIAN</AVU>
+            <AVU id="SOFTWARE_VERSION">09</AVU>
+            <AVU id="SOFTWARE_VERSION_INSTALL">EM64L-G09RevC.01</AVU>
+            <AVU id="MOLECULE_ATOMIC_COMPOSITION">C:18 H:15 P:1</AVU>
+          </AVUs>
+        </file>
+      </fileGroup>
+    </files>
+    <subdirectories/>
+  </directory>
+</ibiomes>

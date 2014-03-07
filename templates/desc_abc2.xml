@@ -1,0 +1,95 @@
+<rules>
+  <!-- ======================================================================================== -->
+  <!-- Experiment rules  -->
+  <!-- ======================================================================================== -->
+  <rule type="experiment">
+        <metadata>
+	  <avu attribute="boundary_conditions">Periodic</avu>
+	  <avu attribute="constraint">SHAKE</avu>
+	  <avu attribute="thermostat">Berendsen</avu>
+	  <avu attribute="electrostatics">PME</avu>
+	  <avu attribute="time_step_length">0.002</avu>
+	  <avu attribute="force_field">AMBER FF99bsc0</avu>
+	  <avu attribute="force_field">SPC/E</avu>
+        </metadata>
+  </rule>
+  <!-- ======================================================================================== -->
+  <!-- File rules  -->
+  <!-- ======================================================================================== -->
+  <rule type="file" match="*.pdb" format="PDB">
+  	<metadata>
+  	</metadata>
+  </rule>
+ <rule type="file" match="traj-ions-snap.pdb" class="structure" description="Trajectory snapshot with ions and no water">
+        <metadata>
+        </metadata>
+  </rule>
+
+  <!-- ======================================================================================== -->
+  <rule type="file" match="(rms)|(*.(csv|dat|raw))" format="CSV">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <!-- ======================================================================================== -->
+  <rule type="file" match="2drms.gnu" format="Gnuplot" description="Gnuplot script for 2D-RMSd plot">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <!-- ======================================================================================== -->
+  <rule type="file" match="*-radial.png" class="analysis" description="Radial plots">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="*-summary.pdf" class="analysis" description="Analysis summary">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="*.(png|jpg|jpeg|gif|tif)" class="analysis">
+  	<metadata></metadata>
+  </rule>
+  <!-- ======================================================================================== -->
+  <rule type="file" match="((traj.*)|(*.(mdcrd|traj|inpcrd|coords|crds|x)))" format="AMBER trajectory" softwareContext="AMBER">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="traj-ions.strip" format="AMBER trajectory" softwareContext="AMBER" description="Trajectory with ions and no water">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <!-- ======================================================================================== -->
+  <rule type="file" match="*.(prmtop|topo|top|parm|parm7)" format="AMBER parmtop" softwareContext="AMBER">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="$$$$.(prmtop|topo|top|parm|parm7)" class="topology" softwareContext="AMBER" description="Topology with ions and water">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="*-ions.(prmtop|topo|top|parm|parm7)" softwareContext="AMBER" description="Stripped topology with ions (no water)">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <!-- ======================================================================================== -->
+  <rule type="file" match="*.(rst|restart|restrt|rst7|restrt7)(.*)?" format="AMBER restart" softwareContext="AMBER" description="Restart file">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <!-- ======================================================================================== -->
+  <rule type="file" match="*.in" format="Script" description="Ptraj/Cpptraj analysis script">
+  	<metadata>
+	    <avu attribute="software_name">cpptraj</avu>
+  	</metadata>
+  </rule>
+  <rule type="file" match="*.out" format="Text" description="Ptraj/Cpptraj analysis script log">
+  	<metadata>
+	    <avu attribute="software_name">cpptraj</avu>
+  	</metadata>
+  </rule>
+  <rule type="file" match="*.R" format="Script" description="R script">
+  	<metadata>
+	    <avu attribute="software_name">R</avu>
+  	</metadata>
+  </rule>
+  	  
+  <!-- ======================================================================================== -->
+</rules>

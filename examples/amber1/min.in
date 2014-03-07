@@ -1,0 +1,20 @@
+ in-vacuo run, Langevin, no cutoff
+ &cntrl
+   igb = 0, ntb = 0, ntpr = 5, ntwx = 0,
+
+   cut = 500.0, nsnb = 999999999,
+
+   imin = 1, maxcyc = 1000, ncyc = 1000,
+  
+   ntc=1, ntf=1,
+
+   nmropt = 1,
+
+ &end
+ &ewald
+   use_pme = 0, nbflag = 0, vdwmeth = 0, eedmeth = 4,
+ &end
+ &wt type = 'END', &end
+DISANG=restraints.dat
+LISTIN=POUT
+LISTOUT=POUT

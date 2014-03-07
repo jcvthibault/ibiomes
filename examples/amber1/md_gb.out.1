@@ -1,0 +1,1752 @@
+
+          -------------------------------------------------------
+          Amber 8  SANDER                 Scripps/UCSF 2004
+          -------------------------------------------------------
+
+| Run on 04/19/2005 at 15:33:19
+  [-O]verwriting output
+
+File Assignments:
+|  MDIN: md_gb.in                                                              
+| MDOUT: md_gb.out.1                                                           
+|INPCRD: md_gb.restrt                                                          
+|  PARM: c414_vac.topo                                                         
+|RESTRT: md_gb.restrt.1                                                        
+|  REFC: refc                                                                  
+| MDVEL: mdvel                                                                 
+|  MDEN: mden                                                                  
+| MDCRD: md_gb.traj.1                                                          
+|MDINFO: mdinfo                                                                
+|INPDIP: inpdip                                                                
+|RSTDIP: rstdip                                                                
+
+ 
+ Here is the input file:
+ 
+ Langevin MD for RNA using IGB1                                                
+ &cntrl                                                                        
+                                                                               
+  igb = 1, ntb = 0,                                                            
+                                                                               
+  nstlim = 1500, ntwr = 500,                                                   
+                                                                               
+  ntwx = 500, ntpr = 125,                                                      
+                                                                               
+  cut = 25.0, rgbmax = 20.0,                                                   
+  t = 0.0, dt = 0.002,                                                         
+  tempi = 200, temp0 = 300,                                                    
+  ntt = 3, gamma_ln = 1.0,                                                     
+                                                                               
+  ntc = 2, ntf = 2,                                                            
+  nmropt = 1,                                                                  
+ /                                                                             
+ &wt type = 'END', &end                                                        
+DISANG=restraints.dat                                                          
+LISTIN=POUT                                                                    
+LISTOUT=POUT                                                                   
+
+--------------------------------------------------------------------------------
+   1.  RESOURCE   USE: 
+--------------------------------------------------------------------------------
+
+| Flags:                                                                        
+| New format PARM file being parsed.
+| Version =    1.000 Date = 04/18/05 Time = 12:17:47
+ NATOM  =    5746 NTYPES =      16 NBONH =    1935 MBONA  =    4262
+ NTHETH =    4443 MTHETA =    6639 NPHIH =    8144 MPHIA  =   11170
+ NHPARM =       0 NPARM  =       0 NNB   =   32150 NRES   =     178
+ NBONA  =    4262 NTHETA =    6639 NPHIA =   11170 NUMBND =      46
+ NUMANG =     107 NPTRA  =      41 NATYP =      28 NPHB   =       0
+ IFBOX  =       0 NMXRS  =      49 IFCAP =       0 NEXTRA =       0
+ NCOPY  =       0
+
+
+|     Memory Use     Allocated
+|     Real              150181
+|     Hollerith          34656
+|     Integer           318222
+|     Max Pairs              1
+|     Max Rstack             1
+|     Max Istack             1
+|       Total             2551 kbytes
+| Duplicated    0 dihedrals
+| Duplicated    0 dihedrals
+
+--------------------------------------------------------------------------------
+   2.  CONTROL  DATA  FOR  THE  RUN
+--------------------------------------------------------------------------------
+
+                                                                                
+
+General flags:
+     imin    =       0, nmropt  =       1
+
+Nature and format of input:
+     ntx     =       1, irest   =       0, ntrx    =       1
+
+Nature and format of output:
+     ntxo    =       1, ntpr    =     125, ntrx    =       1, ntwr    =     500
+     iwrap   =       0, ntwx    =     500, ntwv    =       0, ntwe    =       0
+     ioutfm  =       0, ntwprt  =       0, idecomp =       0, rbornstat=      0
+
+Potential function:
+     ntf     =       2, ntb     =       0, igb     =       1, nsnb    =      25
+     ipol    =       0, gbsa    =       0, iesp    =       0
+     dielc   =   1.00000, cut     =  25.00000, intdiel =   1.00000
+     saltcon =   0.00000, offset  =   0.09000, gbalpha=    1.00000
+     gbbeta  =   0.00000, gbgamma =   0.00000, surften =   0.00500
+     rdt     =   0.00000, rgbmax  =  20.00000
+     scnb    =   2.00000, scee    =   1.20000
+
+Frozen or restrained atoms:
+     ibelly  =       0, ntr     =       0
+
+Molecular dynamics:
+     nstlim  =    1500, nscm    =    1000, nrespa  =       1
+     t       =   0.00000, dt      =   0.00200, vlimit  =  20.00000
+
+Langevin dynamics temperature regulation:
+     ig      =   71277
+     temp0   = 300.00000, tempi   = 200.00000, gamma_ln=   1.00000
+
+SHAKE:
+     ntc     =       2, jfastw  =       0
+     tol     =   0.00001
+
+NMR refinement options:
+     iscale  =       0, noeskp  =       1, ipnlty  =       1, mxsub   =       1
+     scalm   = 100.00000, pencut  =   0.10000, tausw   =   0.10000
+
+--------------------------------------------------------------------------------
+   3.  ATOMIC COORDINATES AND VELOCITIES
+--------------------------------------------------------------------------------
+
+                                                                                
+ begin time read from input coords =     3.000 ps
+
+
+
+           Begin reading energy term weight changes/NMR restraints
+ WEIGHT CHANGES:
+                         ** No weight changes given **
+
+ RESTRAINTS:
+ Requested file redirections:
+  DISANG    = restraints.dat
+  LISTIN    = POUT
+  LISTOUT   = POUT
+ Restraints will be read from file: restraints.dat
+ Here are comments from the DISANG input file:
+ #                                                                               
+ # BONUS RESTRAINTS                                                              
+ #                                                                               
+ # 9-23                                                                          
+ #                                                                               
+ 
+******
+ N6  (  275)-N7  (  724)                            NSTEP1=     0 NSTEP2=     0
+R1 =   0.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.978  Rcurr-(R2+R3)/2:    0.128  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N7  (  272)-N6  (  727)                            NSTEP1=     0 NSTEP2=     0
+R1 =   0.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.894  Rcurr-(R2+R3)/2:    0.044  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  (  273)-C6  (  274)-C5  (  725)-C6  (  726)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    1.251  Rcurr-(R2+R3)/2:    1.251  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C4  (  282)-N1  (  278)-C4  (  734)-N1  (  730)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -0.923  Rcurr-(R2+R3)/2:    0.923  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N7  (  431)-N3  (  246)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.828  Rcurr-(R2+R3)/2:    0.022  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N6  (  434)-O2  (  249)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.964  Rcurr-(R2+R3)/2:    0.114  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O2' (  254)-N1  (  663)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.200 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.445  Rcurr-(R2+R3)/2:    0.545  MIN(Rcurr-R2,Rcurr-R3):    0.245
+******
+ O2' (  254)-N6  (  660)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.200 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.195  Rcurr-(R2+R3)/2:    0.295  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C8  (  429)-C5  (  432)-N1  (  239)-C5  (  242)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    9.997  Rcurr-(R2+R3)/2:    9.997  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N9  (  428)-C4  (  441)-N3  (  246)-C4  (  244)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -0.706  Rcurr-(R2+R3)/2:    0.706  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N7  (  431)-C6  (  433)-C2  (  248)-C5  (  242)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    7.353  Rcurr-(R2+R3)/2:    7.353  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  (  308)-N4  (  794)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.873  Rcurr-(R2+R3)/2:    0.023  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  (  309)-N3  (  797)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.084  Rcurr-(R2+R3)/2:    0.234  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  (  312)-O2  (  799)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.075  Rcurr-(R2+R3)/2:    0.225  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  (  307)-C2  (  311)-C2  (  798)-C4  (  793)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -10.040  Rcurr-(R2+R3)/2:   10.040  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  (  306)-C4  (  316)-N1  (  788)-C6  (  789)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -6.656  Rcurr-(R2+R3)/2:    6.656  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  (  311)-N1  (  309)-N3  (  797)-C2  (  798)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -11.422  Rcurr-(R2+R3)/2:   11.422  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  (  760)-N4  (  342)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.002  Rcurr-(R2+R3)/2:    0.152  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  (  761)-N3  (  345)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.926  Rcurr-(R2+R3)/2:    0.076  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  (  764)-O2  (  347)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.921  Rcurr-(R2+R3)/2:    0.071  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  (  759)-C2  (  763)-C2  (  346)-C4  (  341)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -24.873  Rcurr-(R2+R3)/2:   24.873  MIN(Rcurr-R2,Rcurr-R3):    4.873
+******
+ C5  (  758)-C4  (  768)-N1  (  336)-C6  (  337)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -30.127  Rcurr-(R2+R3)/2:   30.127  MIN(Rcurr-R2,Rcurr-R3):   10.127
+******
+ C2  (  763)-N1  (  761)-N3  (  345)-C2  (  346)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -17.668  Rcurr-(R2+R3)/2:   17.668  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N6  (  727)-O4  (  373)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.941  Rcurr-(R2+R3)/2:    0.091  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  (  730)-N3  (  374)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.987  Rcurr-(R2+R3)/2:    0.137  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  (  731)-O2  (  377)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.800 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    4.009  Rcurr-(R2+R3)/2:    0.809  MIN(Rcurr-R2,Rcurr-R3):    0.209
+******
+ C6  (  726)-N3  (  733)-C2  (  376)-C5  (  370)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -23.073  Rcurr-(R2+R3)/2:   23.073  MIN(Rcurr-R2,Rcurr-R3):    3.073
+******
+ C5  (  725)-C4  (  734)-N1  (  367)-C6  (  368)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -29.271  Rcurr-(R2+R3)/2:   29.271  MIN(Rcurr-R2,Rcurr-R3):    9.271
+******
+ C2  (  731)-N1  (  730)-N3  (  374)-C2  (  376)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -15.052  Rcurr-(R2+R3)/2:   15.052  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  (  693)-N4  (  403)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.000 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.929  Rcurr-(R2+R3)/2:    0.129  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  (  694)-N3  (  406)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.000 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.913  Rcurr-(R2+R3)/2:    0.113  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  (  697)-O2  (  408)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.000 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.802  Rcurr-(R2+R3)/2:    0.002  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  (  692)-C2  (  696)-C2  (  407)-C4  (  402)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -3.173  Rcurr-(R2+R3)/2:    3.173  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  (  691)-C4  (  701)-N1  (  397)-C6  (  398)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -11.937  Rcurr-(R2+R3)/2:   11.937  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  (  696)-N1  (  694)-N3  (  406)-C2  (  407)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    5.867  Rcurr-(R2+R3)/2:    5.867  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N6  ( 1386)-O4  (  857)                            NSTEP1=     0 NSTEP2=     0
+R1 =   2.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.280  Rcurr-(R2+R3)/2:    0.430  MIN(Rcurr-R2,Rcurr-R3):    0.180
+******
+ N1  ( 1389)-N3  (  858)                            NSTEP1=     0 NSTEP2=     0
+R1 =   2.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.929  Rcurr-(R2+R3)/2:    0.079  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 1389)-H3  (  859)                            NSTEP1=     0 NSTEP2=     0
+R1 =   1.000 R2 =   1.600 R3 =   2.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.265  Rcurr-(R2+R3)/2:    0.415  MIN(Rcurr-R2,Rcurr-R3):    0.165
+******
+ C2  ( 1390)-O2  (  861)                            NSTEP1=     0 NSTEP2=     0
+R1 =   2.000 R2 =   2.600 R3 =   3.800 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.483  Rcurr-(R2+R3)/2:    0.283  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 1385)-C2  ( 1390)-C2  (  860)-C4  (  856)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -22.229  Rcurr-(R2+R3)/2:   22.229  MIN(Rcurr-R2,Rcurr-R3):    2.229
+******
+ C5  ( 1384)-C4  ( 1393)-C4  (  856)-N3  (  858)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  115.310  Rcurr-(R2+R3)/2:  115.310  MIN(Rcurr-R2,Rcurr-R3):   95.310
+******
+ C2  ( 1390)-N1  ( 1389)-N3  (  858)-C2  (  860)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -17.378  Rcurr-(R2+R3)/2:   17.378  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 1352)-N4  (  888)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.042  Rcurr-(R2+R3)/2:    0.192  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 1353)-N3  (  891)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.234  Rcurr-(R2+R3)/2:    0.384  MIN(Rcurr-R2,Rcurr-R3):    0.134
+******
+ H1  ( 1354)-N3  (  891)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   1.600 R3 =   2.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.377  Rcurr-(R2+R3)/2:    0.527  MIN(Rcurr-R2,Rcurr-R3):    0.277
+******
+ N2  ( 1356)-O2  (  893)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    5.143  Rcurr-(R2+R3)/2:    2.293  MIN(Rcurr-R2,Rcurr-R3):    2.043
+******
+ H21 ( 1357)-O2  (  893)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   1.600 R3 =   2.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    4.701  Rcurr-(R2+R3)/2:    2.851  MIN(Rcurr-R2,Rcurr-R3):    2.601
+******
+ C6  ( 1351)-C2  ( 1355)-C2  (  892)-C4  (  887)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   37.732  Rcurr-(R2+R3)/2:   37.732  MIN(Rcurr-R2,Rcurr-R3):   17.732
+******
+ C5  ( 1350)-C4  ( 1360)-N1  (  882)-C6  (  883)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    9.017  Rcurr-(R2+R3)/2:    9.017  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 1356)-C6  ( 1351)-N4  (  888)-C2  (  892)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   49.554  Rcurr-(R2+R3)/2:   49.554  MIN(Rcurr-R2,Rcurr-R3):   29.554
+******
+ N6  (  919)-O4  ( 1322)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.907  Rcurr-(R2+R3)/2:    0.057  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  (  922)-N3  ( 1323)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.132  Rcurr-(R2+R3)/2:    0.282  MIN(Rcurr-R2,Rcurr-R3):    0.032
+******
+ C2  (  923)-O2  ( 1326)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.800 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.854  Rcurr-(R2+R3)/2:    0.654  MIN(Rcurr-R2,Rcurr-R3):    0.054
+******
+ C6  (  918)-N3  (  925)-C2  ( 1325)-C5  ( 1319)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -22.770  Rcurr-(R2+R3)/2:   22.770  MIN(Rcurr-R2,Rcurr-R3):    2.770
+******
+ C5  (  917)-C4  (  926)-N1  ( 1316)-C6  ( 1317)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -14.445  Rcurr-(R2+R3)/2:   14.445  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  (  923)-N1  (  922)-N3  ( 1323)-C2  ( 1325)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -8.629  Rcurr-(R2+R3)/2:    8.629  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  (  952)-N4  ( 1291)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.000 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.803  Rcurr-(R2+R3)/2:    0.003  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  (  953)-N3  ( 1294)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.000 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.797  Rcurr-(R2+R3)/2:    0.003  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  (  956)-O2  ( 1296)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.000 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.656  Rcurr-(R2+R3)/2:    0.144  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  (  951)-C2  (  955)-C2  ( 1295)-C4  ( 1290)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -18.276  Rcurr-(R2+R3)/2:   18.276  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  (  950)-C4  (  960)-N1  ( 1285)-C6  ( 1286)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -23.189  Rcurr-(R2+R3)/2:   23.189  MIN(Rcurr-R2,Rcurr-R3):    3.189
+******
+ C2  (  955)-N1  (  953)-N3  ( 1294)-C2  ( 1295)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -25.291  Rcurr-(R2+R3)/2:   25.291  MIN(Rcurr-R2,Rcurr-R3):    5.291
+******
+ N6  (  986)-O2  ( 1264)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.300 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.135  Rcurr-(R2+R3)/2:    0.185  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  (  989)-N3  ( 1261)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.300 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.889  Rcurr-(R2+R3)/2:    0.061  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  (  990)-O4  ( 1260)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.800 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.483  Rcurr-(R2+R3)/2:    0.283  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  (  984)-N3  (  992)-C5  ( 1258)-N1  ( 1255)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -8.720  Rcurr-(R2+R3)/2:    8.720  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  (  985)-C2  (  990)-C4  ( 1259)-C2  ( 1263)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -8.627  Rcurr-(R2+R3)/2:    8.627  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N6  (  986)-N1  (  989)-O4  ( 1260)-O2  ( 1264)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -10.606  Rcurr-(R2+R3)/2:   10.606  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 2829)-N4  ( 1551)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.000 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.486  Rcurr-(R2+R3)/2:    0.686  MIN(Rcurr-R2,Rcurr-R3):    0.486
+******
+ N1  ( 2830)-N3  ( 1554)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.000 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.098  Rcurr-(R2+R3)/2:    0.298  MIN(Rcurr-R2,Rcurr-R3):    0.098
+******
+ N2  ( 2833)-O2  ( 1556)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.000 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.789  Rcurr-(R2+R3)/2:    0.011  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 2828)-C2  ( 2832)-C2  ( 1555)-C4  ( 1550)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -12.173  Rcurr-(R2+R3)/2:   12.173  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 2827)-C4  ( 2837)-N1  ( 1545)-C6  ( 1546)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -21.211  Rcurr-(R2+R3)/2:   21.211  MIN(Rcurr-R2,Rcurr-R3):    1.211
+******
+ C2  ( 2832)-N1  ( 2830)-N3  ( 1554)-C2  ( 1555)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    4.089  Rcurr-(R2+R3)/2:    4.089  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 2795)-N4  ( 1582)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.000 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.073  Rcurr-(R2+R3)/2:    0.273  MIN(Rcurr-R2,Rcurr-R3):    0.073
+******
+ N1  ( 2796)-N3  ( 1585)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.000 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.937  Rcurr-(R2+R3)/2:    0.137  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 2799)-O2  ( 1587)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.000 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.655  Rcurr-(R2+R3)/2:    0.145  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 2794)-C2  ( 2798)-C2  ( 1586)-C4  ( 1581)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -7.866  Rcurr-(R2+R3)/2:    7.866  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 2793)-C4  ( 2803)-N1  ( 1576)-C6  ( 1577)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -7.275  Rcurr-(R2+R3)/2:    7.275  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 2798)-N1  ( 2796)-N3  ( 1585)-C2  ( 1586)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -6.995  Rcurr-(R2+R3)/2:    6.995  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N6  ( 1613)-O4  ( 2765)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.848  Rcurr-(R2+R3)/2:    0.002  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 1616)-N3  ( 2766)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.942  Rcurr-(R2+R3)/2:    0.092  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 1617)-O2  ( 2769)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.800 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    4.070  Rcurr-(R2+R3)/2:    0.870  MIN(Rcurr-R2,Rcurr-R3):    0.270
+******
+ C6  ( 1612)-N3  ( 1619)-C2  ( 2768)-C5  ( 2762)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -25.460  Rcurr-(R2+R3)/2:   25.460  MIN(Rcurr-R2,Rcurr-R3):    5.460
+******
+ C5  ( 1611)-C4  ( 1620)-N1  ( 2759)-C6  ( 2760)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -21.987  Rcurr-(R2+R3)/2:   21.987  MIN(Rcurr-R2,Rcurr-R3):    1.987
+******
+ C2  ( 1617)-N1  ( 1616)-N3  ( 2766)-C2  ( 2768)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -11.145  Rcurr-(R2+R3)/2:   11.145  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 1646)-N4  ( 2734)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.763  Rcurr-(R2+R3)/2:    0.087  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 1647)-N3  ( 2737)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.896  Rcurr-(R2+R3)/2:    0.046  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 1650)-O2  ( 2739)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.907  Rcurr-(R2+R3)/2:    0.057  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 1645)-C2  ( 1649)-C2  ( 2738)-C4  ( 2733)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    4.828  Rcurr-(R2+R3)/2:    4.828  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 1644)-C4  ( 1654)-N1  ( 2728)-C6  ( 2729)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    0.769  Rcurr-(R2+R3)/2:    0.769  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 1649)-N1  ( 1647)-N3  ( 2737)-C2  ( 2738)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    8.542  Rcurr-(R2+R3)/2:    8.542  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 1680)-O4  ( 2704)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   4.200 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    4.431  Rcurr-(R2+R3)/2:    1.031  MIN(Rcurr-R2,Rcurr-R3):    0.231
+******
+ N1  ( 1681)-N3  ( 2705)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   4.200 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    4.140  Rcurr-(R2+R3)/2:    0.740  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 1684)-O2  ( 2708)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   4.200 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.711  Rcurr-(R2+R3)/2:    0.311  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 1714)-N4  ( 2673)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.231  Rcurr-(R2+R3)/2:    0.381  MIN(Rcurr-R2,Rcurr-R3):    0.131
+******
+ N1  ( 1715)-N3  ( 2676)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.975  Rcurr-(R2+R3)/2:    0.125  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 1718)-O2  ( 2678)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.873  Rcurr-(R2+R3)/2:    0.023  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 1713)-C2  ( 1717)-C2  ( 2677)-C4  ( 2672)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -24.907  Rcurr-(R2+R3)/2:   24.907  MIN(Rcurr-R2,Rcurr-R3):    4.907
+******
+ C5  ( 1712)-C4  ( 1722)-N1  ( 2667)-C6  ( 2668)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -27.142  Rcurr-(R2+R3)/2:   27.142  MIN(Rcurr-R2,Rcurr-R3):    7.142
+******
+ C2  ( 1717)-N1  ( 1715)-N3  ( 2676)-C2  ( 2677)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -30.599  Rcurr-(R2+R3)/2:   30.599  MIN(Rcurr-R2,Rcurr-R3):   10.599
+******
+ N6  ( 2640)-O4  ( 1748)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.230  Rcurr-(R2+R3)/2:    0.380  MIN(Rcurr-R2,Rcurr-R3):    0.130
+******
+ N1  ( 2643)-N3  ( 1749)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.088  Rcurr-(R2+R3)/2:    0.238  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 2644)-O2  ( 1752)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.800 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.659  Rcurr-(R2+R3)/2:    0.459  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 2639)-N3  ( 2646)-C2  ( 1751)-C5  ( 1745)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -17.891  Rcurr-(R2+R3)/2:   17.891  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 2638)-C4  ( 2647)-N1  ( 1742)-C6  ( 1743)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -17.445  Rcurr-(R2+R3)/2:   17.445  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 2644)-N1  ( 2643)-N3  ( 1749)-C2  ( 1751)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -19.367  Rcurr-(R2+R3)/2:   19.367  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 2606)-O2  ( 1781)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   4.200 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    4.114  Rcurr-(R2+R3)/2:    0.714  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 2607)-N3  ( 1778)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   4.200 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.986  Rcurr-(R2+R3)/2:    0.586  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 2610)-O4  ( 1777)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   4.200 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.838  Rcurr-(R2+R3)/2:    0.438  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N6  ( 4047)-O4  ( 1080)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.200 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.628  Rcurr-(R2+R3)/2:    0.728  MIN(Rcurr-R2,Rcurr-R3):    0.428
+******
+ N1  ( 4050)-N3  ( 1081)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.200 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.322  Rcurr-(R2+R3)/2:    0.422  MIN(Rcurr-R2,Rcurr-R3):    0.122
+******
+ N1  ( 4050)-H3  ( 1082)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   1.600 R3 =   2.200 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.673  Rcurr-(R2+R3)/2:    1.773  MIN(Rcurr-R2,Rcurr-R3):    1.473
+******
+ C2  ( 4051)-S2  ( 1084)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   4.000 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    4.179  Rcurr-(R2+R3)/2:    0.879  MIN(Rcurr-R2,Rcurr-R3):    0.179
+******
+ C6  ( 4046)-C2  ( 4051)-C2  ( 1083)-C4  ( 1079)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -40.000 R3 =  40.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -1.862  Rcurr-(R2+R3)/2:    1.862  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 4045)-N3  ( 4053)-N1  ( 1074)-C5  ( 1077)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -40.000 R3 =  40.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -8.899  Rcurr-(R2+R3)/2:    8.899  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 4051)-N6  ( 4047)-C4  ( 1079)-C2  ( 1083)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -40.000 R3 =  40.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    9.215  Rcurr-(R2+R3)/2:    9.215  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N6  ( 4014)-O4  ( 1119)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.840  Rcurr-(R2+R3)/2:    0.010  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 4017)-N3  ( 1120)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.806  Rcurr-(R2+R3)/2:    0.044  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 4018)-O2  ( 1123)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.800 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.453  Rcurr-(R2+R3)/2:    0.253  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 4013)-N3  ( 4020)-C2  ( 1122)-C5  ( 1116)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -4.354  Rcurr-(R2+R3)/2:    4.354  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 4012)-C4  ( 4021)-N1  ( 1113)-C6  ( 1114)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -11.046  Rcurr-(R2+R3)/2:   11.046  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 4018)-N1  ( 4017)-N3  ( 1120)-C2  ( 1122)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -8.558  Rcurr-(R2+R3)/2:    8.558  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N6  ( 3981)-O4  ( 1149)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.777  Rcurr-(R2+R3)/2:    0.073  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 3984)-N3  ( 1150)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.964  Rcurr-(R2+R3)/2:    0.114  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 3985)-O2  ( 1153)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.800 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.837  Rcurr-(R2+R3)/2:    0.637  MIN(Rcurr-R2,Rcurr-R3):    0.037
+******
+ C6  ( 3980)-N3  ( 3987)-C2  ( 1152)-C5  ( 1146)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -14.376  Rcurr-(R2+R3)/2:   14.376  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 3979)-C4  ( 3988)-N1  ( 1143)-C6  ( 1144)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -15.103  Rcurr-(R2+R3)/2:   15.103  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 3985)-N1  ( 3984)-N3  ( 1150)-C2  ( 1152)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -1.671  Rcurr-(R2+R3)/2:    1.671  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 4429)-N4  ( 3566)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.915  Rcurr-(R2+R3)/2:    0.065  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 4430)-N3  ( 3569)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.919  Rcurr-(R2+R3)/2:    0.069  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 4433)-O2  ( 3571)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.940  Rcurr-(R2+R3)/2:    0.090  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 4428)-C2  ( 4432)-C2  ( 3570)-C4  ( 3565)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -4.749  Rcurr-(R2+R3)/2:    4.749  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 4427)-C4  ( 4437)-N1  ( 3560)-C6  ( 3561)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -18.186  Rcurr-(R2+R3)/2:   18.186  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 4432)-N1  ( 4430)-N3  ( 3569)-C2  ( 3570)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -24.669  Rcurr-(R2+R3)/2:   24.669  MIN(Rcurr-R2,Rcurr-R3):    4.669
+******
+ N6  ( 4396)-O4  ( 3597)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.137  Rcurr-(R2+R3)/2:    0.287  MIN(Rcurr-R2,Rcurr-R3):    0.037
+******
+ N1  ( 4399)-N3  ( 3598)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.910  Rcurr-(R2+R3)/2:    0.060  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 4400)-O2  ( 3601)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.800 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.142  Rcurr-(R2+R3)/2:    0.058  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 4395)-N3  ( 4402)-C2  ( 3600)-C5  ( 3594)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -18.726  Rcurr-(R2+R3)/2:   18.726  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 4394)-C4  ( 4403)-N1  ( 3591)-C6  ( 3592)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -16.139  Rcurr-(R2+R3)/2:   16.139  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 4400)-N1  ( 4399)-N3  ( 3598)-C2  ( 3600)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    9.088  Rcurr-(R2+R3)/2:    9.088  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 4331)-N4  ( 3627)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.916  Rcurr-(R2+R3)/2:    0.066  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 4332)-N3  ( 3630)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.048  Rcurr-(R2+R3)/2:    0.198  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 4335)-O2  ( 3632)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.944  Rcurr-(R2+R3)/2:    0.094  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 4330)-C2  ( 4334)-C2  ( 3631)-C4  ( 3626)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -1.817  Rcurr-(R2+R3)/2:    1.817  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 4329)-C4  ( 4339)-N1  ( 3621)-C6  ( 3622)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   15.066  Rcurr-(R2+R3)/2:   15.066  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 4334)-N1  ( 4332)-N3  ( 3630)-C2  ( 3631)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -9.747  Rcurr-(R2+R3)/2:    9.747  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N6  ( 4298)-O4  ( 3658)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.872  Rcurr-(R2+R3)/2:    0.022  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 4301)-N3  ( 3659)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.011  Rcurr-(R2+R3)/2:    0.161  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 4302)-O2  ( 3662)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.800 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    4.059  Rcurr-(R2+R3)/2:    0.859  MIN(Rcurr-R2,Rcurr-R3):    0.259
+******
+ C6  ( 4297)-N3  ( 4304)-C2  ( 3661)-C5  ( 3655)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -1.214  Rcurr-(R2+R3)/2:    1.214  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 4296)-C4  ( 4305)-N1  ( 3652)-C6  ( 3653)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -5.346  Rcurr-(R2+R3)/2:    5.346  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 4302)-N1  ( 4301)-N3  ( 3659)-C2  ( 3661)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   22.527  Rcurr-(R2+R3)/2:   22.527  MIN(Rcurr-R2,Rcurr-R3):    2.527
+******
+ N6  ( 3688)-O4  ( 4268)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.154  Rcurr-(R2+R3)/2:    0.304  MIN(Rcurr-R2,Rcurr-R3):    0.054
+******
+ N1  ( 3691)-N3  ( 4269)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.011  Rcurr-(R2+R3)/2:    0.161  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 3692)-O2  ( 4272)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.800 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.473  Rcurr-(R2+R3)/2:    0.273  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 3687)-N3  ( 3694)-C2  ( 4271)-C5  ( 4265)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -8.782  Rcurr-(R2+R3)/2:    8.782  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 3686)-C4  ( 3695)-N1  ( 4262)-C6  ( 4263)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -4.888  Rcurr-(R2+R3)/2:    4.888  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 3692)-N1  ( 3691)-N3  ( 4269)-C2  ( 4271)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -23.346  Rcurr-(R2+R3)/2:   23.346  MIN(Rcurr-R2,Rcurr-R3):    3.346
+******
+ O6  ( 3721)-N4  ( 4237)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.046  Rcurr-(R2+R3)/2:    0.196  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 3722)-N3  ( 4240)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.946  Rcurr-(R2+R3)/2:    0.096  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 3725)-O2  ( 4242)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.774  Rcurr-(R2+R3)/2:    0.076  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 3720)-C2  ( 3724)-C2  ( 4241)-C4  ( 4236)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -8.360  Rcurr-(R2+R3)/2:    8.360  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 3719)-C4  ( 3729)-N1  ( 4231)-C6  ( 4232)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -27.111  Rcurr-(R2+R3)/2:   27.111  MIN(Rcurr-R2,Rcurr-R3):    7.111
+******
+ C2  ( 3724)-N1  ( 3722)-N3  ( 4240)-C2  ( 4241)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   17.879  Rcurr-(R2+R3)/2:   17.879  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N6  ( 3755)-O4  ( 4207)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.990  Rcurr-(R2+R3)/2:    0.140  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 3758)-N3  ( 4208)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.030  Rcurr-(R2+R3)/2:    0.180  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 3758)-H3  ( 4209)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   1.600 R3 =   2.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.066  Rcurr-(R2+R3)/2:    0.216  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 3759)-O2  ( 4211)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.800 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.730  Rcurr-(R2+R3)/2:    0.530  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 3754)-N3  ( 3761)-C2  ( 4210)-C5  ( 4204)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -22.100  Rcurr-(R2+R3)/2:   22.100  MIN(Rcurr-R2,Rcurr-R3):    2.100
+******
+ C5  ( 3753)-C4  ( 3762)-N1  ( 4201)-C6  ( 4202)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -30.096  Rcurr-(R2+R3)/2:   30.096  MIN(Rcurr-R2,Rcurr-R3):   10.096
+******
+ C2  ( 3759)-N1  ( 3758)-N3  ( 4208)-C2  ( 4210)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -15.794  Rcurr-(R2+R3)/2:   15.794  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 3819)-N4  ( 4176)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.976  Rcurr-(R2+R3)/2:    0.126  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 3820)-N3  ( 4179)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.068  Rcurr-(R2+R3)/2:    0.218  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 3823)-O2  ( 4181)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.950  Rcurr-(R2+R3)/2:    0.100  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 3818)-C2  ( 3822)-C2  ( 4180)-C4  ( 4175)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -12.871  Rcurr-(R2+R3)/2:   12.871  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 3817)-C4  ( 3827)-N1  ( 4170)-C6  ( 4171)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -5.976  Rcurr-(R2+R3)/2:    5.976  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 3822)-N1  ( 3820)-N3  ( 4179)-C2  ( 4180)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -7.041  Rcurr-(R2+R3)/2:    7.041  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 3853)-N3  ( 4147)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   4.200 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    4.266  Rcurr-(R2+R3)/2:    0.866  MIN(Rcurr-R2,Rcurr-R3):    0.066
+******
+ N1  ( 3854)-N3  ( 4147)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   4.200 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    4.827  Rcurr-(R2+R3)/2:    1.427  MIN(Rcurr-R2,Rcurr-R3):    0.627
+******
+ N2  ( 3857)-O2  ( 4150)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   4.200 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.808  Rcurr-(R2+R3)/2:    0.408  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N6  ( 4113)-O4  ( 3887)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.561  Rcurr-(R2+R3)/2:    0.711  MIN(Rcurr-R2,Rcurr-R3):    0.461
+******
+ N1  ( 4116)-N3  ( 3888)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.818  Rcurr-(R2+R3)/2:    0.032  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 4116)-H3  ( 3889)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   1.600 R3 =   2.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    1.924  Rcurr-(R2+R3)/2:    0.074  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 4117)-O2  ( 3891)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.800 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.236  Rcurr-(R2+R3)/2:    0.036  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 4112)-N3  ( 4119)-C2  ( 3890)-C5  ( 3884)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -27.715  Rcurr-(R2+R3)/2:   27.715  MIN(Rcurr-R2,Rcurr-R3):    7.715
+******
+ C5  ( 4111)-C4  ( 4120)-N1  ( 3881)-C6  ( 3882)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -21.050  Rcurr-(R2+R3)/2:   21.050  MIN(Rcurr-R2,Rcurr-R3):    1.050
+******
+ C2  ( 4117)-N1  ( 4116)-N3  ( 3888)-C2  ( 3890)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -5.380  Rcurr-(R2+R3)/2:    5.380  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N6  ( 5731)-O4  ( 3187)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.793  Rcurr-(R2+R3)/2:    0.057  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 5734)-N3  ( 3188)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.883  Rcurr-(R2+R3)/2:    0.033  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 5735)-O2  ( 3191)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.800 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.584  Rcurr-(R2+R3)/2:    0.384  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 5730)-N3  ( 5737)-C2  ( 3190)-C5  ( 3184)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    0.454  Rcurr-(R2+R3)/2:    0.454  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 5729)-C4  ( 5738)-N1  ( 3181)-C6  ( 3182)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    0.157  Rcurr-(R2+R3)/2:    0.157  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 5735)-N1  ( 5734)-N3  ( 3188)-C2  ( 3190)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   15.628  Rcurr-(R2+R3)/2:   15.628  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 5697)-N4  ( 3217)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.090  Rcurr-(R2+R3)/2:    0.240  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 5698)-N3  ( 3220)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.037  Rcurr-(R2+R3)/2:    0.187  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 5701)-O2  ( 3222)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.824  Rcurr-(R2+R3)/2:    0.026  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 5696)-C2  ( 5700)-C2  ( 3221)-C4  ( 3216)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   15.241  Rcurr-(R2+R3)/2:   15.241  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 5695)-C4  ( 5705)-N1  ( 3211)-C6  ( 3212)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -2.653  Rcurr-(R2+R3)/2:    2.653  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 5700)-N1  ( 5698)-N3  ( 3220)-C2  ( 3221)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   19.822  Rcurr-(R2+R3)/2:   19.822  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 5663)-N4  ( 3248)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.006  Rcurr-(R2+R3)/2:    0.156  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 5664)-N3  ( 3251)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.085  Rcurr-(R2+R3)/2:    0.235  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 5667)-O2  ( 3253)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.033  Rcurr-(R2+R3)/2:    0.183  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 5662)-C2  ( 5666)-C2  ( 3252)-C4  ( 3247)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -16.498  Rcurr-(R2+R3)/2:   16.498  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 5661)-C4  ( 5671)-N1  ( 3242)-C6  ( 3243)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -19.672  Rcurr-(R2+R3)/2:   19.672  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 5666)-N1  ( 5664)-N3  ( 3251)-C2  ( 3252)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -2.168  Rcurr-(R2+R3)/2:    2.168  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 5629)-N4  ( 3279)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.997  Rcurr-(R2+R3)/2:    0.147  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 5630)-N3  ( 3282)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.855  Rcurr-(R2+R3)/2:    0.005  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 5633)-O2  ( 3284)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.774  Rcurr-(R2+R3)/2:    0.076  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 5628)-C2  ( 5632)-C2  ( 3283)-C4  ( 3278)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    1.462  Rcurr-(R2+R3)/2:    1.462  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 5627)-C4  ( 5637)-N1  ( 3273)-C6  ( 3274)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -4.246  Rcurr-(R2+R3)/2:    4.246  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 5632)-N1  ( 5630)-N3  ( 3282)-C2  ( 3283)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -0.799  Rcurr-(R2+R3)/2:    0.799  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N6  ( 2446)-O4  ( 4463)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.868  Rcurr-(R2+R3)/2:    0.018  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 2449)-N3  ( 4464)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.951  Rcurr-(R2+R3)/2:    0.101  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 2450)-O2  ( 4467)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.800 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.858  Rcurr-(R2+R3)/2:    0.658  MIN(Rcurr-R2,Rcurr-R3):    0.058
+******
+ C6  ( 2445)-N3  ( 2452)-C2  ( 4466)-C5  ( 4460)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -26.129  Rcurr-(R2+R3)/2:   26.129  MIN(Rcurr-R2,Rcurr-R3):    6.129
+******
+ C5  ( 2444)-C4  ( 2453)-N1  ( 4457)-C6  ( 4458)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -16.850  Rcurr-(R2+R3)/2:   16.850  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 2450)-N1  ( 2449)-N3  ( 4464)-C2  ( 4466)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -13.681  Rcurr-(R2+R3)/2:   13.681  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 4493)-N4  ( 2415)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.913  Rcurr-(R2+R3)/2:    0.063  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 4494)-N3  ( 2418)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.881  Rcurr-(R2+R3)/2:    0.031  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 4497)-O2  ( 2420)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.765  Rcurr-(R2+R3)/2:    0.085  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 4492)-C2  ( 4496)-C2  ( 2419)-C4  ( 2414)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -15.078  Rcurr-(R2+R3)/2:   15.078  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 4491)-C4  ( 4501)-N1  ( 2409)-C6  ( 2410)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -13.716  Rcurr-(R2+R3)/2:   13.716  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 4496)-N1  ( 4494)-N3  ( 2418)-C2  ( 2419)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -17.764  Rcurr-(R2+R3)/2:   17.764  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 4527)-N4  ( 2384)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.851  Rcurr-(R2+R3)/2:    0.001  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 4528)-N3  ( 2387)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.937  Rcurr-(R2+R3)/2:    0.087  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 4531)-O2  ( 2389)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.689  Rcurr-(R2+R3)/2:    0.161  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 4526)-C2  ( 4530)-C2  ( 2388)-C4  ( 2383)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -13.979  Rcurr-(R2+R3)/2:   13.979  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 4525)-C4  ( 4535)-N1  ( 2378)-C6  ( 2379)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -16.991  Rcurr-(R2+R3)/2:   16.991  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 4530)-N1  ( 4528)-N3  ( 2387)-C2  ( 2388)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -27.425  Rcurr-(R2+R3)/2:   27.425  MIN(Rcurr-R2,Rcurr-R3):    7.425
+******
+ O6  ( 2350)-N4  ( 4561)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.185  Rcurr-(R2+R3)/2:    0.335  MIN(Rcurr-R2,Rcurr-R3):    0.085
+******
+ N1  ( 2351)-N3  ( 4564)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.948  Rcurr-(R2+R3)/2:    0.098  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 2354)-O2  ( 4566)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.766  Rcurr-(R2+R3)/2:    0.084  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 2349)-C2  ( 2353)-C2  ( 4565)-C4  ( 4560)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -20.041  Rcurr-(R2+R3)/2:   20.041  MIN(Rcurr-R2,Rcurr-R3):    0.041
+******
+ C5  ( 2348)-C4  ( 2358)-N1  ( 4555)-C6  ( 4556)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -28.627  Rcurr-(R2+R3)/2:   28.627  MIN(Rcurr-R2,Rcurr-R3):    8.627
+******
+ C2  ( 2353)-N1  ( 2351)-N3  ( 4564)-C2  ( 4565)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -19.971  Rcurr-(R2+R3)/2:   19.971  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 4592)-N4  ( 2319)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.953  Rcurr-(R2+R3)/2:    0.103  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 4593)-N3  ( 2322)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.895  Rcurr-(R2+R3)/2:    0.045  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 4596)-O2  ( 2324)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.838  Rcurr-(R2+R3)/2:    0.012  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 4591)-C2  ( 4595)-C2  ( 2323)-C4  ( 2318)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -7.958  Rcurr-(R2+R3)/2:    7.958  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 4590)-C4  ( 4600)-N1  ( 2313)-C6  ( 2314)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -4.865  Rcurr-(R2+R3)/2:    4.865  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 4595)-N1  ( 4593)-N3  ( 2322)-C2  ( 2323)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -7.299  Rcurr-(R2+R3)/2:    7.299  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 2285)-N4  ( 4626)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.097  Rcurr-(R2+R3)/2:    0.247  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 2286)-N3  ( 4629)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.851  Rcurr-(R2+R3)/2:    0.001  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 2289)-O2  ( 4631)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.837  Rcurr-(R2+R3)/2:    0.013  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 2284)-C2  ( 2288)-C2  ( 4630)-C4  ( 4625)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -15.149  Rcurr-(R2+R3)/2:   15.149  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 2283)-C4  ( 2293)-N1  ( 4620)-C6  ( 4621)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -24.643  Rcurr-(R2+R3)/2:   24.643  MIN(Rcurr-R2,Rcurr-R3):    4.643
+******
+ C2  ( 2288)-N1  ( 2286)-N3  ( 4629)-C2  ( 4630)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -23.556  Rcurr-(R2+R3)/2:   23.556  MIN(Rcurr-R2,Rcurr-R3):    3.556
+******
+ O6  ( 2251)-N4  ( 4657)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.768  Rcurr-(R2+R3)/2:    0.082  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 2252)-N3  ( 4660)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.874  Rcurr-(R2+R3)/2:    0.024  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 2255)-O2  ( 4662)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.846  Rcurr-(R2+R3)/2:    0.004  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 2250)-C2  ( 2254)-C2  ( 4661)-C4  ( 4656)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -14.872  Rcurr-(R2+R3)/2:   14.872  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 2249)-C4  ( 2259)-N1  ( 4651)-C6  ( 4652)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -18.323  Rcurr-(R2+R3)/2:   18.323  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 2254)-N1  ( 2252)-N3  ( 4660)-C2  ( 4661)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -12.900  Rcurr-(R2+R3)/2:   12.900  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 2217)-N4  ( 4688)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.170  Rcurr-(R2+R3)/2:    0.320  MIN(Rcurr-R2,Rcurr-R3):    0.070
+******
+ N1  ( 2218)-N3  ( 4691)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.114  Rcurr-(R2+R3)/2:    0.264  MIN(Rcurr-R2,Rcurr-R3):    0.014
+******
+ N2  ( 2221)-O2  ( 4693)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.942  Rcurr-(R2+R3)/2:    0.092  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 2216)-C2  ( 2220)-C2  ( 4692)-C4  ( 4687)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -12.811  Rcurr-(R2+R3)/2:   12.811  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 2215)-C4  ( 2225)-N1  ( 4682)-C6  ( 4683)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -16.508  Rcurr-(R2+R3)/2:   16.508  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 2220)-N1  ( 2218)-N3  ( 4691)-C2  ( 4692)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -2.709  Rcurr-(R2+R3)/2:    2.709  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 4719)-N4  ( 2186)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.884  Rcurr-(R2+R3)/2:    0.034  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 4720)-N3  ( 2189)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.019  Rcurr-(R2+R3)/2:    0.169  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 4723)-O2  ( 2191)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.858  Rcurr-(R2+R3)/2:    0.008  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 4718)-C2  ( 4722)-C2  ( 2190)-C4  ( 2185)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -14.521  Rcurr-(R2+R3)/2:   14.521  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 4717)-C4  ( 4727)-N1  ( 2180)-C6  ( 2181)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -26.278  Rcurr-(R2+R3)/2:   26.278  MIN(Rcurr-R2,Rcurr-R3):    6.278
+******
+ C2  ( 4722)-N1  ( 4720)-N3  ( 2189)-C2  ( 2190)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -11.972  Rcurr-(R2+R3)/2:   11.972  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N6  ( 4753)-O4  ( 2156)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.866  Rcurr-(R2+R3)/2:    0.016  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 4756)-N3  ( 2157)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.891  Rcurr-(R2+R3)/2:    0.041  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 4757)-O2  ( 2160)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.800 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.844  Rcurr-(R2+R3)/2:    0.644  MIN(Rcurr-R2,Rcurr-R3):    0.044
+******
+ C6  ( 4752)-N3  ( 4759)-C2  ( 2159)-C5  ( 2153)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -18.364  Rcurr-(R2+R3)/2:   18.364  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 4751)-C4  ( 4760)-N1  ( 2150)-C6  ( 2151)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -14.333  Rcurr-(R2+R3)/2:   14.333  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 4757)-N1  ( 4756)-N3  ( 2157)-C2  ( 2159)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -31.366  Rcurr-(R2+R3)/2:   31.366  MIN(Rcurr-R2,Rcurr-R3):   11.366
+******
+ N6  ( 4786)-O4  ( 2126)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.942  Rcurr-(R2+R3)/2:    0.092  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 4789)-N3  ( 2127)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.982  Rcurr-(R2+R3)/2:    0.132  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 4790)-O2  ( 2130)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.800 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.813  Rcurr-(R2+R3)/2:    0.613  MIN(Rcurr-R2,Rcurr-R3):    0.013
+******
+ C6  ( 4785)-N3  ( 4792)-C2  ( 2129)-C5  ( 2123)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -15.781  Rcurr-(R2+R3)/2:   15.781  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 4784)-C4  ( 4793)-N1  ( 2120)-C6  ( 2121)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -14.044  Rcurr-(R2+R3)/2:   14.044  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 4790)-N1  ( 4789)-N3  ( 2127)-C2  ( 2129)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -4.169  Rcurr-(R2+R3)/2:    4.169  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 2092)-N4  ( 4819)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.187  Rcurr-(R2+R3)/2:    0.337  MIN(Rcurr-R2,Rcurr-R3):    0.087
+******
+ N1  ( 2093)-N3  ( 4822)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.033  Rcurr-(R2+R3)/2:    0.183  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 2096)-O2  ( 4824)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.986  Rcurr-(R2+R3)/2:    0.136  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 2091)-C2  ( 2095)-C2  ( 4823)-C4  ( 4818)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -13.571  Rcurr-(R2+R3)/2:   13.571  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 2090)-C4  ( 2100)-N1  ( 4813)-C6  ( 4814)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -10.442  Rcurr-(R2+R3)/2:   10.442  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 2095)-N1  ( 2093)-N3  ( 4822)-C2  ( 4823)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -11.129  Rcurr-(R2+R3)/2:   11.129  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N6  ( 4850)-O4  ( 2062)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.088  Rcurr-(R2+R3)/2:    0.238  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 4853)-N3  ( 2063)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.038  Rcurr-(R2+R3)/2:    0.188  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 4854)-O2  ( 2066)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.800 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.503  Rcurr-(R2+R3)/2:    0.303  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 4849)-N3  ( 4856)-C2  ( 2065)-C5  ( 2059)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -20.606  Rcurr-(R2+R3)/2:   20.606  MIN(Rcurr-R2,Rcurr-R3):    0.606
+******
+ C5  ( 4848)-C4  ( 4857)-N1  ( 2056)-C6  ( 2057)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -17.692  Rcurr-(R2+R3)/2:   17.692  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 4854)-N1  ( 4853)-N3  ( 2063)-C2  ( 2065)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -0.158  Rcurr-(R2+R3)/2:    0.158  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 4883)-N4  ( 2031)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.918  Rcurr-(R2+R3)/2:    0.068  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 4884)-N3  ( 2034)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.972  Rcurr-(R2+R3)/2:    0.122  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 4887)-O2  ( 2036)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.958  Rcurr-(R2+R3)/2:    0.108  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 4882)-C2  ( 4886)-C2  ( 2035)-C4  ( 2030)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -6.506  Rcurr-(R2+R3)/2:    6.506  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 4881)-C4  ( 4891)-N1  ( 2025)-C6  ( 2026)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -7.653  Rcurr-(R2+R3)/2:    7.653  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 4886)-N1  ( 4884)-N3  ( 2034)-C2  ( 2035)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -0.655  Rcurr-(R2+R3)/2:    0.655  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 4917)-N4  ( 2000)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.926  Rcurr-(R2+R3)/2:    0.076  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 4918)-N3  ( 2003)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.895  Rcurr-(R2+R3)/2:    0.045  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 4921)-O2  ( 2005)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.800  Rcurr-(R2+R3)/2:    0.050  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 4916)-C2  ( 4920)-C2  ( 2004)-C4  ( 1999)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -7.012  Rcurr-(R2+R3)/2:    7.012  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 4915)-C4  ( 4925)-N1  ( 1994)-C6  ( 1995)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -16.097  Rcurr-(R2+R3)/2:   16.097  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 4920)-N1  ( 4918)-N3  ( 2003)-C2  ( 2004)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -21.433  Rcurr-(R2+R3)/2:   21.433  MIN(Rcurr-R2,Rcurr-R3):    1.433
+******
+ O6  ( 4951)-N4  ( 1969)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.087  Rcurr-(R2+R3)/2:    0.237  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 4952)-N3  ( 1972)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.004  Rcurr-(R2+R3)/2:    0.154  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 4955)-O2  ( 1974)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.908  Rcurr-(R2+R3)/2:    0.058  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 4950)-C2  ( 4954)-C2  ( 1973)-C4  ( 1968)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -10.575  Rcurr-(R2+R3)/2:   10.575  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 4949)-C4  ( 4959)-N1  ( 1963)-C6  ( 1964)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -25.973  Rcurr-(R2+R3)/2:   25.973  MIN(Rcurr-R2,Rcurr-R3):    5.973
+******
+ C2  ( 4954)-N1  ( 4952)-N3  ( 1972)-C2  ( 1973)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -12.070  Rcurr-(R2+R3)/2:   12.070  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N6  ( 4985)-O4  ( 1939)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.219  Rcurr-(R2+R3)/2:    0.369  MIN(Rcurr-R2,Rcurr-R3):    0.119
+******
+ N1  ( 4988)-N3  ( 1940)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.760  Rcurr-(R2+R3)/2:    0.090  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 4989)-O2  ( 1943)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.800 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.336  Rcurr-(R2+R3)/2:    0.136  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 4984)-N3  ( 4991)-C2  ( 1942)-C5  ( 1936)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -9.062  Rcurr-(R2+R3)/2:    9.062  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 4983)-C4  ( 4992)-N1  ( 1933)-C6  ( 1934)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -9.548  Rcurr-(R2+R3)/2:    9.548  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 4989)-N1  ( 4988)-N3  ( 1940)-C2  ( 1942)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -4.314  Rcurr-(R2+R3)/2:    4.314  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O6  ( 1905)-N4  ( 5018)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.113  Rcurr-(R2+R3)/2:    0.263  MIN(Rcurr-R2,Rcurr-R3):    0.013
+******
+ N1  ( 1906)-N3  ( 5021)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.068  Rcurr-(R2+R3)/2:    0.218  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N2  ( 1909)-O2  ( 5023)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.735  Rcurr-(R2+R3)/2:    0.115  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 1904)-C2  ( 1908)-C2  ( 5022)-C4  ( 5017)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.829  Rcurr-(R2+R3)/2:    2.829  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 1903)-C4  ( 1913)-N1  ( 5012)-C6  ( 5013)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -7.703  Rcurr-(R2+R3)/2:    7.703  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 1908)-N1  ( 1906)-N3  ( 5021)-C2  ( 5022)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   11.977  Rcurr-(R2+R3)/2:   11.977  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O4  ( 5049)-N6  ( 5402)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.037  Rcurr-(R2+R3)/2:    0.187  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N3  ( 5050)-N1  ( 5405)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.124  Rcurr-(R2+R3)/2:    0.274  MIN(Rcurr-R2,Rcurr-R3):    0.024
+******
+ O2  ( 5053)-C2  ( 5406)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.800 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.890  Rcurr-(R2+R3)/2:    0.690  MIN(Rcurr-R2,Rcurr-R3):    0.090
+******
+ C6  ( 5401)-N3  ( 5408)-C2  ( 5052)-C5  ( 5046)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -22.177  Rcurr-(R2+R3)/2:   22.177  MIN(Rcurr-R2,Rcurr-R3):    2.177
+******
+ C5  ( 5400)-C4  ( 5409)-N1  ( 5043)-C6  ( 5044)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -28.641  Rcurr-(R2+R3)/2:   28.641  MIN(Rcurr-R2,Rcurr-R3):    8.641
+******
+ C2  ( 5406)-N1  ( 5405)-N3  ( 5050)-C2  ( 5052)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -3.595  Rcurr-(R2+R3)/2:    3.595  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O4  ( 5079)-N6  ( 5369)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.755  Rcurr-(R2+R3)/2:    0.095  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N3  ( 5080)-N1  ( 5372)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.958  Rcurr-(R2+R3)/2:    0.108  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ O2  ( 5083)-C2  ( 5373)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.800 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.873  Rcurr-(R2+R3)/2:    0.673  MIN(Rcurr-R2,Rcurr-R3):    0.073
+******
+ C6  ( 5368)-N3  ( 5375)-C2  ( 5082)-C5  ( 5076)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -10.896  Rcurr-(R2+R3)/2:   10.896  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 5367)-C4  ( 5376)-N1  ( 5073)-C6  ( 5074)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -10.700  Rcurr-(R2+R3)/2:   10.700  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 5373)-N1  ( 5372)-N3  ( 5080)-C2  ( 5082)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -14.326  Rcurr-(R2+R3)/2:   14.326  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N6  ( 5336)-O4  ( 5109)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.862  Rcurr-(R2+R3)/2:    0.012  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ N1  ( 5339)-N3  ( 5110)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.100 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    2.888  Rcurr-(R2+R3)/2:    0.038  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 5340)-O2  ( 5113)                            NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 =   2.600 R3 =   3.800 R4 =   5.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:    3.633  Rcurr-(R2+R3)/2:    0.433  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C6  ( 5335)-N3  ( 5342)-C2  ( 5112)-C5  ( 5106)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -15.533  Rcurr-(R2+R3)/2:   15.533  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C5  ( 5334)-C4  ( 5343)-N1  ( 5103)-C6  ( 5104)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:   -2.882  Rcurr-(R2+R3)/2:    2.882  MIN(Rcurr-R2,Rcurr-R3):    0.000
+******
+ C2  ( 5340)-N1  ( 5339)-N3  ( 5110)-C2  ( 5112)    NSTEP1=     0 NSTEP2=     0
+R1 = -45.000 R2 = -20.000 R3 =  20.000 R4 =  45.000 RK2 =   5.000 RK3 =    5.000
+ Rcurr:  -11.257  Rcurr-(R2+R3)/2:   11.257  MIN(Rcurr-R2,Rcurr-R3):    0.000
+                       Number of restraints read =   338
+
+                  Done reading weight changes/NMR restraints
+
+
+ Number of triangulated 3-point waters found:        0
+
+--------------------------------------------------------------------------------
+   4.  RESULTS
+--------------------------------------------------------------------------------
+
+
+ NSTEP =        0   TIME(PS) =       3.000  TEMP(K) =   226.78  PRESS =     0.0
+ Etot   =    -29765.1949  EKtot   =      3446.8163  EPtot      =    -33212.0112
+ BOND   =      3257.1927  ANGLE   =      3172.0272  DIHED      =      3888.0920
+ 1-4 NB =      1451.4698  1-4 EEL =    -18618.5777  VDWAALS    =     -2059.5961
+ EELEC  =     44364.7404  EGB     =    -68750.9900  RESTRAINT  =        83.6304
+ EAMBER (non-restraint)  =    -33295.6416
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =   73.659   Angle =     0.000   Torsion =     9.972
+===============================================================================
+
+ NSTEP =      125   TIME(PS) =       3.250  TEMP(K) =   253.11  PRESS =     0.0
+ Etot   =    -29879.8586  EKtot   =      3846.9826  EPtot      =    -33726.8412
+ BOND   =      3177.7139  ANGLE   =      2890.3584  DIHED      =      3792.1227
+ 1-4 NB =      1453.8774  1-4 EEL =    -18569.1521  VDWAALS    =     -2083.9558
+ EELEC  =     43530.2304  EGB     =    -67981.0315  RESTRAINT  =        62.9954
+ EAMBER (non-restraint)  =    -33789.8366
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =   52.022   Angle =     0.000   Torsion =    10.973
+===============================================================================
+
+ NSTEP =      250   TIME(PS) =       3.500  TEMP(K) =   269.18  PRESS =     0.0
+ Etot   =    -29537.4392  EKtot   =      4091.3130  EPtot      =    -33628.7522
+ BOND   =      3167.8088  ANGLE   =      3001.3809  DIHED      =      3817.8720
+ 1-4 NB =      1439.8545  1-4 EEL =    -18557.9770  VDWAALS    =     -2125.7498
+ EELEC  =     43569.7264  EGB     =    -68005.8332  RESTRAINT  =        64.1653
+ EAMBER (non-restraint)  =    -33692.9175
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =   53.574   Angle =     0.000   Torsion =    10.592
+===============================================================================
+
+ NSTEP =      375   TIME(PS) =       3.750  TEMP(K) =   271.17  PRESS =     0.0
+ Etot   =    -29382.4136  EKtot   =      4121.5149  EPtot      =    -33503.9285
+ BOND   =      3289.5495  ANGLE   =      2986.4969  DIHED      =      3801.6988
+ 1-4 NB =      1457.6674  1-4 EEL =    -18567.4024  VDWAALS    =     -2089.6759
+ EELEC  =     42500.9453  EGB     =    -66938.1059  RESTRAINT  =        54.8978
+ EAMBER (non-restraint)  =    -33558.8263
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =   46.861   Angle =     0.000   Torsion =     8.036
+===============================================================================
+
+ NSTEP =      500   TIME(PS) =       4.000  TEMP(K) =   281.14  PRESS =     0.0
+ Etot   =    -29214.9253  EKtot   =      4273.1172  EPtot      =    -33488.0425
+ BOND   =      3195.6984  ANGLE   =      3073.7505  DIHED      =      3825.6840
+ 1-4 NB =      1443.4336  1-4 EEL =    -18610.0841  VDWAALS    =     -2055.7173
+ EELEC  =     43345.4787  EGB     =    -67767.2635  RESTRAINT  =        60.9772
+ EAMBER (non-restraint)  =    -33549.0197
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =   50.345   Angle =     0.000   Torsion =    10.632
+===============================================================================
+
+ NSTEP =      625   TIME(PS) =       4.250  TEMP(K) =   280.21  PRESS =     0.0
+ Etot   =    -29163.5488  EKtot   =      4258.8815  EPtot      =    -33422.4303
+ BOND   =      3218.2924  ANGLE   =      3077.6332  DIHED      =      3842.1508
+ 1-4 NB =      1433.4403  1-4 EEL =    -18579.8197  VDWAALS    =     -2038.2799
+ EELEC  =     43075.0516  EGB     =    -67507.2041  RESTRAINT  =        56.3051
+ EAMBER (non-restraint)  =    -33478.7354
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =   46.331   Angle =     0.000   Torsion =     9.974
+===============================================================================
+
+ NSTEP =      750   TIME(PS) =       4.500  TEMP(K) =   282.74  PRESS =     0.0
+ Etot   =    -29035.2844  EKtot   =      4297.3479  EPtot      =    -33332.6323
+ BOND   =      3249.7722  ANGLE   =      3117.0667  DIHED      =      3858.7818
+ 1-4 NB =      1457.0275  1-4 EEL =    -18661.5315  VDWAALS    =     -2008.1288
+ EELEC  =     42992.6689  EGB     =    -67395.9708  RESTRAINT  =        57.6818
+ EAMBER (non-restraint)  =    -33390.3141
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =   48.371   Angle =     0.000   Torsion =     9.311
+===============================================================================
+
+ NSTEP =      875   TIME(PS) =       4.750  TEMP(K) =   284.59  PRESS =     0.0
+ Etot   =    -28953.6898  EKtot   =      4325.4700  EPtot      =    -33279.1597
+ BOND   =      3264.9107  ANGLE   =      3106.6599  DIHED      =      3877.0401
+ 1-4 NB =      1470.7544  1-4 EEL =    -18576.8038  VDWAALS    =     -2053.3560
+ EELEC  =     44352.3152  EGB     =    -68784.0790  RESTRAINT  =        63.3988
+ EAMBER (non-restraint)  =    -33342.5585
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =   53.859   Angle =     0.000   Torsion =     9.539
+===============================================================================
+
+   KE Trans =     0.2619   KE Rot =     1.6195   C.O.M. Vel =    0.003021
+
+   Translational and rotational motion removed
+
+   KE Trans =     0.0000   KE Rot =     0.0000   C.O.M. Vel =    0.000000
+
+ NSTEP =     1000   TIME(PS) =       5.000  TEMP(K) =   287.10  PRESS =     0.0
+ Etot   =    -28922.3428  EKtot   =      4363.5783  EPtot      =    -33285.9211
+ BOND   =      3274.1918  ANGLE   =      3157.6225  DIHED      =      3863.0234
+ 1-4 NB =      1472.4730  1-4 EEL =    -18676.3524  VDWAALS    =     -2069.2988
+ EELEC  =     42902.5288  EGB     =    -67270.1164  RESTRAINT  =        60.0069
+ EAMBER (non-restraint)  =    -33345.9280
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =   49.730   Angle =     0.000   Torsion =    10.277
+===============================================================================
+
+ NSTEP =     1125   TIME(PS) =       5.250  TEMP(K) =   287.95  PRESS =     0.0
+ Etot   =    -28948.7031  EKtot   =      4376.5581  EPtot      =    -33325.2611
+ BOND   =      3248.8275  ANGLE   =      3134.3994  DIHED      =      3893.8861
+ 1-4 NB =      1451.7149  1-4 EEL =    -18591.6699  VDWAALS    =     -2090.3691
+ EELEC  =     42357.3397  EGB     =    -66788.2054  RESTRAINT  =        58.8157
+ EAMBER (non-restraint)  =    -33384.0768
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =   50.549   Angle =     0.000   Torsion =     8.267
+===============================================================================
+
+ NSTEP =     1250   TIME(PS) =       5.500  TEMP(K) =   289.82  PRESS =     0.0
+ Etot   =    -28830.1966  EKtot   =      4404.9688  EPtot      =    -33235.1654
+ BOND   =      3276.0490  ANGLE   =      3198.6138  DIHED      =      3925.8388
+ 1-4 NB =      1457.1184  1-4 EEL =    -18618.2161  VDWAALS    =     -2071.9861
+ EELEC  =     42389.9967  EGB     =    -66850.7784  RESTRAINT  =        58.1986
+ EAMBER (non-restraint)  =    -33293.3640
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =   47.506   Angle =     0.000   Torsion =    10.693
+===============================================================================
+
+ NSTEP =     1375   TIME(PS) =       5.750  TEMP(K) =   294.37  PRESS =     0.0
+ Etot   =    -28712.2747  EKtot   =      4474.0778  EPtot      =    -33186.3526
+ BOND   =      3347.2190  ANGLE   =      3193.3666  DIHED      =      3915.7721
+ 1-4 NB =      1455.2154  1-4 EEL =    -18614.3276  VDWAALS    =     -2080.3274
+ EELEC  =     42688.4547  EGB     =    -67151.9216  RESTRAINT  =        60.1962
+ EAMBER (non-restraint)  =    -33246.5488
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =   49.704   Angle =     0.000   Torsion =    10.492
+===============================================================================
+
+ NSTEP =     1500   TIME(PS) =       6.000  TEMP(K) =   297.29  PRESS =     0.0
+ Etot   =    -28746.9313  EKtot   =      4518.4600  EPtot      =    -33265.3912
+ BOND   =      3305.8674  ANGLE   =      3120.1628  DIHED      =      3893.0704
+ 1-4 NB =      1452.1799  1-4 EEL =    -18561.5409  VDWAALS    =     -2059.2757
+ EELEC  =     42251.0015  EGB     =    -66722.7126  RESTRAINT  =        55.8560
+ EAMBER (non-restraint)  =    -33321.2472
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =   46.649   Angle =     0.000   Torsion =     9.207
+===============================================================================
+
+      A V E R A G E S   O V E R    1500 S T E P S
+
+
+ NSTEP =     1500   TIME(PS) =       6.000  TEMP(K) =   279.76  PRESS =     0.0
+ Etot   =    -29166.8662  EKtot   =      4252.0518  EPtot      =    -33418.9181
+ BOND   =      3237.1489  ANGLE   =      3076.8627  DIHED      =      3853.2622
+ 1-4 NB =      1449.3855  1-4 EEL =    -18596.9671  VDWAALS    =     -2066.8767
+ EELEC  =     43164.8983  EGB     =    -67594.4382  RESTRAINT  =        57.8064
+ EAMBER (non-restraint)  =    -33476.7245
+ ------------------------------------------------------------------------------
+
+ NMR restraints: Bond =   46.649   Angle =     0.000   Torsion =     9.207
+===============================================================================
+
+      R M S  F L U C T U A T I O N S
+
+
+ NSTEP =     1500   TIME(PS) =       6.000  TEMP(K) =    13.45  PRESS =     0.0
+ Etot   =       382.0079  EKtot   =       204.3830  EPtot      =       186.6686
+ BOND   =        72.7087  ANGLE   =       103.5875  DIHED      =        39.2066
+ 1-4 NB =        15.1492  1-4 EEL =        42.7160  VDWAALS    =        26.7219
+ EELEC  =       671.2499  EGB     =       662.8045  RESTRAINT  =         4.1714
+ EAMBER (non-restraint)  =       182.4972
+ ------------------------------------------------------------------------------
+
+
+ NMR restraints on final step:
+
+ ------------------------------------------------------------------------------
+
+
+ Final Restraint Analysis for coords: md_gb.restrt.1                          
+
+
+ Restraints, deviations, and energy contributions:    pencut =    0.10
+
+ ------------------------------------------------------------------------------
+     First atom        Last atom    curr. value target deviation  penalty
+ ------------------------------------------------------------------------------
+  O2'  RU     8 --  N1   RA    21:    3.538    3.200    0.338    0.572 d    0: 0
+  C2   RA    23 --  O2   RU    12:    3.992    3.800    0.192    0.185 d    0: 0
+  C4   RA    23 --  N1   RU    12:  -28.116  -20.000    8.116    0.100 t
+  C4   RA    43 --  C4   PSU   27:  116.230   20.000   96.230    6.376 t
+  N1   RG    42 --  N3   RC    28:    3.462    3.100    0.362    0.657 d    0: 0
+  H1   RG    42 --  N3   RC    28:    2.526    2.100    0.426    0.909 d    0: 0
+  N2   RG    42 --  O2   RC    28:    5.105    3.100    2.005   20.049 d    0: 0
+  H21  RG    42 --  O2   RC    28:    4.113    2.100    2.013   20.269 d    0: 0
+  C6   RG    42 --  N4   RC    28:   31.405   20.000   11.405    0.198 t
+  N6   RA    31 --  O2   PSU   39:    3.547    3.300    0.247    0.305 d    0: 0
+  N1   RA    31 --  O4   PSU   39:  -29.835  -20.000    9.835    0.147 t
+  O6   RG    88 --  N4   RC    48:    3.186    3.000    0.186    0.173 d    0: 0
+  N1   RG    88 --  N3   RC    48:    3.143    3.000    0.143    0.102 d    0: 0
+  C2   RA    50 --  O2   RU    86:    4.086    3.800    0.286    0.410 d    0: 0
+  O6   RG    52 --  O4   RU    84:    4.369    4.200    0.169    0.143 d    0: 0
+  N1   RA   126 --  H3   U8U   34:    2.581    2.200    0.381    0.726 d    0: 0
+  N1   RA   134 --  N3   RU   114:   34.732   20.000   14.732    0.331 t
+  C2   RA   117 --  O2   RU   131:    4.126    3.800    0.326    0.531 d    0: 0
+  N3   RA   117 --  C2   RU   131:  -31.133  -20.000   11.133    0.189 t
+  C4   RA   117 --  N1   RU   131:  -38.762  -20.000   18.762    0.536 t
+  N1   RG   120 --  N3   RU   129:    4.500    4.200    0.300    0.451 d    0: 0
+  N6   RA   128 --  O4   RU   121:    3.423    3.100    0.323    0.521 d    0: 0
+  O6   RG    73 --  N4   RC   142:    3.327    3.100    0.227    0.257 d    0: 0
+  C4   RG    73 --  N1   RC   142:  -35.382  -20.000   15.382    0.360 t
+  C4   RG   147 --  N1   RC    68:  -28.710  -20.000    8.710    0.116 t
+  N1   RA   148 --  N3   RU    67:  -28.746  -20.000    8.746    0.117 t
+                                       Total distance penalty:     46.540
+                                       Total torsion  penalty:      9.063
+|                               RMS deviation from ideal bonds :      0.0362
+|                               RMS deviation from ideal angles:      4.232
+ ------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+   5.  TIMINGS
+--------------------------------------------------------------------------------
+
+|                Calc gb radii            813.29 (20.15% of Gen B)
+|                Calc gb diag            1441.56 (35.72% of Gen B)
+|                Calc gb off-diag        1780.94 (44.13% of Gen B)
+|             Gen Born time           4035.95 (100.0% of Nonbo)
+|          Nonbond force           4035.95 (98.98% of Force)
+|          Bond/Angle/Dihedral       41.08 ( 1.01% of Force)
+|          Other                      0.41 ( 0.01% of Force)
+|       Force time              4077.43 (47.79% of Runmd)
+|       Shake time                 1.24 ( 0.01% of Runmd)
+|       Verlet update time      4453.28 (52.20% of Runmd)
+|    Runmd Time              8531.96 (100.0% of Total)
+| Total time              8532.21 (100.0% of ALL  )
+
+| Highest rstack allocated:          0
+| Highest istack allocated:          0
+|           Job began  at 15:33:19.276  on 04/19/2005
+|           Setup done at 15:33:19.525  on 04/19/2005
+|           Run   done at 17:55:31.482  on 04/19/2005
+|     wallclock() was called   30024 times

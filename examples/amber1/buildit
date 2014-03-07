@@ -1,0 +1,8 @@
+loadoff psu2.lib
+loadoff t6a.lib
+loadoff u8u.lib
+parm94 = loadamberparams parm94.drd2.dat
+
+PU = PSU
+TA = T6A
+

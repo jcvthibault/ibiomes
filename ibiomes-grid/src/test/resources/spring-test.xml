@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<!-- ======================================== MySQL ==================================== -->
+
+	<bean id="placeholderConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
+    	<property name="locations">
+		    <list>
+		        <value>file:${IBIOMES_HOME}/test/config/ibiomes-db-test.properties</value>
+		    </list>
+		</property>
+    </bean>
+    
+	<bean id="dataSourceTest" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${dbDriverClassName}" />
+		<property name="url" value="${dbUrl}" />
+		<property name="username" value="${dbUsername}" />
+		<property name="password" value="${dbPassword}" />
+	</bean>
+
+	<bean id="metadataSqlConnector" class="edu.utah.bmi.ibiomes.metadata.MetadataSqlConnector">
+		<property name="dataSource" ref="dataSourceTest" />
+	</bean>
+	<bean id="experimentSetSqlConnector" class="edu.utah.bmi.ibiomes.pub.set.ExperimentSetSqlConnector">
+		<property name="dataSource" ref="dataSourceTest" />
+	</bean>
+
+	<!-- ====================================== Other test parameters ================================== -->
+	
+	<!-- iRODS test parameters -->
+    <util:properties id="testProperties" location="file:${IBIOMES_HOME}/test/config/ibiomes-repo-test.properties"/>
+	
+</beans>

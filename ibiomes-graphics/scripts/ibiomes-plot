@@ -1,0 +1,15 @@
+#!/bin/bash
+
+ARGS=("$@")
+NARGS=${#ARGS[@]} 
+USAGE="Usage: ibiomes-plot <data-file> <output-file> [scatter|line|heatmap]"
+IBIOMES_JAR=$IBIOMES_HOME/lib/ibiomes-lite-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+
+if [ $NARGS -lt 2 ]; then
+	echo $USAGE
+	exit
+fi
+
+# PARSE ONLY
+java -classpath $IBIOMES_JAR edu.utah.bmi.ibiomes.cli.PlotDataFile ${ARGS[@]}
+

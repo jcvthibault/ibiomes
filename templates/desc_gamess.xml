@@ -1,0 +1,25 @@
+<rules>
+  <!-- ======================================================================================== -->
+  <!-- General rules (any directory) -->
+  <!-- ======================================================================================== -->
+  <rule type="file" match="*.in" format="GAMESS input" softwareContext="GAMESS">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="*.(log|out)" format="GAMESS output" softwareContext="GAMESS">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="*.pdb" format="PDB">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="*.csv" format="CSV">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="*.(png|jpg|jpeg|gif|tif)" class="analysis">
+  	<metadata></metadata>
+  </rule>
+  
+</rules>

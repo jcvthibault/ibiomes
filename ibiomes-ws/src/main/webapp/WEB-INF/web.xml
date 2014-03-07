@@ -1,0 +1,75 @@
+<web-app 
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+    version="2.5">
+
+  <display-name>ibiomes-ws</display-name>
+  <description>iBIOMES REST interface</description>
+  
+  	<!-- ============================ PARAMETERS ================================== -->
+  	<!--
+      - Location of the XML file that defines the root application context
+      - Applied by ContextLoaderListener.
+     -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/ibiomes-mvc-servlet.xml</param-value>
+    </context-param>
+    
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener> 
+    
+	<context-param>
+	  <description>URL to the root of this web application</description> 
+      <param-name>APP_ROOT_URL</param-name>
+      <param-value>http://juliens-grid-node.chpc.utah.edu:8080/ibiomes-ws</param-value>
+    </context-param>
+    <context-param>
+      <description>Local absolute path to the root of this web application</description> 
+      <param-name>APP_ROOT_PATH</param-name>
+      <param-value>/uufs/chpc.utah.edu/common/home/globus/development/tomcat/apache-tomcat-6.0.32/webapps/ibiomes-ws</param-value>
+    </context-param>
+    <context-param>
+	  <description>Name of the default iRODS resource</description> 
+      <param-name>IRODS_RESOURCE</param-name>
+      <param-value>node1</param-value>
+    </context-param>
+    <context-param>
+	  <description>Temporary directory</description> 
+      <param-name>TEMP_DIR</param-name>
+      <param-value>temp</param-value>
+    </context-param>
+   
+    <!-- ============================ ERROR PAGES ================================== -->
+    
+	  <error-page>
+		<error-code>404</error-code>
+		<location>/errors/error404.html</location>
+	  </error-page>
+	 <!--  <error-page>
+		<error-code>500</error-code>
+		<location>/errors/error500.html</location>
+	  </error-page> -->
+    <!-- ============================ SERVLETS ================================== -->
+    
+	<!--
+      - Provides core MVC application controller. See ibiomes-mvc-servlet.xml.
+     -->
+    <servlet>
+        <servlet-name>ibiomes-mvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ibiomes-mvc</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
+    </servlet-mapping>
+    
+    <session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+
+</web-app>

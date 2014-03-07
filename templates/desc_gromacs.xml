@@ -1,0 +1,43 @@
+<rules>
+  <!-- ======================================================================================== -->
+  <!-- General rules (any directory) -->
+  <!-- ======================================================================================== -->
+  <rule type="file" match="*.pdb" format="PDB">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="*.csv" format="CSV">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="*.mdp" format="GROMACS MD input">
+  	<metadata></metadata>
+  </rule>
+  <rule type="file" match="*.itp" format="GROMACS include topology">
+  	<metadata></metadata>
+  </rule>
+  <rule type="file" match="*.topo?" format="GROMACS system topology">
+  	<metadata></metadata>
+  </rule>
+  <rule type="file" match="*.gro" format="GROMACS gro">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="*.ndx" format="GROMACS index">
+  	<metadata></metadata>
+  </rule>
+  	  
+  <!-- ======================================================================================== -->
+  <!-- Special PDB files -->
+  <!-- ======================================================================================== -->
+
+  <rule type="file" match="average.pdb" description="Average structure">
+    <metadata>
+    </metadata>
+  </rule>
+  <rule type="file" match="min*.pdb" description="Minimized structure">
+    <metadata>
+    </metadata>
+  </rule>
+
+</rules>

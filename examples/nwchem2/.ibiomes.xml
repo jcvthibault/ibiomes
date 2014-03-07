@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ibiomes>
+  <directory absolutePath="/home/juji/workspace/iBIOMESTestData/nwchem/h2o" name="h2o" parent="/home/juji/workspace/iBIOMESTestData/nwchem">
+    <AVUs>
+      <AVU id="SOFTWARE_NAME">NWChem</AVU>
+      <AVU id="FILE_TYPE">COLLECTION</AVU>
+      <AVU id="METHOD">Quantum mechanics</AVU>
+      <AVU id="QM_SPIN_MULTIPLICITY">0</AVU>
+      <AVU id="QM_TOTAL_MOLECULE_CHARGE">0</AVU>
+      <AVU id="MOLECULE_ATOMIC_WEIGHT">18.01528</AVU>
+      <AVU id="MOLECULE_ATOMIC_COMPOSITION">H:2 O:1</AVU>
+      <AVU id="MOLECULE_ATOMIC_COMPOSITION2">H[2]O</AVU>
+      <AVU id="MOLECULE_TYPE">Chemical compound</AVU>
+      <AVU id="COUNT_ATOM">3</AVU>
+      <AVU id="COUNT_ION">0</AVU>
+      <AVU id="COUNT_WATER">0</AVU>
+      <AVU id="MAIN_3D_STRUCTURE_FILE">h2o.out</AVU>
+    </AVUs>
+    <files>
+      <fileGroup format="NWChem input">
+        <file absolutePath="/home/juji/workspace/iBIOMESTestData/nwchem/h2o/h2o.nw" format="NWChem input" modificationDate="02/03/12 14:38" name="h2o.nw" parent="/home/juji/workspace/iBIOMESTestData/nwchem/h2o" size="224">
+          <AVUs>
+            <AVU id="FILE_FORMAT">NWChem input</AVU>
+            <AVU id="METHOD">Quantum mechanics</AVU>
+            <AVU id="MOLECULE_ATOMIC_WEIGHT">18.01528</AVU>
+            <AVU id="MOLECULE_ATOMIC_COMPOSITION">H:2 O:1</AVU>
+            <AVU id="MOLECULE_ATOMIC_COMPOSITION2">H[2]O</AVU>
+            <AVU id="MOLECULE_TYPE">Chemical compound</AVU>
+            <AVU id="COUNT_ATOM">3</AVU>
+            <AVU id="COUNT_ION">0</AVU>
+            <AVU id="COUNT_WATER">0</AVU>
+            <AVU id="QM_BASIS_SET">6-31g*</AVU>
+            <AVU id="QM_LEVEL_OF_THEORY">SCF</AVU>
+            <AVU id="QM_SPIN_MULTIPLICITY">0</AVU>
+            <AVU id="QM_TOTAL_MOLECULE_CHARGE">0</AVU>
+            <AVU id="CALCULATION">Energy gradient calculations</AVU>
+          </AVUs>
+        </file>
+      </fileGroup>
+      <fileGroup format="NWChem output">
+        <file absolutePath="/home/juji/workspace/iBIOMESTestData/nwchem/h2o/h2o.out" format="NWChem output" modificationDate="02/03/12 14:38" name="h2o.out" parent="/home/juji/workspace/iBIOMESTestData/nwchem/h2o" size="26192">
+          <AVUs>
+            <AVU id="FILE_FORMAT">NWChem output</AVU>
+          </AVUs>
+        </file>
+      </fileGroup>
+    </files>
+    <subdirectories/>
+  </directory>
+</ibiomes>

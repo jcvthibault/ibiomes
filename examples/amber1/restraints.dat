@@ -1,0 +1,937 @@
+#
+# BONUS RESTRAINTS
+#
+# 9-23
+#
+ &rst iresid = 1, iat = 9, 23, 0, 0,
+   atnam = 'N6', 'N7', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 9, 23, 0, 0,
+   atnam = 'N7', 'N6', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 9, 9, 23, 23,
+   atnam = 'C5', 'C6', 'C5', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 9, 9, 23, 23,
+   atnam = 'C4', 'N1', 'C4', 'N1', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# 8-14-21
+#
+ &rst iresid = 1, iat = 14, 8, 0, 0,
+   atnam = 'N7', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 14, 8, 0, 0,
+   atnam = 'N6', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 8, 21, 0, 0,
+   atnam = "O2'", 'N1', r2 = 2.6, r3 = 3.2, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 8, 21, 0, 0,
+   atnam = "O2'", 'N6', r2 = 2.6, r3 = 3.2, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 14, 14, 8, 8,
+   atnam = 'C8', 'C5', 'N1', 'C5', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 14, 14, 8, 8,
+   atnam = 'N9', 'C4', 'N3', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 14, 14, 8, 8,
+   atnam = 'N7', 'C6', 'C2', 'C5', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+#
+# G10-C25
+#
+ &rst iresid = 1, iat = 10, 25, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 10, 25, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 10, 25, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 10, 10, 25, 25,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 10, 10, 25, 25,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 10, 10, 25, 25,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# C11-G24
+#
+ &rst iresid = 1, iat = 24, 11, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 24, 11, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 24, 11, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 24, 11, 0, 0,
+   atnam = 'H21', 'O2', r2 = 1.6, r3 = 2.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 24, 24, 11, 11,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 24, 24, 11, 11,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 24, 24, 11, 11,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# U12-A23
+#
+ &rst iresid = 1, iat = 23, 12, 0, 0,
+   atnam = 'N6', 'O4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 23, 12, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 23, 12, 0, 0,
+   atnam = 'C2', 'O2', r2 = 2.6, r3 = 3.8, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 23, 23, 12, 12,
+   atnam = 'C6', 'N3', 'C2', 'C5', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 23, 23, 12, 12,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 23, 23, 12, 12,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# C13-G22
+#
+ &rst iresid = 1, iat = 22, 13, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.0, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 22, 13, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.0, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 22, 13, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.0, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 22, 22, 13, 13,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 22, 22, 13, 13,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 22, 22, 13, 13,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# PSU27-A43
+#
+ &rst iresid = 1, iat = 43, 27, 0, 0,
+   atnam = 'N6', 'O4', r1 = 2.0, r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 43, 27, 0, 0,
+   atnam = 'N1', 'N3', r1 = 2.0, r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 43, 27, 0, 0,
+   atnam = 'N1', 'H3', r1 = 1.0, r2 = 1.6, r3 = 2.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 43, 27, 0, 0,
+   atnam = 'C2', 'O2', r1 = 2.0, r2 = 2.6, r3 = 3.8, r4 = 5.0,
+   rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 43, 43, 27, 27,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 43, 43, 27, 27,
+   atnam = 'C5', 'C4', 'C4', 'N3', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 43, 43, 27, 27,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# C28-G42
+#
+ &rst iresid = 1, iat = 42, 28, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 42, 28, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 42, 28, 0, 0,
+   atnam = 'H1', 'N3', r2 = 1.6, r3 = 2.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 42, 28, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 42, 28, 0, 0,
+   atnam = 'H21', 'O2', r2 = 1.6, r3 = 2.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 42, 42, 28, 28,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 42, 42, 28, 28,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 42, 42, 28, 28,
+   atnam = 'N2', 'C6', 'N4', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# A29-U41
+#
+ &rst iresid = 1, iat = 29, 41, 0, 0,
+   atnam = 'N6', 'O4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 29, 41, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 29, 41, 0, 0,
+   atnam = 'C2', 'O2', r2 = 2.6, r3 = 3.8, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 29, 29, 41, 41,
+   atnam = 'C6', 'N3', 'C2', 'C5', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 29, 29, 41, 41,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 29, 29, 41, 41,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# G30-C40
+#
+ &rst iresid = 1, iat = 30, 40, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.0, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 30, 40, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.0, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 30, 40, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.0, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 30, 30, 40, 40,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 30, 30, 40, 40,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 30, 30, 40, 40,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# A31-PSU39
+#
+ &rst iresid = 1, iat = 31, 39, 0, 0,
+   atnam = 'N6', 'O2', r2 = 2.6, r3 = 3.3, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 31, 39, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.3, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 31, 39, 0, 0,
+   atnam = 'C2', 'O4', r2 = 2.6, r3 = 3.8, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 31, 31, 39, 39,
+   atnam = 'C5', 'N3', 'C5', 'N1', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 31, 31, 39, 39,
+   atnam = 'C6', 'C2', 'C4', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 31, 31, 39, 39,
+   atnam = 'N6', 'N1', 'O4', 'O2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# C48-G88
+#
+ &rst iresid = 1, iat = 88, 48, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.0, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 88, 48, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.0, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 88, 48, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.0, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 88, 88, 48, 48,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 88, 88, 48, 48,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 88, 88, 48, 48,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# C49-G87
+#
+ &rst iresid = 1, iat = 87, 49, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.0, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 87, 49, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.0, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 87, 49, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.0, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 87, 87, 49, 49,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 87, 87, 49, 49,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 87, 87, 49, 49,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# A50-U86
+#
+ &rst iresid = 1, iat = 50, 86, 0, 0,
+   atnam = 'N6', 'O4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 50, 86, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 50, 86, 0, 0,
+   atnam = 'C2', 'O2', r2 = 2.6, r3 = 3.8, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 50, 50, 86, 86,
+   atnam = 'C6', 'N3', 'C2', 'C5', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 50, 50, 86, 86,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 50, 50, 86, 86,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# G51-C85
+#
+ &rst iresid = 1, iat = 51, 85, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 51, 85, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 51, 85, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 51, 51, 85, 85,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 51, 51, 85, 85,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 51, 51, 85, 85,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# G52-U84
+#
+ &rst iresid = 1, iat = 52, 84, 0, 0,
+   atnam = 'O6', 'O4', r2 = 2.6, r3 = 4.2, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 52, 84, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 4.2, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 52, 84, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 4.2, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+#
+#
+# G53-C83
+#
+ &rst iresid = 1, iat = 53, 83, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 53, 83, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 53, 83, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 53, 53, 83, 83,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 53, 53, 83, 83,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 53, 53, 83, 83,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# U54-A82
+#
+ &rst iresid = 1, iat = 82, 54, 0, 0,
+   atnam = 'N6', 'O4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 82, 54, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 82, 54, 0, 0,
+   atnam = 'C2', 'O2', r2 = 2.6, r3 = 3.8, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 82, 82, 54, 54,
+   atnam = 'C6', 'N3', 'C2', 'C5', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 82, 82, 54, 54,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 82, 82, 54, 54,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# PSU55-G81
+#
+ &rst iresid = 1, iat = 81, 55, 0, 0,
+   atnam = 'O6', 'O2', r2 = 2.6, r3 = 4.2, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 81, 55, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 4.2, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 81, 55, 0, 0,
+   atnam = 'N2', 'O4', r2 = 2.6, r3 = 4.2, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+#
+# U33-T6A37
+#
+# &rst iresid = 1, iat = 37, 33, 0, 0,
+#   atnam = 'N6', 'O4', r2 = 2.6, r3 = 4.2, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+# &rst iresid = 1, iat = 37, 33, 0, 0,
+#   atnam = 'N1', 'N3', r2 = 2.6, r3 = 4.2, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+# &rst iresid = 1, iat = 37, 33, 0, 0,
+#   atnam = 'C2', 'O2', r2 = 2.6, r3 = 4.2, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+#
+# U8U34-A126
+#
+ &rst iresid = 1, iat = 126, 34, 0, 0,
+   atnam = 'N6', 'O4', r2 = 2.6, r3 = 3.2, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 126, 34, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.2, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 126, 34, 0, 0,
+   atnam = 'N1', 'H3', r2 = 1.6, r3 = 2.2, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 126, 34, 0, 0,
+   atnam = 'C2', 'S2', r2 = 2.6, r3 = 4.0, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 126, 126, 34, 34,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -40.0, r3 = 40.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 126, 126, 34, 34,
+   atnam = 'C5', 'N3', 'N1', 'C5', r1 = -45.0, r2 = -40.0, r3 = 40.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 126, 126, 34, 34,
+   atnam = 'C2', 'N6', 'C4', 'C2', r1 = -45.0, r2 = -40.0, r3 = 40.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# U35-A125
+#
+ &rst iresid = 1, iat = 125, 35, 0, 0,
+   atnam = 'N6', 'O4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 125, 35, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 125, 35, 0, 0,
+   atnam = 'C2', 'O2', r2 = 2.6, r3 = 3.8, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 125, 125, 35, 35,
+   atnam = 'C6', 'N3', 'C2', 'C5', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 125, 125, 35, 35,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 125, 125, 35, 35,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# U36-A124
+#
+ &rst iresid = 1, iat = 124, 36, 0, 0,
+   atnam = 'N6', 'O4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 124, 36, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 124, 36, 0, 0,
+   atnam = 'C2', 'O2', r2 = 2.6, r3 = 3.8, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 124, 124, 36, 36,
+   atnam = 'C6', 'N3', 'C2', 'C5', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 124, 124, 36, 36,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 124, 124, 36, 36,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+#
+# G138-C111
+#
+ &rst iresid = 1, iat = 138, 111, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 138, 111, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 138, 111, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 138, 138, 111, 111,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 138, 138, 111, 111,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 138, 138, 111, 111,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# U112-A137
+#
+ &rst iresid = 1, iat = 137, 112, 0, 0,
+   atnam = 'N6', 'O4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 137, 112, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 137, 112, 0, 0,
+   atnam = 'C2', 'O2', r2 = 2.6, r3 = 3.8, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 137, 137, 112, 112,
+   atnam = 'C6', 'N3', 'C2', 'C5', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 137, 137, 112, 112,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 137, 137, 112, 112,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+#
+# G135-C113
+#
+ &rst iresid = 1, iat = 135, 113, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 135, 113, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 135, 113, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 135, 135, 113, 113,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 135, 135, 113, 113,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 135, 135, 113, 113,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# U114-A134
+#
+ &rst iresid = 1, iat = 134, 114, 0, 0,
+   atnam = 'N6', 'O4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 134, 114, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 134, 114, 0, 0,
+   atnam = 'C2', 'O2', r2 = 2.6, r3 = 3.8, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 134, 134, 114, 114,
+   atnam = 'C6', 'N3', 'C2', 'C5', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 134, 134, 114, 114,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 134, 134, 114, 114,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# U133-A115
+#
+ &rst iresid = 1, iat = 115, 133, 0, 0,
+   atnam = 'N6', 'O4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 115, 133, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 115, 133, 0, 0,
+   atnam = 'C2', 'O2', r2 = 2.6, r3 = 3.8, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 115, 115, 133, 133,
+   atnam = 'C6', 'N3', 'C2', 'C5', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 115, 115, 133, 133,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 115, 115, 133, 133,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+#
+# G116-C132
+#
+ &rst iresid = 1, iat = 116, 132, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 116, 132, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 116, 132, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 116, 116, 132, 132,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 116, 116, 132, 132,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 116, 116, 132, 132,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# U131-A117
+#
+ &rst iresid = 1, iat = 117, 131, 0, 0,
+   atnam = 'N6', 'O4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 117, 131, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 117, 131, 0, 0,
+   atnam = 'N1', 'H3', r2 = 1.6, r3 = 2.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 117, 131, 0, 0,
+   atnam = 'C2', 'O2', r2 = 2.6, r3 = 3.8, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 117, 117, 131, 131,
+   atnam = 'C6', 'N3', 'C2', 'C5', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 117, 117, 131, 131,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 117, 117, 131, 131,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+#
+# G119-C130
+#
+ &rst iresid = 1, iat = 119, 130, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 119, 130, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 119, 130, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 119, 119, 130, 130,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 119, 119, 130, 130,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 119, 119, 130, 130,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# G120-U129
+#
+ &rst iresid = 1, iat = 120, 129, 0, 0,
+   atnam = 'O6', 'N3', r2 = 2.6, r3 = 4.2, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 120, 129, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 4.2, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 120, 129, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 4.2, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+#
+# U121-A128
+#
+ &rst iresid = 1, iat = 128, 121, 0, 0,
+   atnam = 'N6', 'O4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 128, 121, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 128, 121, 0, 0,
+   atnam = 'N1', 'H3', r2 = 1.6, r3 = 2.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 128, 121, 0, 0,
+   atnam = 'C2', 'O2', r2 = 2.6, r3 = 3.8, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 128, 128, 121, 121,
+   atnam = 'C6', 'N3', 'C2', 'C5', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 128, 128, 121, 121,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 128, 128, 121, 121,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# U99-A178
+#
+ &rst iresid = 1, iat = 178, 99, 0, 0,
+   atnam = 'N6', 'O4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 178, 99, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 178, 99, 0, 0,
+   atnam = 'C2', 'O2', r2 = 2.6, r3 = 3.8, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 178, 178, 99, 99,
+   atnam = 'C6', 'N3', 'C2', 'C5', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 178, 178, 99, 99,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 178, 178, 99, 99,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+#
+# G177-C100
+#
+ &rst iresid = 1, iat = 177, 100, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 177, 100, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 177, 100, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 177, 177, 100, 100,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 177, 177, 100, 100,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 177, 177, 100, 100,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+#
+# G176-C101
+#
+ &rst iresid = 1, iat = 176, 101, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 176, 101, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 176, 101, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 176, 176, 101, 101,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 176, 176, 101, 101,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 176, 176, 101, 101,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+#
+# G175-C102
+#
+ &rst iresid = 1, iat = 175, 102, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 175, 102, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 175, 102, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 175, 175, 102, 102,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 175, 175, 102, 102,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 175, 175, 102, 102,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# U139-A76
+#
+ &rst iresid = 1, iat = 76, 139, 0, 0,
+   atnam = 'N6', 'O4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 76, 139, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 76, 139, 0, 0,
+   atnam = 'C2', 'O2', r2 = 2.6, r3 = 3.8, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 76, 76, 139, 139,
+   atnam = 'C6', 'N3', 'C2', 'C5', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 76, 76, 139, 139,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 76, 76, 139, 139,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+#
+# G140-C75
+#
+ &rst iresid = 1, iat = 140, 75, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 140, 75, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 140, 75, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 140, 140, 75, 75,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 140, 140, 75, 75,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 140, 140, 75, 75,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+#
+# G141-C74
+#
+ &rst iresid = 1, iat = 141, 74, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 141, 74, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 141, 74, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 141, 141, 74, 74,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 141, 141, 74, 74,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 141, 141, 74, 74,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+#
+# G73-C142
+#
+ &rst iresid = 1, iat = 73, 142, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 73, 142, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 73, 142, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 73, 73, 142, 142,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 73, 73, 142, 142,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 73, 73, 142, 142,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+#
+# G143-C72
+#
+ &rst iresid = 1, iat = 143, 72, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 143, 72, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 143, 72, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 143, 143, 72, 72,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 143, 143, 72, 72,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 143, 143, 72, 72,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+#
+# G71-C144
+#
+ &rst iresid = 1, iat = 71, 144, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 71, 144, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 71, 144, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 71, 71, 144, 144,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 71, 71, 144, 144,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 71, 71, 144, 144,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+#
+# G70-C145
+#
+ &rst iresid = 1, iat = 70, 145, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 70, 145, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 70, 145, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 70, 70, 145, 145,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 70, 70, 145, 145,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 70, 70, 145, 145,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+#
+# G69-C146
+#
+ &rst iresid = 1, iat = 69, 146, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 69, 146, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 69, 146, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 69, 69, 146, 146,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 69, 69, 146, 146,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 69, 69, 146, 146,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+#
+# G147-C68
+#
+ &rst iresid = 1, iat = 147, 68, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 147, 68, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 147, 68, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 147, 147, 68, 68,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 147, 147, 68, 68,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 147, 147, 68, 68,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# U67-A148
+#
+ &rst iresid = 1, iat = 148, 67, 0, 0,
+   atnam = 'N6', 'O4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 148, 67, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 148, 67, 0, 0,
+   atnam = 'C2', 'O2', r2 = 2.6, r3 = 3.8, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 148, 148, 67, 67,
+   atnam = 'C6', 'N3', 'C2', 'C5', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 148, 148, 67, 67,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 148, 148, 67, 67,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# U66-A149
+#
+ &rst iresid = 1, iat = 149, 66, 0, 0,
+   atnam = 'N6', 'O4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 149, 66, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 149, 66, 0, 0,
+   atnam = 'C2', 'O2', r2 = 2.6, r3 = 3.8, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 149, 149, 66, 66,
+   atnam = 'C6', 'N3', 'C2', 'C5', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 149, 149, 66, 66,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 149, 149, 66, 66,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+#
+# G65-C150
+#
+ &rst iresid = 1, iat = 65, 150, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 65, 150, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 65, 150, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 65, 65, 150, 150,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 65, 65, 150, 150,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 65, 65, 150, 150,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# U64-A151
+#
+ &rst iresid = 1, iat = 151, 64, 0, 0,
+   atnam = 'N6', 'O4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 151, 64, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 151, 64, 0, 0,
+   atnam = 'C2', 'O2', r2 = 2.6, r3 = 3.8, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 151, 151, 64, 64,
+   atnam = 'C6', 'N3', 'C2', 'C5', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 151, 151, 64, 64,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 151, 151, 64, 64,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+#
+# G152-C63
+#
+ &rst iresid = 1, iat = 152, 63, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 152, 63, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 152, 63, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 152, 152, 63, 63,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 152, 152, 63, 63,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 152, 152, 63, 63,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+#
+# G153-C62
+#
+ &rst iresid = 1, iat = 153, 62, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 153, 62, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 153, 62, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 153, 153, 62, 62,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 153, 153, 62, 62,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 153, 153, 62, 62,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+#
+# G154-C61
+#
+ &rst iresid = 1, iat = 154, 61, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 154, 61, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 154, 61, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 154, 154, 61, 61,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 154, 154, 61, 61,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 154, 154, 61, 61,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# U60-A155
+#
+ &rst iresid = 1, iat = 155, 60, 0, 0,
+   atnam = 'N6', 'O4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 155, 60, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 155, 60, 0, 0,
+   atnam = 'C2', 'O2', r2 = 2.6, r3 = 3.8, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 155, 155, 60, 60,
+   atnam = 'C6', 'N3', 'C2', 'C5', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 155, 155, 60, 60,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 155, 155, 60, 60,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+#
+# G59-C156
+#
+ &rst iresid = 1, iat = 59, 156, 0, 0,
+   atnam = 'O6', 'N4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 59, 156, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 59, 156, 0, 0,
+   atnam = 'N2', 'O2', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 59, 59, 156, 156,
+   atnam = 'C6', 'C2', 'C2', 'C4', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 59, 59, 156, 156,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 59, 59, 156, 156,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# U157-A168
+#
+ &rst iresid = 1, iat = 157, 168, 0, 0,
+   atnam = 'O4', 'N6', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 157, 168, 0, 0,
+   atnam = 'N3', 'N1', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 157, 168, 0, 0,
+   atnam = 'O2', 'C2', r2 = 2.6, r3 = 3.8, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 168, 168, 157, 157,
+   atnam = 'C6', 'N3', 'C2', 'C5', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 168, 168, 157, 157,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 168, 168, 157, 157,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# U158-A167
+#
+ &rst iresid = 1, iat = 158, 167, 0, 0,
+   atnam = 'O4', 'N6', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 158, 167, 0, 0,
+   atnam = 'N3', 'N1', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 158, 167, 0, 0,
+   atnam = 'O2', 'C2', r2 = 2.6, r3 = 3.8, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 167, 167, 158, 158,
+   atnam = 'C6', 'N3', 'C2', 'C5', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 167, 167, 158, 158,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 167, 167, 158, 158,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+#
+# U159-A166
+#
+ &rst iresid = 1, iat = 166, 159, 0, 0,
+   atnam = 'N6', 'O4', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 166, 159, 0, 0,
+   atnam = 'N1', 'N3', r2 = 2.6, r3 = 3.1, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 166, 159, 0, 0,
+   atnam = 'C2', 'O2', r2 = 2.6, r3 = 3.8, r4 = 5.0, rk2=5.0, rk3=5.0, &end
+
+ &rst iresid = 1, iat = 166, 166, 159, 159,
+   atnam = 'C6', 'N3', 'C2', 'C5', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 166, 166, 159, 159,
+   atnam = 'C5', 'C4', 'N1', 'C6', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end
+ &rst iresid = 1, iat = 166, 166, 159, 159,
+   atnam = 'C2', 'N1', 'N3', 'C2', r1 = -45.0, r2 = -20.0, r3 = 20.0, r4 = 45.0, rk2=5.0, rk3=5.0, &end

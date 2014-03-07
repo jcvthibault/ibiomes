@@ -1,0 +1,22 @@
+Initial minimization for RNA using IGB1
+ &cntrl
+
+  igb = 1, ntb = 0,
+  
+  imin = 1,
+  maxcyc = 500,
+  ncyc = 500,
+  
+  ntt = 1, tautp = 0.2,
+  
+  cut = 20.0,
+  t = 0.0, dt = 0.001,
+  tempi = 300, temp0 = 300,
+
+  nmropt = 1,
+ /
+ &wt type = 'END', &end
+DISANG=restraints.dat
+LISTIN=POUT
+LISTOUT=POUT
+

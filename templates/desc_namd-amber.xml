@@ -1,0 +1,46 @@
+<rules>
+
+  <!-- PDB files (update matching pattern if necessary) -->
+  <rule type="file" match="*.pdb" format="PDB">
+  	<metadata></metadata>
+  </rule>
+
+  <!-- Trajectory files: DCD -->
+  <rule type="file" match="(*.dcd)" format="DCD trajectory" softwareContext="NAMD" description="DCD atomic trajectory/coordinates">
+  	<metadata></metadata>
+  </rule>
+  <rule type="file" match="(*.nowat.dcd)" format="DCD trajectory" softwareContext="NAMD" description="DCD atomic trajectory/coordinates without water">
+  	<metadata></metadata>
+  </rule>
+
+  <!-- Topology files: AMBER parmtop -->
+  <rule type="file" match="*.(prmtop|topo|top|parm|parm7)" format="AMBER parmtop" softwareContext="NAMD" description="Parameter/topology file (AMBER format)">
+  	<metadata></metadata>
+  </rule>
+  
+  <!-- MD input files: NAMD config files with a name that start with 'dyn' and have a '.conf' extension -->
+  <rule type="file" match="dyn*.conf" format="NAMD configuration" softwareContext="NAMD" description="Molecular dynamics task configuration (production run)">
+  	<metadata></metadata>
+  </rule>
+
+  <!-- MD log files: NAMD output files with a name that start with 'dyn' and have a '.out' extension -->
+  <rule type="file" match="dyn*.out" format="NAMD standard output" softwareContext="NAMD" description="Molecular dynamics output (production run)">
+  	<metadata></metadata>
+  </rule>
+
+
+  <!-- ANALYSIS DATA DISPLAY -->
+  <!-- Flag all image files as 'analysis' result so they get displayed in the experiment summary -->
+  <rule type="file" match="*.(png|jpg|jpeg|gif|tif)" class="analysis">
+  	<metadata></metadata>
+  </rule>
+  <!-- Customize .dat file for display -->
+  <rule type="file" match="hp3.3.kink.vsT.dat" format="CSV" class="analysis" description="hp3.3 kink vs T">
+    <metadata>
+      <avu attribute="data_labels">Kink,T</avu>
+      <avu attribute="data_units">X,Y</avu>
+      <!-- plot type can be 'line', 'dot', 'line', or 'histogram' -->
+      <avu attribute="preferred_plot_type">heatmap</avu>
+    </metadata>
+  </rule>
+</rules>

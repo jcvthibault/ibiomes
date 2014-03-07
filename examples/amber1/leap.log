@@ -1,0 +1,1139 @@
+log started: Tue Apr 19 19:37:42 2005
+
+Log file: ./leap.log
+> #
+> # ----- leaprc for loading the Cornell et al. 1994 force field.
+> #       assumes that any unspecified nucleic acids are DNA 
+> #
+> #	load atom type hybridizations
+> #
+> addAtomTypes {
+> 	{ "H"   "H" "sp3" }
+> 	{ "HO"  "H" "sp3" }
+> 	{ "HS"  "H" "sp3" }
+> 	{ "H1"  "H" "sp3" }
+> 	{ "H2"  "H" "sp3" }
+> 	{ "H3"  "H" "sp3" }
+> 	{ "H4"  "H" "sp3" }
+> 	{ "H5"  "H" "sp3" }
+> 	{ "HW"  "H" "sp3" }
+> 	{ "HC"  "H" "sp3" }
+> 	{ "HA"  "H" "sp3" }
+> 	{ "HP"  "H" "sp3" }
+> 	{ "OH"  "O" "sp3" }
+> 	{ "OS"  "O" "sp3" }
+> 	{ "O"   "O" "sp2" }
+> 	{ "O2"  "O" "sp2" }
+> 	{ "OW"  "O" "sp3" }
+> 	{ "CT"  "C" "sp3" }
+> 	{ "CH"  "C" "sp3" }
+> 	{ "C2"  "C" "sp3" }
+> 	{ "C3"  "C" "sp3" }
+> 	{ "C"   "C" "sp2" }
+> 	{ "C*"  "C" "sp2" }
+> 	{ "CA"  "C" "sp2" }
+> 	{ "CB"  "C" "sp2" }
+> 	{ "CC"  "C" "sp2" }
+> 	{ "CN"  "C" "sp2" }
+> 	{ "CM"  "C" "sp2" }
+> 	{ "CK"  "C" "sp2" }
+> 	{ "CQ"  "C" "sp2" }
+> 	{ "CD"  "C" "sp2" }
+> 	{ "CE"  "C" "sp2" }
+> 	{ "CF"  "C" "sp2" }
+> 	{ "CG"  "C" "sp2" }
+> 	{ "CP"  "C" "sp2" }
+> 	{ "CI"  "C" "sp2" }
+> 	{ "CJ"  "C" "sp2" }
+> 	{ "CW"  "C" "sp2" }
+> 	{ "CV"  "C" "sp2" }
+> 	{ "CR"  "C" "sp2" }
+> 	{ "CA"  "C" "sp2" }
+> 	{ "CY"  "C" "sp2" }
+> 	{ "C0"  "C" "sp2" }
+> 	{ "MG"  "Mg" "sp3" }
+> 	{ "N"   "N" "sp2" }
+> 	{ "NA"  "N" "sp2" }
+> 	{ "N2"  "N" "sp2" }
+> 	{ "N*"  "N" "sp2" }
+> 	{ "NP"  "N" "sp2" }
+> 	{ "NQ"  "N" "sp2" }
+> 	{ "NB"  "N" "sp2" }
+> 	{ "NC"  "N" "sp2" }
+> 	{ "NT"  "N" "sp3" }
+> 	{ "N3"  "N" "sp3" }
+> 	{ "S"   "S" "sp3" }
+> 	{ "SH"  "S" "sp3" }
+> 	{ "P"   "P" "sp3" }
+> 	{ "LP"  ""  "sp3" }
+> 	{ "F"   "F" "sp3" }
+> 	{ "CL"  "Cl" "sp3" }
+> 	{ "BR"  "Br" "sp3" }
+> 	{ "I"   "I"  "sp3" }
+> 	{ "FE"  "Fe" "sp3" }
+>     { "EP"  ""  "sp3" }
+> # glycam
+> 	{ "OG"  "O" "sp3" }
+> 	{ "OL"  "O" "sp3" }
+> 	{ "AC"  "C" "sp3" }
+> 	{ "EC"  "C" "sp3" }
+> }
+> #
+> #	Load the main parameter set.
+> #
+> parm94 = loadamberparams parm94.dat
+Loading parameters: /uufs/inscc.utah.edu/common/home/cheatham/dirs/amberfs/AMBER/amber8/arches-pathscale-serial-static//dat/leap/parm/parm94.dat
+(UNKNOWN ATOM TYPE: IM)
+(UNKNOWN ATOM TYPE: Li)
+(UNKNOWN ATOM TYPE: IP)
+(UNKNOWN ATOM TYPE: K)
+(UNKNOWN ATOM TYPE: Rb)
+(UNKNOWN ATOM TYPE: Cs)
+(UNKNOWN ATOM TYPE: IB)
+(UNKNOWN ATOM TYPE: EP)
+> #
+> #	Load DNA/RNA libraries
+> #
+> loadOff all_nucleic94.lib
+Loading library: /uufs/inscc.utah.edu/common/home/cheatham/dirs/amberfs/AMBER/amber8/arches-pathscale-serial-static//dat/leap/lib/all_nucleic94.lib
+Loading: DA
+Loading: DA3
+Loading: DA5
+Loading: DAN
+Loading: DC
+Loading: DC3
+Loading: DC5
+Loading: DCN
+Loading: DG
+Loading: DG3
+Loading: DG5
+Loading: DGN
+Loading: DT
+Loading: DT3
+Loading: DT5
+Loading: DTN
+Loading: RA
+Loading: RA3
+Loading: RA5
+Loading: RAN
+Loading: RC
+Loading: RC3
+Loading: RC5
+Loading: RCN
+Loading: RG
+Loading: RG3
+Loading: RG5
+Loading: RGN
+Loading: RU
+Loading: RU3
+Loading: RU5
+Loading: RUN
+> #
+> #	Load main chain and terminating 
+> #	amino acid libraries.
+> #
+> loadOff all_amino94.lib
+Loading library: /uufs/inscc.utah.edu/common/home/cheatham/dirs/amberfs/AMBER/amber8/arches-pathscale-serial-static//dat/leap/lib/all_amino94.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+> loadOff all_aminoct94.lib
+Loading library: /uufs/inscc.utah.edu/common/home/cheatham/dirs/amberfs/AMBER/amber8/arches-pathscale-serial-static//dat/leap/lib/all_aminoct94.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+> loadOff all_aminont94.lib
+Loading library: /uufs/inscc.utah.edu/common/home/cheatham/dirs/amberfs/AMBER/amber8/arches-pathscale-serial-static//dat/leap/lib/all_aminont94.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+> 
+> loadOff ions94.lib
+Loading library: /uufs/inscc.utah.edu/common/home/cheatham/dirs/amberfs/AMBER/amber8/arches-pathscale-serial-static//dat/leap/lib/ions94.lib
+Loading: CIO
+Loading: Cl-
+Loading: Cs+
+Loading: IB
+Loading: K+
+Loading: Li+
+Loading: MG2
+Loading: Na+
+Loading: Rb+
+> loadOff solvents.lib
+Loading library: /uufs/inscc.utah.edu/common/home/cheatham/dirs/amberfs/AMBER/amber8/arches-pathscale-serial-static//dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: PL3
+Loading: POL3BOX
+Loading: SPC
+Loading: SPCBOX
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+> HOH = TP3
+> WAT = TP3
+> 
+> #
+> #	Define the PDB name map for the amino acids and DNA.
+> #
+> addPdbResMap {
+>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>   { 0 "GUA" "RG5"  } { 1 "GUA" "RG3"  } { "GUA" "RG" }
+>   { 0 "ADE" "RA5"  } { 1 "ADE" "RA3"  } { "ADE" "RA" }
+>   { 0 "CYT" "RC5"  } { 1 "CYT" "RC3"  } { "CYT" "RC" }
+>   { 0 "THY" "RT5"  } { 1 "THY" "RT3"  } { "THY" "RT" }
+>   { 0 "G" "RG5"  } { 1 "G" "RG3"  } { "G" "RG" } { "GN" "RGN" }
+>   { 0 "A" "RA5"  } { 1 "A" "RA3"  } { "A" "RA" } { "AN" "RAN" }
+>   { 0 "C" "RC5"  } { 1 "C" "RC3"  } { "C" "RC" } { "CN" "RCN" }
+>   { 0 "T" "RT5"  } { 1 "T" "RT3"  } { "T" "RT" } { "TN" "RTN" }
+>   { 0 "U" "RU5"  } { 1 "U" "RU3"  } { "U" "RU" } { "UN" "RUN" }
+>   { 0 "C5" "RC5" }
+>   { 0 "G5" "RG5" }
+>   { 0 "A5" "RA5" }
+>   { 0 "T5" "RT5" }
+>   { 0 "U5" "RU5" }
+>   { 1 "C3" "RC3" }
+>   { 1 "G3" "RG3" }
+>   { 1 "A3" "RA3" }
+>   { 1 "T3" "RT3" }
+>   { 1 "U3" "RU3" }
+> 
+> }
+> 
+> addPdbAtomMap {
+>   { "O5*" "O5'" }
+>   { "C5*" "C5'" }
+>   { "C4*" "C4'" }
+>   { "O4*" "O4'" }
+>   { "C3*" "C3'" }
+>   { "O3*" "O3'" }
+>   { "C2*" "C2'" }
+>   { "C1*" "C1'" }
+>   { "C5M" "C7"  }
+>   { "H1*" "H1'" }
+>   { "H2*1" "H2'1" }
+>   { "H2*2" "H2'2" }
+>   { "H3*" "H3'" }
+>   { "H4*" "H4'" }
+>   { "H5*1" "H5'1" }
+>   { "H5*2" "H5'2" }
+> # old ff atom names -> new
+>   { "O1'" "O4'" }
+>   { "OA"  "O1P" }
+>   { "OB"  "O2P" }
+> }
+> 
+> 
+> #
+> # assumed that most often proteins use HIE
+> #
+> NHIS = NHIE
+> HIS = HIE
+> CHIS = CHIE
+ 
+> source buildit
+----- Source: ./buildit
+----- Source of ./buildit done
+>> loadoff psu2.lib
+Loading library: ./psu2.lib
+Loading: F
+Loading: PSU
+>> loadoff t6a.lib
+Loading library: ./t6a.lib
+Loading: T6A
+>> loadoff u8u.lib
+Loading library: ./u8u.lib
+Loading: U8U
+>> parm94 = loadamberparams parm94.drd2.dat
+Loading parameters: ./parm94.drd2.dat
+(UNKNOWN ATOM TYPE: S2)
+(UNKNOWN ATOM TYPE: IM)
+(UNKNOWN ATOM TYPE: Li)
+(UNKNOWN ATOM TYPE: IP)
+(UNKNOWN ATOM TYPE: K)
+(UNKNOWN ATOM TYPE: Rb)
+(UNKNOWN ATOM TYPE: Cs)
+(UNKNOWN ATOM TYPE: IB)
+>> 
+>> PU = PSU
+>> TA = T6A
+>> 
+> 
+> aa = loadpdb input7.pdb
+Loading PDB file: ./input7.pdb
+Matching PDB residue names to LEaP variables.
+(Residue 0: RG5, Terminal/beginning, was not found in name map.)
+(Residue 1: RC, Nonterminal, was not found in name map.)
+(Residue 2: RC, Nonterminal, was not found in name map.)
+(Residue 3: RC, Nonterminal, was not found in name map.)
+(Residue 4: RG, Nonterminal, was not found in name map.)
+(Residue 5: RG, Nonterminal, was not found in name map.)
+(Residue 6: RA, Nonterminal, was not found in name map.)
+(Residue 7: RU, Nonterminal, was not found in name map.)
+(Residue 8: RA, Nonterminal, was not found in name map.)
+(Residue 9: RG, Nonterminal, was not found in name map.)
+(Residue 10: RC, Nonterminal, was not found in name map.)
+(Residue 11: RU, Nonterminal, was not found in name map.)
+(Residue 12: RC, Nonterminal, was not found in name map.)
+(Residue 13: RA, Nonterminal, was not found in name map.)
+(Residue 14: RG, Nonterminal, was not found in name map.)
+(Residue 15: RU, Nonterminal, was not found in name map.)
+(Residue 16: RC, Nonterminal, was not found in name map.)
+(Residue 17: RG, Nonterminal, was not found in name map.)
+(Residue 18: RG, Nonterminal, was not found in name map.)
+(Residue 19: RU, Nonterminal, was not found in name map.)
+(Residue 20: RA, Nonterminal, was not found in name map.)
+(Residue 21: RG, Nonterminal, was not found in name map.)
+(Residue 22: RA, Nonterminal, was not found in name map.)
+(Residue 23: RG, Nonterminal, was not found in name map.)
+(Residue 24: RC, Nonterminal, was not found in name map.)
+(Residue 25: RA, Nonterminal, was not found in name map.)
+(Residue 26: PSU, Nonterminal, was not found in name map.)
+(Residue 27: RC, Nonterminal, was not found in name map.)
+(Residue 28: RA, Nonterminal, was not found in name map.)
+(Residue 29: RG, Nonterminal, was not found in name map.)
+(Residue 30: RA, Nonterminal, was not found in name map.)
+(Residue 31: RC, Nonterminal, was not found in name map.)
+(Residue 32: RU, Nonterminal, was not found in name map.)
+(Residue 33: U8U, Nonterminal, was not found in name map.)
+(Residue 34: RU, Nonterminal, was not found in name map.)
+(Residue 35: RU, Nonterminal, was not found in name map.)
+(Residue 36: T6A, Nonterminal, was not found in name map.)
+(Residue 37: RA, Nonterminal, was not found in name map.)
+(Residue 38: PSU, Nonterminal, was not found in name map.)
+(Residue 39: RC, Nonterminal, was not found in name map.)
+(Residue 40: RU, Nonterminal, was not found in name map.)
+(Residue 41: RG, Nonterminal, was not found in name map.)
+(Residue 42: RA, Nonterminal, was not found in name map.)
+(Residue 43: RG, Nonterminal, was not found in name map.)
+(Residue 44: RG, Nonterminal, was not found in name map.)
+(Residue 45: RG, Nonterminal, was not found in name map.)
+(Residue 46: RU, Nonterminal, was not found in name map.)
+(Residue 47: RC, Nonterminal, was not found in name map.)
+(Residue 48: RC, Nonterminal, was not found in name map.)
+(Residue 49: RA, Nonterminal, was not found in name map.)
+(Residue 50: RG, Nonterminal, was not found in name map.)
+(Residue 51: RG, Nonterminal, was not found in name map.)
+(Residue 52: RG, Nonterminal, was not found in name map.)
+(Residue 53: RU, Nonterminal, was not found in name map.)
+(Residue 54: PSU, Nonterminal, was not found in name map.)
+(Residue 55: RC, Nonterminal, was not found in name map.)
+(Residue 56: RA, Nonterminal, was not found in name map.)
+(Residue 57: RA, Nonterminal, was not found in name map.)
+(Residue 58: RG, Nonterminal, was not found in name map.)
+(Residue 59: RU, Nonterminal, was not found in name map.)
+(Residue 60: RC, Nonterminal, was not found in name map.)
+(Residue 61: RC, Nonterminal, was not found in name map.)
+(Residue 62: RC, Nonterminal, was not found in name map.)
+(Residue 63: RU, Nonterminal, was not found in name map.)
+(Residue 64: RG, Nonterminal, was not found in name map.)
+(Residue 65: RU, Nonterminal, was not found in name map.)
+(Residue 66: RU, Nonterminal, was not found in name map.)
+(Residue 67: RC, Nonterminal, was not found in name map.)
+(Residue 68: RG, Nonterminal, was not found in name map.)
+(Residue 69: RG, Nonterminal, was not found in name map.)
+(Residue 70: RG, Nonterminal, was not found in name map.)
+(Residue 71: RC, Nonterminal, was not found in name map.)
+(Residue 72: RG, Nonterminal, was not found in name map.)
+(Residue 73: RC, Nonterminal, was not found in name map.)
+(Residue 74: RC, Nonterminal, was not found in name map.)
+(Residue 75: RA3, Terminal/last, was not found in name map.)
+(Residue 76: RG5, Terminal/beginning, was not found in name map.)
+(Residue 77: RU, Nonterminal, was not found in name map.)
+(Residue 78: RG, Nonterminal, was not found in name map.)
+(Residue 79: RU, Nonterminal, was not found in name map.)
+(Residue 80: RG, Nonterminal, was not found in name map.)
+(Residue 81: RA, Nonterminal, was not found in name map.)
+(Residue 82: RC, Nonterminal, was not found in name map.)
+(Residue 83: RU, Nonterminal, was not found in name map.)
+(Residue 84: RC, Nonterminal, was not found in name map.)
+(Residue 85: RU, Nonterminal, was not found in name map.)
+(Residue 86: RG, Nonterminal, was not found in name map.)
+(Residue 87: RG, Nonterminal, was not found in name map.)
+(Residue 88: RU, Nonterminal, was not found in name map.)
+(Residue 89: RA, Nonterminal, was not found in name map.)
+(Residue 90: RA, Nonterminal, was not found in name map.)
+(Residue 91: RC, Nonterminal, was not found in name map.)
+(Residue 92: RU, Nonterminal, was not found in name map.)
+(Residue 93: RA, Nonterminal, was not found in name map.)
+(Residue 94: RG, Nonterminal, was not found in name map.)
+(Residue 95: RA, Nonterminal, was not found in name map.)
+(Residue 96: RG, Nonterminal, was not found in name map.)
+(Residue 97: RA, Nonterminal, was not found in name map.)
+(Residue 98: RU, Nonterminal, was not found in name map.)
+(Residue 99: RC, Nonterminal, was not found in name map.)
+(Residue 100: RC, Nonterminal, was not found in name map.)
+(Residue 101: RC, Nonterminal, was not found in name map.)
+(Residue 102: RU, Nonterminal, was not found in name map.)
+(Residue 103: RC, Nonterminal, was not found in name map.)
+(Residue 104: RA, Nonterminal, was not found in name map.)
+(Residue 105: RG, Nonterminal, was not found in name map.)
+(Residue 106: RA, Nonterminal, was not found in name map.)
+(Residue 107: RC, Nonterminal, was not found in name map.)
+(Residue 108: RC, Nonterminal, was not found in name map.)
+(Residue 109: RA, Nonterminal, was not found in name map.)
+(Residue 110: RC, Nonterminal, was not found in name map.)
+(Residue 111: RU, Nonterminal, was not found in name map.)
+(Residue 112: RC, Nonterminal, was not found in name map.)
+(Residue 113: RU, Nonterminal, was not found in name map.)
+(Residue 114: RA, Nonterminal, was not found in name map.)
+(Residue 115: RG, Nonterminal, was not found in name map.)
+(Residue 116: RA, Nonterminal, was not found in name map.)
+(Residue 117: RC, Nonterminal, was not found in name map.)
+(Residue 118: RG, Nonterminal, was not found in name map.)
+(Residue 119: RG, Nonterminal, was not found in name map.)
+(Residue 120: RU, Nonterminal, was not found in name map.)
+(Residue 121: RG, Nonterminal, was not found in name map.)
+(Residue 122: RU, Nonterminal, was not found in name map.)
+(Residue 123: RA, Nonterminal, was not found in name map.)
+(Residue 124: RA, Nonterminal, was not found in name map.)
+(Residue 125: RA, Nonterminal, was not found in name map.)
+(Residue 126: RA, Nonterminal, was not found in name map.)
+(Residue 127: RA, Nonterminal, was not found in name map.)
+(Residue 128: RU, Nonterminal, was not found in name map.)
+(Residue 129: RC, Nonterminal, was not found in name map.)
+(Residue 130: RU, Nonterminal, was not found in name map.)
+(Residue 131: RC, Nonterminal, was not found in name map.)
+(Residue 132: RU, Nonterminal, was not found in name map.)
+(Residue 133: RA, Nonterminal, was not found in name map.)
+(Residue 134: RG, Nonterminal, was not found in name map.)
+(Residue 135: RC, Nonterminal, was not found in name map.)
+(Residue 136: RA, Nonterminal, was not found in name map.)
+(Residue 137: RG, Nonterminal, was not found in name map.)
+(Residue 138: RU, Nonterminal, was not found in name map.)
+(Residue 139: RG, Nonterminal, was not found in name map.)
+(Residue 140: RG, Nonterminal, was not found in name map.)
+(Residue 141: RC, Nonterminal, was not found in name map.)
+(Residue 142: RG, Nonterminal, was not found in name map.)
+(Residue 143: RC, Nonterminal, was not found in name map.)
+(Residue 144: RC, Nonterminal, was not found in name map.)
+(Residue 145: RC, Nonterminal, was not found in name map.)
+(Residue 146: RG, Nonterminal, was not found in name map.)
+(Residue 147: RA, Nonterminal, was not found in name map.)
+(Residue 148: RA, Nonterminal, was not found in name map.)
+(Residue 149: RC, Nonterminal, was not found in name map.)
+(Residue 150: RA, Nonterminal, was not found in name map.)
+(Residue 151: RG, Nonterminal, was not found in name map.)
+(Residue 152: RG, Nonterminal, was not found in name map.)
+(Residue 153: RG, Nonterminal, was not found in name map.)
+(Residue 154: RA, Nonterminal, was not found in name map.)
+(Residue 155: RC, Nonterminal, was not found in name map.)
+(Residue 156: RU, Nonterminal, was not found in name map.)
+(Residue 157: RU, Nonterminal, was not found in name map.)
+(Residue 158: RU, Nonterminal, was not found in name map.)
+(Residue 159: RA, Nonterminal, was not found in name map.)
+(Residue 160: RA, Nonterminal, was not found in name map.)
+(Residue 161: RA, Nonterminal, was not found in name map.)
+(Residue 162: RG, Nonterminal, was not found in name map.)
+(Residue 163: RU, Nonterminal, was not found in name map.)
+(Residue 164: RG, Nonterminal, was not found in name map.)
+(Residue 165: RA, Nonterminal, was not found in name map.)
+(Residue 166: RA, Nonterminal, was not found in name map.)
+(Residue 167: RA, Nonterminal, was not found in name map.)
+(Residue 168: RG, Nonterminal, was not found in name map.)
+(Residue 169: RU, Nonterminal, was not found in name map.)
+(Residue 170: RA, Nonterminal, was not found in name map.)
+(Residue 171: RA, Nonterminal, was not found in name map.)
+(Residue 172: RC, Nonterminal, was not found in name map.)
+(Residue 173: RA, Nonterminal, was not found in name map.)
+(Residue 174: RG, Nonterminal, was not found in name map.)
+(Residue 175: RG, Nonterminal, was not found in name map.)
+(Residue 176: RG, Nonterminal, was not found in name map.)
+(Residue 177: RA3, Terminal/last, was not found in name map.)
+Joining RG5 - RC
+Joining RC - RC
+Joining RC - RC
+Joining RC - RG
+Joining RG - RG
+Joining RG - RA
+Joining RA - RU
+Joining RU - RA
+Joining RA - RG
+Joining RG - RC
+Joining RC - RU
+Joining RU - RC
+Joining RC - RA
+Joining RA - RG
+Joining RG - RU
+Joining RU - RC
+Joining RC - RG
+Joining RG - RG
+Joining RG - RU
+Joining RU - RA
+Joining RA - RG
+Joining RG - RA
+Joining RA - RG
+Joining RG - RC
+Joining RC - RA
+Joining RA - PSU
+Joining PSU - RC
+Joining RC - RA
+Joining RA - RG
+Joining RG - RA
+Joining RA - RC
+Joining RC - RU
+Joining RU - U8U
+Joining U8U - RU
+Joining RU - RU
+Joining RU - T6A
+  Added missing heavy atom: .R<T6A 37>.A<O13A 40>
+  Added missing heavy atom: .R<T6A 37>.A<O13B 41>
+Joining T6A - RA
+Joining RA - PSU
+Joining PSU - RC
+Joining RC - RU
+Joining RU - RG
+Joining RG - RA
+Joining RA - RG
+Joining RG - RG
+Joining RG - RG
+Joining RG - RU
+Joining RU - RC
+Joining RC - RC
+Joining RC - RA
+Joining RA - RG
+Joining RG - RG
+Joining RG - RG
+Joining RG - RU
+Joining RU - PSU
+Joining PSU - RC
+Joining RC - RA
+Joining RA - RA
+Joining RA - RG
+Joining RG - RU
+Joining RU - RC
+Joining RC - RC
+Joining RC - RC
+Joining RC - RU
+Joining RU - RG
+Joining RG - RU
+Joining RU - RU
+Joining RU - RC
+Joining RC - RG
+Joining RG - RG
+Joining RG - RG
+Joining RG - RC
+Joining RC - RG
+Joining RG - RC
+Joining RC - RC
+Joining RC - RA3
+Joining RG5 - RU
+Joining RU - RG
+Joining RG - RU
+Joining RU - RG
+Joining RG - RA
+Joining RA - RC
+Joining RC - RU
+Joining RU - RC
+Joining RC - RU
+Joining RU - RG
+Joining RG - RG
+Joining RG - RU
+Joining RU - RA
+Joining RA - RA
+Joining RA - RC
+Joining RC - RU
+Joining RU - RA
+Joining RA - RG
+Joining RG - RA
+Joining RA - RG
+Joining RG - RA
+Joining RA - RU
+Joining RU - RC
+Joining RC - RC
+Joining RC - RC
+Joining RC - RU
+Joining RU - RC
+Joining RC - RA
+Joining RA - RG
+Joining RG - RA
+Joining RA - RC
+Joining RC - RC
+Joining RC - RA
+Joining RA - RC
+Joining RC - RU
+Joining RU - RC
+Joining RC - RU
+Joining RU - RA
+Joining RA - RG
+Joining RG - RA
+Joining RA - RC
+Joining RC - RG
+Joining RG - RG
+Joining RG - RU
+Joining RU - RG
+Joining RG - RU
+Joining RU - RA
+Joining RA - RA
+Joining RA - RA
+Joining RA - RA
+Joining RA - RA
+Joining RA - RU
+Joining RU - RC
+Joining RC - RU
+Joining RU - RC
+Joining RC - RU
+Joining RU - RA
+Joining RA - RG
+Joining RG - RC
+Joining RC - RA
+Joining RA - RG
+Joining RG - RU
+Joining RU - RG
+Joining RG - RG
+Joining RG - RC
+Joining RC - RG
+Joining RG - RC
+Joining RC - RC
+Joining RC - RC
+Joining RC - RG
+Joining RG - RA
+Joining RA - RA
+Joining RA - RC
+Joining RC - RA
+Joining RA - RG
+Joining RG - RG
+Joining RG - RG
+Joining RG - RA
+Joining RA - RC
+Joining RC - RU
+Joining RU - RU
+Joining RU - RU
+Joining RU - RA
+Joining RA - RA
+Joining RA - RA
+Joining RA - RG
+Joining RG - RU
+Joining RU - RG
+Joining RG - RA
+Joining RA - RA
+Joining RA - RA
+Joining RA - RG
+Joining RG - RU
+Joining RU - RA
+Joining RA - RA
+Joining RA - RC
+Joining RC - RA
+Joining RA - RG
+Joining RG - RG
+Joining RG - RG
+Joining RG - RA3
+  total atoms in file: 5740
+  Leap added 6 missing atoms according to residue templates:
+       2 Heavy
+       4 H / lone pairs
+> saveamberparm aa mal1-trna-complex_vac.topo mal1-trna-complex_vac.coords
+Checking Unit.
+WARNING: There is a bond of 3.050494 angstroms between: 
+-------  .R<RG 175>.A<C1' 11> and .R<RG 175>.A<N9 13>
+WARNING: The unperturbed charge of the unit: -176.000200 is not zero.
+
+ -- ignoring the warnings.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-NA-C-S2
+        atoms are: N1 N3 C2 S2
+ ** Warning: No sp2 improper torsion term for  CT-H-N3-H
+        atoms are: CA HN N HN2
+ ** Warning: No sp2 improper torsion term for  CT-H-N3-CT
+        atoms are: CA HN N C
+ ** Warning: No sp2 improper torsion term for  CT-H-N3-CT
+        atoms are: CA HN2 N C
+ ** Warning: No sp2 improper torsion term for  H-H-N3-CT
+        atoms are: HN HN2 N C
+ ** Warning: No sp2 improper torsion term for  CA-CB-CB-NB
+        atoms are: C6 C4 C5 N7
+ ** Warning: No sp2 improper torsion term for  NC-CB-CB-N*
+        atoms are: N3 C5 C4 N9
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-C-CB-CB
+        atoms are: N7 C6 C5 C4
+ ** Warning: No sp2 improper torsion term for  N*-CB-CB-NC
+        atoms are: N9 C5 C4 N3
+ ** Warning: No sp2 improper torsion term for  NB-CA-CB-CB
+        atoms are: N7 C6 C5 C4
+ total 1023 improper torsions applied
+Building H-Bond parameters.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+ (no restraints)
+> quit
+	Quit

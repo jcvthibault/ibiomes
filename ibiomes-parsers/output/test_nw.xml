@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ibiomes>
+  <directory absolutePath="/home/juji/ibiomes/test/nwchem/water" name="water" parent="/home/juji/ibiomes/test/nwchem">
+    <AVUs>
+      <AVU id="SOFTWARE_NAME">NWChem</AVU>
+      <AVU id="FILE_TYPE">EXPERIMENT</AVU>
+      <AVU id="TASK_DESCRIPTION">H2O+ : STO-3G UHF geometry optimization</AVU>
+      <AVU id="METHOD">Quantum mechanics</AVU>
+      <AVU id="CALCULATION">Geometry optimization</AVU>
+      <AVU id="BOUNDARY_CONDITIONS">Non-periodic</AVU>
+      <AVU id="QM_BASIS_SET">sto-3g</AVU>
+      <AVU id="QM_BASIS_SET">6-31g**</AVU>
+      <AVU id="QM_METHOD_NAME">SCF</AVU>
+      <AVU id="QM_SPIN_MULTIPLICITY">0</AVU>
+      <AVU id="QM_TOTAL_MOLECULE_CHARGE">0</AVU>
+      <AVU id="MOLECULE_ATOMIC_WEIGHT">18.01528</AVU>
+      <AVU id="MOLECULE_ATOMIC_COMPOSITION">H:2 O:1</AVU>
+      <AVU id="MOLECULE_ATOMIC_COMPOSITION2">H[2]O</AVU>
+      <AVU id="MOLECULE_TYPE">Compound</AVU>
+      <AVU id="COUNT_ATOM">3</AVU>
+      <AVU id="COUNT_ION">0</AVU>
+      <AVU id="COUNT_SOLVENT">0</AVU>
+      <AVU id="TOPOLOGY_FILE_PATH">water.nw</AVU>
+      <AVU id="MAIN_3D_STRUCTURE_FILE">water_pme.out</AVU>
+    </AVUs>
+    <files>
+      <fileGroup format="NWChem input">
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/water_md.nw" format="NWChem input" modificationDate="02/03/12 14:38" name="water_md.nw" parent="/home/juji/ibiomes/test/nwchem/water" size="314">
+          <AVUs>
+            <AVU id="FILE_FORMAT">NWChem input</AVU>
+            <AVU id="METHOD">Molecular dynamics</AVU>
+            <AVU id="SOFTWARE_NAME">NWChem</AVU>
+            <AVU id="BOUNDARY_CONDITIONS">Non-periodic</AVU>
+          </AVUs>
+        </file>
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/water.nw" format="NWChem input" modificationDate="02/03/12 14:38" name="water.nw" parent="/home/juji/ibiomes/test/nwchem/water" size="480">
+          <AVUs>
+            <AVU id="FILE_FORMAT">NWChem input</AVU>
+            <AVU id="EXPERIMENT_DESCRIPTION">H2O+ : STO-3G UHF geometry optimization; H2O+ : 6-31g** UMP2 geometry optimization; H2O+ : 6-31g** UMP2 frequencies</AVU>
+            <AVU id="MOLECULE_ATOMIC_WEIGHT">18.01528</AVU>
+            <AVU id="MOLECULE_ATOMIC_COMPOSITION">H:2 O:1</AVU>
+            <AVU id="MOLECULE_ATOMIC_COMPOSITION2">H[2]O</AVU>
+            <AVU id="MOLECULE_TYPE">Compound</AVU>
+            <AVU id="COUNT_ATOM">3</AVU>
+            <AVU id="COUNT_ION">0</AVU>
+            <AVU id="COUNT_SOLVENT">0</AVU>
+            <AVU id="TASK_DESCRIPTION">H2O+ : STO-3G UHF geometry optimization</AVU>
+            <AVU id="METHOD">Quantum mechanics</AVU>
+            <AVU id="SOFTWARE_NAME">NWChem</AVU>
+            <AVU id="CALCULATION">Geometry optimization</AVU>
+            <AVU id="BOUNDARY_CONDITIONS">Non-periodic</AVU>
+            <AVU id="QM_BASIS_SET">sto-3g</AVU>
+            <AVU id="QM_BASIS_SET">6-31g**</AVU>
+            <AVU id="QM_METHOD_NAME">SCF</AVU>
+            <AVU id="QM_SPIN_MULTIPLICITY">0</AVU>
+            <AVU id="QM_TOTAL_MOLECULE_CHARGE">0</AVU>
+            <AVU id="TASK_DESCRIPTION">H2O+ : 6-31g** UMP2 geometry optimization</AVU>
+            <AVU id="QM_METHOD_NAME">MP2</AVU>
+            <AVU id="TASK_DESCRIPTION">H2O+ : 6-31g** UMP2 frequencies</AVU>
+            <AVU id="CALCULATION">Frequency calculations</AVU>
+          </AVUs>
+        </file>
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/waterp_md.nw" format="NWChem input" modificationDate="02/03/12 14:38" name="waterp_md.nw" parent="/home/juji/ibiomes/test/nwchem/water" size="488">
+          <AVUs>
+            <AVU id="FILE_FORMAT">NWChem input</AVU>
+            <AVU id="EXPERIMENT_DESCRIPTION">NWChem molecular dynamics</AVU>
+            <AVU id="TASK_DESCRIPTION">NWChem molecular dynamics</AVU>
+            <AVU id="METHOD">Molecular dynamics</AVU>
+            <AVU id="SOFTWARE_NAME">NWChem</AVU>
+            <AVU id="BOUNDARY_CONDITIONS">Non-periodic</AVU>
+          </AVUs>
+        </file>
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/water_pme.nw" format="NWChem input" modificationDate="02/03/12 14:38" name="water_pme.nw" parent="/home/juji/ibiomes/test/nwchem/water" size="405">
+          <AVUs>
+            <AVU id="FILE_FORMAT">NWChem input</AVU>
+            <AVU id="EXPERIMENT_DESCRIPTION">NWChem molecular dynamics</AVU>
+            <AVU id="TASK_DESCRIPTION">NWChem molecular dynamics</AVU>
+            <AVU id="METHOD">Molecular dynamics</AVU>
+            <AVU id="SOFTWARE_NAME">NWChem</AVU>
+            <AVU id="BOUNDARY_CONDITIONS">Non-periodic</AVU>
+          </AVUs>
+        </file>
+      </fileGroup>
+      <fileGroup format="NWChem output">
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/water_pme.out" format="NWChem output" modificationDate="02/03/12 14:38" name="water_pme.out" parent="/home/juji/ibiomes/test/nwchem/water" size="46574">
+          <AVUs>
+            <AVU id="FILE_FORMAT">NWChem output</AVU>
+          </AVUs>
+        </file>
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/waterp_md.out" format="NWChem output" modificationDate="02/03/12 14:38" name="waterp_md.out" parent="/home/juji/ibiomes/test/nwchem/water" size="38296">
+          <AVUs>
+            <AVU id="FILE_FORMAT">NWChem output</AVU>
+          </AVUs>
+        </file>
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/water_md.out" format="NWChem output" modificationDate="02/03/12 14:38" name="water_md.out" parent="/home/juji/ibiomes/test/nwchem/water" size="84831">
+          <AVUs>
+            <AVU id="FILE_FORMAT">NWChem output</AVU>
+          </AVUs>
+        </file>
+      </fileGroup>
+      <fileGroup format="NWChem restart">
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/water_pme.rst" format="NWChem restart" modificationDate="02/03/12 14:38" name="water_pme.rst" parent="/home/juji/ibiomes/test/nwchem/water" size="493094">
+          <AVUs>
+            <AVU id="FILE_FORMAT">NWChem restart</AVU>
+          </AVUs>
+        </file>
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/waterp_md.rst" format="NWChem restart" modificationDate="02/03/12 14:38" name="waterp_md.rst" parent="/home/juji/ibiomes/test/nwchem/water" size="73495">
+          <AVUs>
+            <AVU id="FILE_FORMAT">NWChem restart</AVU>
+          </AVUs>
+        </file>
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/water_md.rst" format="NWChem restart" modificationDate="02/03/12 14:38" name="water_md.rst" parent="/home/juji/ibiomes/test/nwchem/water" size="79229">
+          <AVUs>
+            <AVU id="FILE_FORMAT">NWChem restart</AVU>
+          </AVUs>
+        </file>
+      </fileGroup>
+      <fileGroup format="NWChem topology">
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/water.top" format="NWChem topology" modificationDate="02/03/12 14:38" name="water.top" parent="/home/juji/ibiomes/test/nwchem/water" size="1654">
+          <AVUs>
+            <AVU id="FILE_FORMAT">NWChem topology</AVU>
+          </AVUs>
+        </file>
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/waterp.top" format="NWChem topology" modificationDate="02/03/12 14:38" name="waterp.top" parent="/home/juji/ibiomes/test/nwchem/water" size="1823">
+          <AVUs>
+            <AVU id="FILE_FORMAT">NWChem topology</AVU>
+          </AVUs>
+        </file>
+      </fileGroup>
+      <fileGroup format="Unknown">
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/h2o_freq.b^-1" format="Unknown" modificationDate="02/03/12 14:38" name="h2o_freq.b^-1" parent="/home/juji/ibiomes/test/nwchem/water" size="240">
+          <AVUs>
+            <AVU id="FILE_FORMAT">Unknown</AVU>
+          </AVUs>
+        </file>
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/h2o_freq.p" format="Unknown" modificationDate="02/03/12 14:38" name="h2o_freq.p" parent="/home/juji/ibiomes/test/nwchem/water" size="96">
+          <AVUs>
+            <AVU id="FILE_FORMAT">Unknown</AVU>
+          </AVUs>
+        </file>
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/water_md.tst" format="Unknown" modificationDate="02/03/12 14:38" name="water_md.tst" parent="/home/juji/ibiomes/test/nwchem/water" size="1500">
+          <AVUs>
+            <AVU id="FILE_FORMAT">Unknown</AVU>
+          </AVUs>
+        </file>
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/h2o_freq.fd_ddipole" format="Unknown" modificationDate="02/03/12 14:38" name="h2o_freq.fd_ddipole" parent="/home/juji/ibiomes/test/nwchem/water" size="594">
+          <AVUs>
+            <AVU id="FILE_FORMAT">Unknown</AVU>
+          </AVUs>
+        </file>
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/waterp_md.tst" format="Unknown" modificationDate="02/03/12 14:38" name="waterp_md.tst" parent="/home/juji/ibiomes/test/nwchem/water" size="1500">
+          <AVUs>
+            <AVU id="FILE_FORMAT">Unknown</AVU>
+          </AVUs>
+        </file>
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/h2o_freq.nmode" format="Unknown" modificationDate="02/03/12 14:38" name="h2o_freq.nmode" parent="/home/juji/ibiomes/test/nwchem/water" size="736">
+          <AVUs>
+            <AVU id="FILE_FORMAT">Unknown</AVU>
+          </AVUs>
+        </file>
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/h2o_freq.hess" format="Unknown" modificationDate="02/03/12 14:38" name="h2o_freq.hess" parent="/home/juji/ibiomes/test/nwchem/water" size="990">
+          <AVUs>
+            <AVU id="FILE_FORMAT">Unknown</AVU>
+          </AVUs>
+        </file>
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/h2o_freq.zmat" format="Unknown" modificationDate="02/03/12 14:38" name="h2o_freq.zmat" parent="/home/juji/ibiomes/test/nwchem/water" size="48">
+          <AVUs>
+            <AVU id="FILE_FORMAT">Unknown</AVU>
+          </AVUs>
+        </file>
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/h2o_freq.drv.hess" format="Unknown" modificationDate="02/03/12 14:38" name="h2o_freq.drv.hess" parent="/home/juji/ibiomes/test/nwchem/water" size="96">
+          <AVUs>
+            <AVU id="FILE_FORMAT">Unknown</AVU>
+          </AVUs>
+        </file>
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/h2o_freq.b" format="Unknown" modificationDate="02/03/12 14:38" name="h2o_freq.b" parent="/home/juji/ibiomes/test/nwchem/water" size="240">
+          <AVUs>
+            <AVU id="FILE_FORMAT">Unknown</AVU>
+          </AVUs>
+        </file>
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/h2o_freq.movecs" format="Unknown" modificationDate="02/03/12 14:38" name="h2o_freq.movecs" parent="/home/juji/ibiomes/test/nwchem/water" size="11545">
+          <AVUs>
+            <AVU id="FILE_FORMAT">Unknown</AVU>
+          </AVUs>
+        </file>
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/h2o_freq.mp2nos" format="Unknown" modificationDate="02/03/12 14:38" name="h2o_freq.mp2nos" parent="/home/juji/ibiomes/test/nwchem/water" size="11545">
+          <AVUs>
+            <AVU id="FILE_FORMAT">Unknown</AVU>
+          </AVUs>
+        </file>
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/h2o_freq.c" format="Unknown" modificationDate="02/03/12 14:38" name="h2o_freq.c" parent="/home/juji/ibiomes/test/nwchem/water" size="96">
+          <AVUs>
+            <AVU id="FILE_FORMAT">Unknown</AVU>
+          </AVUs>
+        </file>
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/h2o_freq.db" format="Unknown" modificationDate="02/03/12 14:38" name="h2o_freq.db" parent="/home/juji/ibiomes/test/nwchem/water" size="834730">
+          <AVUs>
+            <AVU id="FILE_FORMAT">Unknown</AVU>
+          </AVUs>
+        </file>
+        <file absolutePath="/home/juji/ibiomes/test/nwchem/water/water_pme.tst" format="Unknown" modificationDate="02/03/12 14:38" name="water_pme.tst" parent="/home/juji/ibiomes/test/nwchem/water" size="1500">
+          <AVUs>
+            <AVU id="FILE_FORMAT">Unknown</AVU>
+          </AVUs>
+        </file>
+      </fileGroup>
+    </files>
+    <subdirectories/>
+  </directory>
+</ibiomes>

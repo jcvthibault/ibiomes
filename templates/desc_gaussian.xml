@@ -1,0 +1,33 @@
+<rules>
+  <!-- ======================================================================================== -->
+  <!-- General rules (any directory) -->
+  <!-- ======================================================================================== -->
+  <rule type="file" match="*.com" format="GAUSSIAN com" softwareContext="Gaussian">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="*.log" format="GAUSSIAN log" softwareContext="Gaussian">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="*.(rst|restart)" format="GAUSSIAN restart" softwareContext="Gaussian">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="*.chk" format="GAUSSIAN chk" softwareContext="Gaussian">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="*.pdb" format="PDB">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="*.csv" format="CSV">
+  	<metadata>
+  	</metadata>
+  </rule>
+  <rule type="file" match="*.(png|jpg|jpeg|gif|tif)" class="analysis">
+  	<metadata></metadata>
+  </rule>
+  
+</rules>

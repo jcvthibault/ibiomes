@@ -1,0 +1,114 @@
+
+=================================================================
+
+iBIOMES Lite - Integrated Biomolecular Simulations
+Copyright (C) 2014  Julien Thibault, University of Utah
+
+=================================================================
+
+Document outline:
+- Overview
+- License
+- Installation
+- Usage
+- Examples
+
+=================================================================
+OVERVIEW
+=================================================================
+
+iBIOMES Lite helps researchers keep track of their MD or QM experiments through 
+a simple web interface. This can be accessed by the owner of the data locally or 
+via the web if iBIOMES Lite is deployed in an environment that allows public HTML 
+access (e.g. public_html folder at CHPC).
+
+When a user publishes an experiment using the 'ibiomes-lite publish -i' command, 
+the experiment directory is parsed recursively by the program to automatically 
+generate metadata for the experiment and the file collection. The list of metadata 
+is stored at the root of the experiment directory in a .ibiomes.xml file. This 
+file is copied to the iBIOMES Lite web directory ($IBIOMES_LITE_WEBDIR) then 
+transformed into HTML through different XSLs.
+
+Local access:
+In your browser enter 'file://$IBIOMES_LITE_WEBDIR/index.html'
+Where $IBIOMES_LITE_WEBDIR is the absolute path to the iBIOMES Lite web directory.
+
+=================================================================
+LICENSE
+=================================================================
+
+iBIOMES - Integrated Biomolecular Simulations
+Copyright (C) 2014  Julien Thibault, University of Utah
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+=================================================================
+INSTALLATION
+=================================================================
+
+System requirements:
+- Java 1.7+
+- Optional: Web server / public HTML folder
+
+Steps:
+1. Untar ibiomes-lite.tar.gz
+2. Set $IBIOMES_HOME to point to the extracted folder
+3. Add $IBIOMES_HOME/scripts to your $PATH
+4. Copy the lite-web folder to your web directory (e.g. ~/public_html)
+5. Set $IBIOMES_LITE_WEBDIR to point the new lite-web folder
+
+=================================================================
+USAGE
+=================================================================
+
+Use the 'publish' command to generate web content for an experiment:
+
+ibiomes-lite publish -i experiment-dir [-s software] [-x xml-descriptor] [-f]
+ibiomes-lite publish -u
+
+[-u] Reload published experiments.
+[-i experiment-dir] Path to the root of the experiment directory
+[-s software] Name of the software package used to run the simulation/calculations (e.g. amber, nwchem)
+[-x xml-descriptor] Path to the XML descriptor that specifies metadata generation rules
+[-f] Force update of the experiment descriptor if this experiment is already published in iBIOMES Lite
+
+Use the 'clean' command to remove content (XML and HTML) from iBIOMES Lite website. 
+XML descriptors at the experiment directory level are conserved, and can be published again. 
+If the -i option is not specified then all experiments are removed.
+
+ibiomes-lite clean
+ibiomes-lite clean -i experiment-dir
+
+[-i experiment-dir] Path to the experiment to remove from iBIOMES Lite
+
+
+=================================================================
+EXAMPLES
+=================================================================
+
+The $IBIOMES_LITE_WEBDIR/examples/experiments/ directory contains examples of file collections that can 
+be published into iBIOMES. To publish an experiment type:
+
+ibiomes-lite publish -i $IBIOMES_LITE_WEBDIR/examples/experiments/[experimnent_name] -s [software]
+
+For example:
+ibiomes-lite publish -i $IBIOMES_LITE_WEBDIR/examples/experiments/amber1 -s amber
+ibiomes-lite publish -i $IBIOMES_LITE_WEBDIR/examples/experiments/nwchem1 -s nwchem
+ibiomes-lite publish -i $IBIOMES_LITE_WEBDIR/examples/experiments/gaussian1 -s gaussian
+
+
+The $IBIOMES_LITE_WEBDIR/examples/rules/ directory contains examples of descriptor files for metadata 
+generation rules. You can use these descriptors when publishing data into iBIOMES Lite.
+For example:
+ibiomes-lite publish -i $IBIOMES_LITE_WEBDIR/examples/experiments/amber1 -s amber -x $IBIOMES_LITE_WEBDIR/examples/rules/desc_amber.xml

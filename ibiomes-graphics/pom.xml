@@ -1,0 +1,169 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>edu.utah.bmi.ibiomes</groupId>
+	<artifactId>ibiomes-graphics</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>iBIOMES graphics tools API</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring.version>3.1.0.RELEASE</spring.version>
+	</properties>
+	
+	<repositories>
+
+		<!-- CDK -->
+		<repository>
+			<id>ambit.repository.thirdparty</id>
+			<name>ambit.repository.thirdparty</name>
+			<url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/thirdparty</url> 
+			<releases> <enabled>true</enabled></releases>
+			<snapshots>
+				<enabled>false</enabled> 
+				<updatePolicy>never</updatePolicy><checksumPolicy>fail</checksumPolicy> 
+			</snapshots>
+		</repository>
+		<!-- CDK - JChemPaint -->
+		<repository>
+			<id>ambit.repository.ucc</id>
+			<name>ambit.repository.ucc</name>
+			<url>http://ambit.uni-plovdiv.bg:8083/nexus/content/repositories/ucc-repo</url> 
+			<releases> <enabled>true</enabled></releases>
+			<snapshots>
+				<enabled>false</enabled> 
+				<updatePolicy>never</updatePolicy><checksumPolicy>fail</checksumPolicy> 
+			</snapshots>
+		</repository>
+		
+	</repositories>
+	<dependencies>
+	
+		<!-- CDK -->
+		<dependency>
+			<groupId>org.openscience.cdk</groupId>
+			<artifactId>cdk-core</artifactId> 
+			<version>1.4.16</version>
+		</dependency>
+		<dependency>
+		<groupId>org.openscience.cdk</groupId> 
+			<artifactId>cdk-data</artifactId>
+			<version>1.4.16</version>
+		</dependency> 
+		<dependency>
+			<groupId>org.openscience.cdk</groupId>
+			<artifactId>cdk-pdb</artifactId> 
+			<version>1.4.16</version> </dependency>
+		<dependency>
+			<groupId>org.openscience.cdk</groupId> 
+			<artifactId>cdk-formula</artifactId>
+			<version>1.4.16</version>
+		</dependency>
+		<dependency> <groupId>org.openscience.cdk</groupId>
+			<artifactId>cdk-io</artifactId> 
+			<version>1.4.16</version>
+		</dependency>
+		<dependency> <groupId>org.openscience.cdk</groupId>
+			<artifactId>cdk-builder3d</artifactId> 
+			<version>1.4.16</version>
+		</dependency>
+		<dependency>
+			<groupId>org.openscience.cdk</groupId>
+			<artifactId>cdk-sdg</artifactId> 
+			<version>1.4.16</version>
+		</dependency>
+		<dependency>
+		  <groupId>org.openscience</groupId>
+		  <artifactId>jchempaint</artifactId>
+		  <version>9</version>
+		</dependency>
+		
+		<!-- ==================== JUnit ====================== -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- ==================== Logging ====================== -->
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+
+		<!-- ==================== SPRING ====================== -->
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- ==================== 3rd party JARs ====================== -->
+		<dependency>
+			<groupId>org.jfree</groupId>
+			<artifactId>chart</artifactId>
+			<version>1.0.14</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jfree</groupId>
+			<artifactId>common</artifactId>
+			<version>1.0.17</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+			          <excludes>
+			            <exclude>*.properties</exclude>
+			          </excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

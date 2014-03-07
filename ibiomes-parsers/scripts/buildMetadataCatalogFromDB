@@ -1,0 +1,14 @@
+#!/bin/bash
+
+ARGS=("$@")
+NARGS=${#ARGS[@]} 
+IBIOMES_JAR=$IBIOMES_HOME/lib/ibiomes-local-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+
+USAGE="Usage: buildMetadataCatalogFromDB <db-host> <db-schema> <db-username> <db-password> [db-port]"
+
+if [ $NARGS -lt 4 ]; then
+	echo $USAGE
+	exit
+fi
+
+java -classpath $IBIOMES_JAR edu.utah.bmi.ibiomes.catalog.cli.DictionaryBuilder ${ARGS[@]}
