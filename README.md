@@ -17,4 +17,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 Documentation:
-http://ibiomes.chpc.utah.edu/ibiomes-web/
+http://ibiomes.chpc.utah.edu/mediawiki/
