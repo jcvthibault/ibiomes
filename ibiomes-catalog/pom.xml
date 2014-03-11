@@ -13,6 +13,19 @@
 		<spring.version>3.1.0.RELEASE</spring.version>
 		<lucene.version>4.1.0</lucene.version>
 	</properties>
+
+	  <developers>
+	  	<developer>
+		  <id>jthibault</id>
+		  <name>Julien Thibault</name>
+		  <url>http://www.irods.org</url>
+		  <organization>University of Utah</organization>
+		  <organizationUrl>http://ibiomes.chpc.utah.edu/mediawiki/</organizationUrl>
+		  <roles>
+		  	<role>developer</role>
+		  </roles>
+	  	</developer>
+	  </developers>
 	
 	<dependencies>
 		

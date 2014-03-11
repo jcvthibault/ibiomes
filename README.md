@@ -1,6 +1,7 @@
 
 iBIOMES (Integrated BIOMolEcular Simulations) core API
-Copyright (C) 2013  Julien Thibault
+
+Copyright (C) 2014  Julien Thibault
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
