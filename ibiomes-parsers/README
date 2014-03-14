@@ -2,7 +2,7 @@
 iBIOMES - Integrated Biomolecular Simulations
 Copyright (C) 2014  Julien Thibault, University of Utah
 
-http://ibiomes.chpc.utah.edu/
+http://ibiomes.chpc.utah.edu/mediawiki/
 
 
 =================================================================
@@ -36,7 +36,6 @@ Maven is required (http://maven.apache.org/)
 1. Install 3rd party JARs:
 ------------------------------------------------
 - NetCDF (http://www.unidata.ucar.edu/software/netcdf-java/)
-- Apache Lucene (http://lucene.apache.org/core/)
 
 mvn install:install-file -Dfile=<path-to-file> -DgroupId=<group-id> \
     -DartifactId=<artifact-id> -Dversion=<version> -Dpackaging=<packaging>
@@ -49,8 +48,6 @@ mvn install:install-file -Dfile=<path-to-file> -DgroupId=<group-id> \
 Examples:
 mvn install:install-file -Dfile=ibiomes-core/lib/netcdfAll-4.3.jar -DgroupId=ucar \
     -DartifactId=nc2 -Dversion=4.3 -Dpackaging=jar
-mvn install:install-file -Dfile=ibiomes-core/lib/lucene-core-3.6.2.jar -DgroupId=org.apache \
-    -DartifactId=lucene -Dversion=3.6.2 -Dpackaging=jar
 
 ------------------------------------------------
 2. Build and package
