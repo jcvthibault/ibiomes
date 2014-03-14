@@ -7,5 +7,13 @@
 # ignore all target directories
 target/
 
-# ignore all files ending with ~
+# ignore temp files ~
 *~ 
+*.swp
+
+# eclipse specific git ignore
+.project
+.metadata
+.classpath
+.settings/
+.loadpath
