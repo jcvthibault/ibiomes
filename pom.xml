@@ -21,7 +21,7 @@
 	<properties>
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 		<spring.version>3.1.0.RELEASE</spring.version>
-		<jargon.version>3.3.2-beta2</jargon.version>
+		<jargon.version>3.3.2-RELEASE</jargon.version>
 	</properties>
 
   <developers>
@@ -53,16 +53,15 @@
 		</repository>
 		<!-- ==================== iRODS (Jargon) ====================== -->
 		<repository>
-			<id>renci.repository</id>
-			<name>renci.repository</name>
-			<url>http://ci-dev.renci.org/nexus/content/repositories/public</url>
+			<id>dice.repository</id>
+			<name>dice.repository</name>
+			<url>https://raw.github.com/DICE-UNC/DICE-Maven/master/releases</url>
+			<!-- <url>https://raw.github.com/DICE-UNC/DICE-Maven/master/snapshots</url> -->
 			<releases>
 				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-				<checksumPolicy>warn</checksumPolicy>
 			</releases>
 			<snapshots>
-				<enabled>true</enabled>
+				<enabled>false</enabled>
 				<updatePolicy>always</updatePolicy>
 				<checksumPolicy>warn</checksumPolicy>
 			</snapshots>

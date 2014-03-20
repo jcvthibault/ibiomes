@@ -47,14 +47,6 @@
 			<artifactId>jargon-httpstream</artifactId>
 		</dependency>
 		
-		<!-- ======================== OWL API (for SKOS API) ======================= -->
-		
-		<!-- <dependency>
-		    <groupId>net.sourceforge.owlapi</groupId>
-		    <artifactId>owlapi-distribution</artifactId>
-		    <version>3.4.5</version>
-		</dependency> -->
-		
 		<!-- ==================== MISC ====================== -->
 
 		<dependency>
