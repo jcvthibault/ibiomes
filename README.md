@@ -21,5 +21,5 @@ Documentation:
 http://ibiomes.chpc.utah.edu/mediawiki/
 
 To compile (without testing):
-maven install -DskipTests
+  mvn install -DskipTests
 
