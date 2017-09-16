@@ -53,18 +53,6 @@
 			<artifactId>ibiomes-grid</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-        
-         <!-- ==================== 3rd party JARs ======================  -->
-		<dependency>
-			<groupId>org.jfree</groupId>
-			<artifactId>chart</artifactId>
-			<version>1.0.14</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jfree</groupId>
-			<artifactId>common</artifactId>
-			<version>1.0.17</version>
-		</dependency>
 		            
 		<!-- ========================  Apache Commons Upload ======================= --> 
 		<dependency>
