@@ -25,6 +25,8 @@ import javax.xml.xpath.*;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
+import net.sf.saxon.lib.NamespaceConstant;
+
 /**
  * XPath reader
  * @author Julien Thibault, University of Utah
@@ -43,8 +45,10 @@ public class XPathReader {
     
     public XPathReader(Document xmlDoc) {
     	xmlDocument = xmlDoc;            
-        xPath =  XPathFactory.newInstance().
-		newXPath();
+        //xPath =  XPathFactory.newInstance().newXPath();
+    	net.sf.saxon.xpath.XPathFactoryImpl xPathFactory = new net.sf.saxon.xpath.XPathFactoryImpl();
+        xPath = xPathFactory.newXPath();
+        
     }
     
     private void initObjects(){        

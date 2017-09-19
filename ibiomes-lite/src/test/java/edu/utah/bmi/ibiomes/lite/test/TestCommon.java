@@ -7,6 +7,7 @@ package edu.utah.bmi.ibiomes.lite.test;
  */
 public class TestCommon {
 	
-	public final static String TEST_DATA_DIR = System.getenv("IBIOMES_HOME") + "/test";
-	public final static String TEST_IBIOMES_CONFIG_FILE = TEST_DATA_DIR + "/config/ibiomes-parser.properties";
+	public final static String TEST_DATA_DIR = System.getenv("IBIOMES_HOME") + "/examples";
+	public final static String TEST_WEB_DIR = System.getenv("IBIOMES_HOME") + "/ibiomes-lite/lite-web";
+	public final static String TEST_IBIOMES_CONFIG_FILE = System.getenv("IBIOMES_HOME") + "/config/ibiomes-parser.properties";
 }

@@ -51,7 +51,7 @@ public class XmlTransformer {
 		Source docSource = new StreamSource(new StringReader(doc));
 		
 		//transform XML to HTML
-		TransformerFactory tFactory = TransformerFactory.newInstance();
+		net.sf.saxon.TransformerFactoryImpl tFactory = new net.sf.saxon.TransformerFactoryImpl();
 		Transformer transformer = tFactory.newTransformer(new javax.xml.transform.stream.StreamSource(xslUrl));
 		transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
 		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
@@ -79,7 +79,7 @@ public class XmlTransformer {
         Source docSource = new StreamSource(new StringReader(xml));
 		
 		//transform XML to HTML
-		TransformerFactory tFactory = TransformerFactory.newInstance();
+		net.sf.saxon.TransformerFactoryImpl tFactory = new net.sf.saxon.TransformerFactoryImpl();
 		Transformer transformer = tFactory.newTransformer();
 		transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
 		transformer.setOutputProperty(OutputKeys.INDENT, "yes");

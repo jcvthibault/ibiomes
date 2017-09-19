@@ -86,13 +86,13 @@ public class IBIOMESLiteManager {
 
 	public final static String PATH_FOLDER_SEPARATOR  = (Utils.isWindows() ? "\\" : "/");
 	public final static String PATH_FOLDER_SEPARATOR_REGEX  = (Utils.isWindows() ? "\\\\" : "/");
-	public final static String IBIOMES_LITE_VERSION = "11-12-2013";
+	public final static String IBIOMES_LITE_VERSION = "09-16-2017";
 	
-	private final static String IBIOMES_EXPERIMENT_SUMMARY_XSL_PATH 	= "style"+PATH_FOLDER_SEPARATOR+"experiment_summary.xsl";
-	private final static String IBIOMES_EXPERIMENT_WORKFLOW_XSL_PATH 	= "style"+PATH_FOLDER_SEPARATOR+"experiment_workflow.xsl";
-	private final static String IBIOMES_EXPERIMENT_FILE_TREE_XSL_PATH 	= "style"+PATH_FOLDER_SEPARATOR+"experiment_files.xsl";
-	private final static String IBIOMES_EXPERIMENT_RUNS_XSL_PATH 		= "style"+PATH_FOLDER_SEPARATOR+"experiment_runs.xsl";
-	private final static String IBIOMES_EXPERIMENT_SET_XSL_PATH 		= "style"+PATH_FOLDER_SEPARATOR+"experiment_list.xsl";
+	private final static String IBIOMES_EXPERIMENT_SUMMARY_XSL_PATH   = "style"+PATH_FOLDER_SEPARATOR+"experiment_summary.xsl";
+	private final static String IBIOMES_EXPERIMENT_WORKFLOW_XSL_PATH  = "style"+PATH_FOLDER_SEPARATOR+"experiment_workflow.xsl";
+	private final static String IBIOMES_EXPERIMENT_FILE_TREE_XSL_PATH = "style"+PATH_FOLDER_SEPARATOR+"experiment_files.xsl";
+	private final static String IBIOMES_EXPERIMENT_RUNS_XSL_PATH      = "style"+PATH_FOLDER_SEPARATOR+"experiment_runs.xsl";
+	private final static String IBIOMES_EXPERIMENT_SET_XSL_PATH       = "style"+PATH_FOLDER_SEPARATOR+"experiment_list.xsl";
 	
 	private final static String IBIOMES_LITE_EXPERIMENT_DIR = "experiments";
 	private final static String IBIOMES_LITE_XML_INDEX 		= "ibiomes.compiled.xml";
@@ -267,14 +267,15 @@ public class IBIOMESLiteManager {
 				Files.createDirectory(Paths.get(liteDirPath));
 		
 				//copy experiment XML descriptors
-				String newFileTreeXmlPath = liteDirPath + "/index.xml";
-				String newWorkflowXmlPath = liteDirPath + "/index-details.xml";
+				String newFileTreeXmlPath = liteDirPath + PATH_FOLDER_SEPARATOR + "index.xml";
+				String newWorkflowXmlPath = liteDirPath + PATH_FOLDER_SEPARATOR + "index-details.xml";
 				Files.copy(Paths.get(experimentDesc.getAbsolutePath()), Paths.get(newFileTreeXmlPath), StandardCopyOption.REPLACE_EXISTING);
 				Files.copy(Paths.get(experimentDirPath + PATH_FOLDER_SEPARATOR + IBIOMES_DESC_WORKFLOW_FILE_NAME), Paths.get(newWorkflowXmlPath), StandardCopyOption.REPLACE_EXISTING);
 				
 				//pull data files (csv, pdb, and images)
 				String dataDirPath = liteDirPath + PATH_FOLDER_SEPARATOR + IBIOMES_LITE_DATA_DIR;
 				Files.createDirectory(Paths.get(dataDirPath));
+				newFileTreeXmlPath = "file:///" + newFileTreeXmlPath.replaceAll("\\\\", "/");
 				this.pullDataFilesForExperiment(newFileTreeXmlPath, newWorkflowXmlPath, liteDirPath + PATH_FOLDER_SEPARATOR + IBIOMES_LITE_DATA_DIR);
 				
 				//generate HTML pages
@@ -529,8 +530,8 @@ public class IBIOMESLiteManager {
 		if (outputXmlWorkflowFile.exists())
 			outputXmlWorkflowFile.delete();
 		
-		TransformerFactory transformerFactory = TransformerFactory.newInstance();
-		Transformer transformer = transformerFactory.newTransformer();
+		net.sf.saxon.TransformerFactoryImpl tFactory = new net.sf.saxon.TransformerFactoryImpl();
+		Transformer transformer = tFactory.newTransformer();
 		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 		transformer.setOutputProperty(OutputKeys.ENCODING, "ISO-8859-1");
 		transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
@@ -821,8 +822,8 @@ public class IBIOMESLiteManager {
 		XMLConverter converter = new XMLConverter();
 		Document doc = converter.convertExperiment(experimentFolder);
 		DOMSource source = new DOMSource(doc);
-		TransformerFactory transformerFactory = TransformerFactory.newInstance();
-		Transformer transformer = transformerFactory.newTransformer();
+		net.sf.saxon.TransformerFactoryImpl tFactory = new net.sf.saxon.TransformerFactoryImpl();
+		Transformer transformer = tFactory.newTransformer();
 		transformer.setOutputProperty(OutputKeys.INDENT, "no");
 		//transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
 		File outputXMLFile = new File(outputFilePath);
@@ -846,8 +847,7 @@ public class IBIOMESLiteManager {
 
 		DOMSource source = new DOMSource(doc);
 		//transform XML to HTML
-		System.setProperty("javax.xml.transform.TransformerFactory", "net.sf.saxon.TransformerFactoryImpl");
-		TransformerFactory tFactory = TransformerFactory.newInstance();
+		net.sf.saxon.TransformerFactoryImpl tFactory = new net.sf.saxon.TransformerFactoryImpl();
 		Transformer transformer = tFactory.newTransformer(new javax.xml.transform.stream.StreamSource(xslUrl));
 		//transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
 		transformer.setOutputProperty(OutputKeys.INDENT, "no");

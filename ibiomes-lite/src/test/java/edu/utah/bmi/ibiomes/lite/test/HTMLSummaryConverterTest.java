@@ -35,11 +35,11 @@ public class HTMLSummaryConverterTest {
 
 	private final Logger logger = Logger.getLogger(HTMLSummaryConverterTest.class);
 	
-	private final String testLiteWebPath = TestCommon.TEST_DATA_DIR + "/lite/lite-web/";
+	private final String testLiteWebPath = TestCommon.TEST_WEB_DIR;
 	
-	private final String xmlDescriptorAmber    = TestCommon.TEST_DATA_DIR + "/project_descriptor/desc_amber.xml";
-	private final String xmlDescriptorGaussian = TestCommon.TEST_DATA_DIR + "/project_descriptor/desc_gaussian.xml";
-	private final String xmlDescriptorAmberQMMM = TestCommon.TEST_DATA_DIR + "/project_descriptor/desc_amber_andy.xml";
+	private final String xmlDescriptorAmber     = System.getenv("IBIOMES_HOME") + "/templates/desc_amber.xml";
+	private final String xmlDescriptorGaussian  = System.getenv("IBIOMES_HOME") + "/templates/desc_gaussian.xml";
+	private final String xmlDescriptorAmberQMMM = System.getenv("IBIOMES_HOME") + "/templates/desc_amber_andy.xml";
 
 	String[] gaussianCollections = {
 			TestCommon.TEST_DATA_DIR + "/gaussian/acac", 

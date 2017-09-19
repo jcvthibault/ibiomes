@@ -33,11 +33,9 @@ import edu.utah.bmi.ibiomes.lite.IBIOMESLiteManager;
 public class PdfConverterTest {
 
 	private final Logger logger = Logger.getLogger(PdfConverterTest.class);
-	
-	public final static String TEST_DATA_DIR = System.getenv("IBIOMES_HOME") + "/test";
 
-	private final String xmlDescriptorAmber    = TestCommon.TEST_DATA_DIR + "/project_descriptor/desc_amber.xml";
-	private final String xmlDescriptorGaussian = TestCommon.TEST_DATA_DIR + "/project_descriptor/desc_gaussian.xml";
+	private final String xmlDescriptorAmber     = System.getenv("IBIOMES_HOME") + "/templates/desc_amber.xml";
+	private final String xmlDescriptorGaussian  = System.getenv("IBIOMES_HOME") + "/templates/desc_gaussian.xml";
 	
 	String[] gaussianCollections = {
 			TestCommon.TEST_DATA_DIR + "/gaussian/acac", 

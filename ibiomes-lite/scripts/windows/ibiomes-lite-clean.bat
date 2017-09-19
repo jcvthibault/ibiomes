@@ -15,7 +15,7 @@ set JAVA_VERSION=%JAVA_VERSION:~14,1%%JAVA_VERSION:~16,1%
 IF %JAVA_VERSION% LSS 17 (
 	GOTO ErrorJava
 )
-set IBIOMES_CLASSES=%IBIOMES_HOME%\lib\ibiomes-lite-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+set IBIOMES_CLASSES=%IBIOMES_HOME%\ibiomes-lite\target\ibiomes-lite-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 java -classpath %IBIOMES_CLASSES% edu.utah.bmi.ibiomes.lite.cli.CommandClean %*
 
 GOTO end

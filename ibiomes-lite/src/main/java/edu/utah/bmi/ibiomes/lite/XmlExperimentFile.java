@@ -29,7 +29,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.XPathConstants;
@@ -109,8 +108,8 @@ public class XmlExperimentFile {
 	{
 		Document doc = this.parseDocument();
 		//XSLT transformation
-		TransformerFactory transformerFactory = TransformerFactory.newInstance();
-		Transformer transformer = transformerFactory.newTransformer(new javax.xml.transform.stream.StreamSource(xslPath));
+		net.sf.saxon.TransformerFactoryImpl tFactory = new net.sf.saxon.TransformerFactoryImpl();
+		Transformer transformer = tFactory.newTransformer(new javax.xml.transform.stream.StreamSource(xslPath));
 		//format output
 		transformer.setOutputProperty(OutputKeys.INDENT, "no");
 		//transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");

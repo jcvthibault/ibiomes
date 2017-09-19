@@ -22,7 +22,6 @@ import java.io.File;
 
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
@@ -45,7 +44,7 @@ import edu.utah.bmi.ibiomes.parse.chem.ExperimentFactory;
 public class HTMLDetailsConverterTest {
 
 	private final Logger logger = Logger.getLogger(HTMLDetailsConverterTest.class);
-	private final String xslUrl = TestCommon.TEST_DATA_DIR + "/lite/lite-web/style/ibiomes_experiment_details.xsl";
+	private final String xslUrl = TestCommon.TEST_WEB_DIR + "/style/experiment_summary.xsl";
 	
 	String[] gaussianCollections = {
 			TestCommon.TEST_DATA_DIR + "/gaussian/acac", 
@@ -92,7 +91,7 @@ public class HTMLDetailsConverterTest {
 			TestCommon.TEST_DATA_DIR + "/namd/namd-amber"};
 	
 	public HTMLDetailsConverterTest() throws Exception{
-		File dir = new File(TestCommon.TEST_DATA_DIR + "/lite/lite-web/experiments/test");
+		File dir = new File(TestCommon.TEST_WEB_DIR + "experiments/test");
 		if (!dir.exists())
 			dir.mkdir();
 		IBIOMESConfiguration config = IBIOMESConfiguration.getInstance(TestCommon.TEST_IBIOMES_CONFIG_FILE, true);
@@ -110,11 +109,11 @@ public class HTMLDetailsConverterTest {
 				Document doc = converter.convertExperiment(exp);
 				DOMSource source = new DOMSource(doc);
 				//transform XML to HTML
-				TransformerFactory tFactory = TransformerFactory.newInstance();
+				net.sf.saxon.TransformerFactoryImpl tFactory = new net.sf.saxon.TransformerFactoryImpl();
 				Transformer transformer = tFactory.newTransformer(new javax.xml.transform.stream.StreamSource(xslUrl));
 				transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
 				transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-				File outputHTMLFile = new File(TestCommon.TEST_DATA_DIR + "/lite/lite-web/experiments/test/gaussian_" + exp.getName()+ ".html");
+				File outputHTMLFile = new File(TestCommon.TEST_WEB_DIR + "/experiments/test/gaussian_" + exp.getName()+ ".html");
 				StreamResult result = new StreamResult(outputHTMLFile);
 				transformer.transform(source, result);
 			}
@@ -136,11 +135,11 @@ public class HTMLDetailsConverterTest {
 				Document doc = converter.convertExperiment(exp);
 				DOMSource source = new DOMSource(doc);
 				//transform XML to HTML
-				TransformerFactory tFactory = TransformerFactory.newInstance();
+				net.sf.saxon.TransformerFactoryImpl tFactory = new net.sf.saxon.TransformerFactoryImpl();
 				Transformer transformer = tFactory.newTransformer(new javax.xml.transform.stream.StreamSource(xslUrl));
 				transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
 				transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-				File outputHTMLFile = new File(TestCommon.TEST_DATA_DIR + "/lite/lite-web/experiments/test/nwchem_" + exp.getName()+ ".html");
+				File outputHTMLFile = new File(TestCommon.TEST_WEB_DIR + "/experiments/test/nwchem_" + exp.getName()+ ".html");
 				StreamResult result = new StreamResult(outputHTMLFile);
 				transformer.transform(source, result);
 			}
@@ -163,11 +162,11 @@ public class HTMLDetailsConverterTest {
 				Document doc = converter.convertExperiment(exp);
 				DOMSource source = new DOMSource(doc);
 				//transform XML to HTML
-				TransformerFactory tFactory = TransformerFactory.newInstance();
+				net.sf.saxon.TransformerFactoryImpl tFactory = new net.sf.saxon.TransformerFactoryImpl();
 				Transformer transformer = tFactory.newTransformer(new javax.xml.transform.stream.StreamSource(xslUrl));
 				transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
 				transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-				File outputHTMLFile = new File(TestCommon.TEST_DATA_DIR + "/lite/lite-web/experiments/test/nwchem_" + exp.getName()+ ".html");
+				File outputHTMLFile = new File(TestCommon.TEST_WEB_DIR + "/experiments/test/nwchem_" + exp.getName()+ ".html");
 				StreamResult result = new StreamResult(outputHTMLFile);
 				transformer.transform(source, result);
 			}
@@ -189,11 +188,11 @@ public class HTMLDetailsConverterTest {
 				Document doc = converter.convertExperiment(exp);
 				DOMSource source = new DOMSource(doc);
 				//transform XML to HTML
-				TransformerFactory tFactory = TransformerFactory.newInstance();
+				net.sf.saxon.TransformerFactoryImpl tFactory = new net.sf.saxon.TransformerFactoryImpl();
 				Transformer transformer = tFactory.newTransformer(new javax.xml.transform.stream.StreamSource(xslUrl));
 				transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
 				transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-				File outputHTMLFile = new File(TestCommon.TEST_DATA_DIR + "/lite/lite-web/experiments/test/gamess_" + exp.getName()+ ".html");
+				File outputHTMLFile = new File(TestCommon.TEST_WEB_DIR + "/experiments/test/gamess_" + exp.getName()+ ".html");
 				StreamResult result = new StreamResult(outputHTMLFile);
 				transformer.transform(source, result);
 			}
@@ -214,11 +213,11 @@ public class HTMLDetailsConverterTest {
 				Document doc = converter.convertExperiment(exp);
 				DOMSource source = new DOMSource(doc);
 				//transform XML to HTML
-				TransformerFactory tFactory = TransformerFactory.newInstance();
+				net.sf.saxon.TransformerFactoryImpl tFactory = new net.sf.saxon.TransformerFactoryImpl();
 				Transformer transformer = tFactory.newTransformer(new javax.xml.transform.stream.StreamSource(xslUrl));
 				transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
 				transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-				File outputHTMLFile = new File(TestCommon.TEST_DATA_DIR + "/lite/lite-web/experiments/test/amber_" + exp.getName()+ ".html");
+				File outputHTMLFile = new File(TestCommon.TEST_WEB_DIR + "/experiments/test/amber_" + exp.getName()+ ".html");
 				StreamResult result = new StreamResult(outputHTMLFile);
 				transformer.transform(source, result);
 			}
@@ -240,11 +239,11 @@ public class HTMLDetailsConverterTest {
 				Document doc = converter.convertExperiment(exp);
 				DOMSource source = new DOMSource(doc);
 				//transform XML to HTML
-				TransformerFactory tFactory = TransformerFactory.newInstance();
+				net.sf.saxon.TransformerFactoryImpl tFactory = new net.sf.saxon.TransformerFactoryImpl();
 				Transformer transformer = tFactory.newTransformer(new javax.xml.transform.stream.StreamSource(xslUrl));
 				transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
 				transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-				File outputHTMLFile = new File(TestCommon.TEST_DATA_DIR + "/lite/lite-web/experiments/test/gromacs_" + exp.getName()+ ".html");
+				File outputHTMLFile = new File(TestCommon.TEST_WEB_DIR + "/experiments/test/gromacs_" + exp.getName()+ ".html");
 				StreamResult result = new StreamResult(outputHTMLFile);
 				transformer.transform(source, result);
 			}
