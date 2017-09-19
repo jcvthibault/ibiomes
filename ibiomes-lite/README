@@ -62,9 +62,11 @@ System requirements:
 - Optional: Web server / public HTML folder
 
 Steps:
-1. Untar ibiomes-lite.tar.gz
-2. Set $IBIOMES_HOME to point to the extracted folder
-3. Add $IBIOMES_HOME/scripts to your $PATH
+1. Get a copy of the ibiomes source code
+2. Compile ibiomes project using 'mvn install -DskipTests' for the root folder ibiomes/ (you can also run this from ibiomes/ibiomes-lite 
+   if you only need this component)
+2. Set $IBIOMES_HOME to point to the root of the project folder
+3. Add $IBIOMES_HOME/ibiomes-lite/scripts to your $PATH
 4. Copy the lite-web folder to your web directory (e.g. ~/public_html)
 5. Set $IBIOMES_LITE_WEBDIR to point the new lite-web folder
 
@@ -103,12 +105,13 @@ be published into iBIOMES. To publish an experiment type:
 ibiomes-lite-publish -i $IBIOMES_LITE_WEBDIR/examples/experiments/[experimnent_name] -s [software]
 
 For example:
-ibiomes-lite-publish -i $IBIOMES_LITE_WEBDIR/examples/experiments/amber1 -s amber
-ibiomes-lite-publish -i $IBIOMES_LITE_WEBDIR/examples/experiments/nwchem1 -s nwchem
-ibiomes-lite-publish -i $IBIOMES_LITE_WEBDIR/examples/experiments/gaussian1 -s gaussian
+ibiomes-lite-publish -i $IBIOMES_HOME/examples/amber1 -s amber
+ibiomes-lite-publish -i $IBIOMES_HOME/examples/nwchem1 -s nwchem
+ibiomes-lite-publish -i $IBIOMES_HOME/examples/gaussian1 -s gaussian
 
 
 The $IBIOMES_LITE_WEBDIR/examples/rules/ directory contains examples of descriptor files for metadata 
 generation rules. You can use these descriptors when publishing data into iBIOMES Lite.
 For example:
-ibiomes-lite-publish -i $IBIOMES_LITE_WEBDIR/examples/experiments/amber1 -s amber -x $IBIOMES_LITE_WEBDIR/examples/rules/desc_amber.xml
+ibiomes-lite-publish -i $IBIOMES_HOME/examples/amber1 -s amber -x $IBIOMES_HOME/templates/desc_amber.xml
+
