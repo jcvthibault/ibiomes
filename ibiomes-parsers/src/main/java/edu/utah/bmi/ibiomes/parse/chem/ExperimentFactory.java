@@ -110,13 +110,15 @@ public class ExperimentFactory {
 	 * @param softwareContext Software context for parsing
 	 * @param descriptorFile Parsing rule descriptor file
 	 * @param listeners Parsing progress listeners
+	 * @param externalURL External URL
 	 * @return List of parsed folders
 	 * @throws Exception 
 	 */
 	private List<ExperimentFolder> parseFileDirectory(
 			String softwareContext, 
 			DirectoryStructureDescriptor descriptorFile,
-			List<IBIOMESListener> listeners) throws Exception
+			List<IBIOMESListener> listeners,
+			String externalURL) throws Exception
 	{
 		//load default software context if necessary
 		if (softwareContext==null && this.defaultConfig!=null){
@@ -131,7 +133,7 @@ public class ExperimentFactory {
 		logger.info("Parsing directory " + this.localPath);
 		
 		//parse files
-		DirectoryParser parser = new DirectoryParser(localPath, descriptorFile, listeners);		
+		DirectoryParser parser = new DirectoryParser(localPath, descriptorFile, listeners, externalURL);		
 		this.directory = parser.parseDirectories(softwareContext);
 		this.experimentFolders = new ArrayList<ExperimentFolder>();
 
@@ -187,8 +189,24 @@ public class ExperimentFactory {
 			DirectoryStructureDescriptor descriptorFile,
 			List<IBIOMESListener> listeners) throws Exception
 	{	
+		return parseDirectoryForMetadata(softwareContext, descriptorFile, listeners, "");
+	}
+	/**
+	 * Parse collection of files to generate experiment metadata
+	 * @param softwareContext Software context
+	 * @param descriptorFile Descriptor file containing parsing rules
+	 * @param listeners Listeners to follow parsing progress
+	 * @return Parsed directory
+	 * @throws Exception
+	 */
+	public LocalDirectory parseDirectoryForMetadata(
+			String softwareContext, 
+			DirectoryStructureDescriptor descriptorFile,
+			List<IBIOMESListener> listeners,
+			String externalURL) throws Exception
+	{	
 		if (this.experimentFolders==null)
-			this.parseFileDirectory(softwareContext, descriptorFile, listeners);
+			this.parseFileDirectory(softwareContext, descriptorFile, listeners, externalURL);
 
 		logger.info("Generating metadata for " + this.localPath);
 		
@@ -220,10 +238,11 @@ public class ExperimentFactory {
 	public Experiment parseDirectoryForExperimentWorkflow(
 			String softwareContext, 
 			DirectoryStructureDescriptor descriptorFile,
-			List<IBIOMESListener> listeners) throws Exception
+			List<IBIOMESListener> listeners,
+			String externalURL) throws Exception
 	{
 		if (this.experimentFolders==null)
-			this.parseFileDirectory(softwareContext, descriptorFile, listeners);
+			this.parseFileDirectory(softwareContext, descriptorFile, listeners, externalURL);
 
 		logger.info("Generating experiment workflow for " + this.localPath);
 		
@@ -239,7 +258,7 @@ public class ExperimentFactory {
 		
 		return experiment;
 	}
-	
+
 	/**
 	 * Parse collection of files to generate metadata and representation of virtual experiment workflow
 	 * @param softwareContext Software context
@@ -251,15 +270,31 @@ public class ExperimentFactory {
 	public ExperimentFolder parseDirectoryForExperimentWorkflowAndMetadata(
 			String softwareContext, 
 			DirectoryStructureDescriptor descriptorFile,
-			List<IBIOMESListener> listeners) throws Exception 
+			List<IBIOMESListener> listeners) throws Exception {
+		return parseDirectoryForExperimentWorkflowAndMetadata(softwareContext, descriptorFile, listeners, "");
+	}
+	/**
+	 * Parse collection of files to generate metadata and representation of virtual experiment workflow
+	 * @param softwareContext Software context
+	 * @param descriptorFile Descriptor file containing parsing rules
+	 * @param listeners Listeners to follow parsing progress
+	 * @return Experiment and associated directory
+	 * @throws Exception 
+	 */
+	public ExperimentFolder parseDirectoryForExperimentWorkflowAndMetadata(
+			String softwareContext, 
+			DirectoryStructureDescriptor descriptorFile,
+			List<IBIOMESListener> listeners,
+			String externalURL) throws Exception 
 	{
-		LocalDirectory directory = this.parseDirectoryForMetadata(softwareContext, descriptorFile, listeners);
-		Experiment experiment = this.parseDirectoryForExperimentWorkflow(softwareContext, descriptorFile, listeners);
-		ExperimentFolder folder = new ExperimentFolder(directory,softwareContext,descriptorFile);
+		LocalDirectory directory = this.parseDirectoryForMetadata(softwareContext, descriptorFile, listeners, externalURL);
+		Experiment experiment = this.parseDirectoryForExperimentWorkflow(softwareContext, descriptorFile, listeners, externalURL);
+		ExperimentFolder folder = new ExperimentFolder(directory, softwareContext, descriptorFile);
 		if (experiment!=null){
 			folder.setProcessGroups(experiment.getProcessGroups());
 			folder.setName(experiment.getName());
 			folder.setDescription(experiment.getDescription());
+			folder.setExternalURL(externalURL);
 		}
 		return folder;
 	}

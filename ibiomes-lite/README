@@ -63,12 +63,13 @@ System requirements:
 
 Steps:
 1. Get a copy of the ibiomes source code
-2. Compile ibiomes project using 'mvn install -DskipTests' for the root folder ibiomes/ (you can also run this from ibiomes/ibiomes-lite 
-   if you only need this component)
-2. Set $IBIOMES_HOME to point to the root of the project folder
+2. Compile ibiomes project
+    a. Go to ibiomes projet root folder (or ibiomes-lite/ folder if you only want to build this component)
+    b. Run 'mvn install -DskipTests'
+2. Set $IBIOMES_HOME to point to the root of the iBIOMES project folder
 3. Add $IBIOMES_HOME/ibiomes-lite/scripts to your $PATH
-4. Copy the lite-web folder to your web directory (e.g. ~/public_html)
-5. Set $IBIOMES_LITE_WEBDIR to point the new lite-web folder
+4. Copy the folder ibiomes-lite/lite-web/ to your web directory (e.g. ~/public_html/)
+5. Set $IBIOMES_LITE_WEBDIR to point the new lite-web folder ((e.g. ~/public_html/lite-web/)
 
 =================================================================
 USAGE
@@ -76,13 +77,14 @@ USAGE
 
 Use the 'publish' command to generate web content for an experiment:
 
-ibiomes-lite-publish -i experiment-dir [-s software] [-x xml-descriptor] [-f]
+ibiomes-lite-publish -i experiment-dir [-s software] [-x xml-descriptor] [-url external-url] [-f]
 ibiomes-lite-publish -u
 
 [-u] Reload published experiments.
 [-i experiment-dir] Path to the root of the experiment directory
 [-s software] Name of the software package used to run the simulation/calculations (e.g. amber, nwchem)
 [-x xml-descriptor] Path to the XML descriptor that specifies metadata generation rules
+[-url external-url] URL to experiment directory (if the files are already available online)
 [-f] Force update of the experiment descriptor if this experiment is already published in iBIOMES Lite
 
 Use the 'clean' command to remove content (XML and HTML) from iBIOMES Lite website. 
@@ -99,16 +101,19 @@ ibiomes-lite-clean -i experiment-dir
 EXAMPLES
 =================================================================
 
-The $IBIOMES_LITE_WEBDIR/examples/experiments/ directory contains examples of file collections that can 
+The $IBIOMES_HOME/examples/ directory contains examples of file collections that can 
 be published into iBIOMES. To publish an experiment type:
 
-ibiomes-lite-publish -i $IBIOMES_LITE_WEBDIR/examples/experiments/[experimnent_name] -s [software]
+ibiomes-lite-publish -i $IBIOMES_HOME/examples/[experiment_name] -s [software]
 
 For example:
 ibiomes-lite-publish -i $IBIOMES_HOME/examples/amber1 -s amber
 ibiomes-lite-publish -i $IBIOMES_HOME/examples/nwchem1 -s nwchem
 ibiomes-lite-publish -i $IBIOMES_HOME/examples/gaussian1 -s gaussian
 
+If the data you are trying to publish is already available online as an HTML directory, you can use the -url option to make all the files downloadable through the iBIOMES Lite web interface.
+For example, if your data is already copied to a public HTML folder such as ~/public_html/experiment1/, and available online as http://myinstitution/~thibault/experiment1/ then you can publish your experiment with:
+ibiomes-lite-publish -i ~/public_html/experiment1/ -s amber -url http://myinstitution/~thibault/experiment1/
 
 The $IBIOMES_LITE_WEBDIR/examples/rules/ directory contains examples of descriptor files for metadata 
 generation rules. You can use these descriptors when publishing data into iBIOMES Lite.

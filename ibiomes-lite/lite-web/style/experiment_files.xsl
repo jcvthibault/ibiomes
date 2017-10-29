@@ -165,6 +165,11 @@ function selectDirectory(id){
 				</xsl:call-template>
 			</xsl:attribute>
 			<h3><xsl:text>Files in </xsl:text><i><span style="color:#65944A"><xsl:value-of select="../@name"/><xsl:text>/</xsl:text></span></i></h3>
+			<xsl:choose><xsl:when test="../@externalURL and ../@externalURL!=''">
+				<p>Browse directory at <a class="link" target="_blank">
+				    <xsl:attribute name="href"><xsl:value-of select="../@externalURL"/></xsl:attribute>
+				    <xsl:value-of select="../@externalURL"/></a></p>
+			</xsl:when></xsl:choose>
 			<p></p>
 			<div style="width:700px;">
 				<xsl:attribute name="id">
@@ -185,7 +190,20 @@ function selectDirectory(id){
 				    			<xsl:sort select="@name"/>
 				    			<tr>
 				    				<td class="first">
+				    				    <a class="link">
+				    				    	<xsl:attribute name="href">
+				    					    <xsl:choose>
+				    					    <xsl:when test="@externalURL and @externalURL!=''"><xsl:value-of select="@externalURL"/></xsl:when>
+				    					    <xsl:otherwise>#</xsl:otherwise>
+				    					    </xsl:choose>
+				    						</xsl:attribute>
 					    				<img alt="file">
+					    					<xsl:attribute name="title">
+					    						<xsl:choose>
+					    						<xsl:when test="@externalURL and @externalURL!=''"><xsl:value-of select="@externalURL"/></xsl:when>
+					    					    <xsl:otherwise>File is not available for download</xsl:otherwise>
+					    					    </xsl:choose>
+					    					</xsl:attribute>
 					    					<xsl:choose>
 							    				<xsl:when test="($format = 'PDB') or ($format = 'GROMACS gro') or ($format = 'GAUSSIAN log') or ($format = 'NWChem output') or ($format = 'XYZ') or ($format = 'CML') or ($format = 'SDF')">
 							    					<xsl:attribute name="src"><xsl:text>../../images/icons/mol_small.png</xsl:text></xsl:attribute>
@@ -200,8 +218,7 @@ function selectDirectory(id){
 							    					<xsl:attribute name="src"><xsl:text>../../images/icons/full_page_small.png</xsl:text></xsl:attribute>
 							    				</xsl:otherwise>
 							    			</xsl:choose>
-					    					<xsl:attribute name="title"><xsl:value-of select="@relativePath"/></xsl:attribute>
-					    				</img>
+					    				</img></a>
 					    			</td>
 				    				<td><xsl:value-of select="@name"/></td>
 				    				<td style="text-align:right"><xsl:value-of select="format-number( round(@size div 1000), '#')"/><xsl:text> KB</xsl:text></td>

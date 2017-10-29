@@ -99,12 +99,13 @@ public class CommandPublish extends AbstractCLICommandParse {
 
 			//add new experiment
 			IBIOMESLiteManager lite = IBIOMESLiteManager.getInstance();
-			lite.publishExperiment(localPath, software, xmlDescPath, isForceDescUpdate, depth );
+			lite.publishExperiment(localPath, software, xmlDescPath, isForceDescUpdate, depth, externalUrl);
 			System.out.println("Experiment "+localPath+" successfully published to iBIOMES Lite");
 		}
 		catch (Exception e){
 			System.out.println("ERROR: the program did not terminate correctly:");
 			System.out.println(e.getMessage());
+			e.printStackTrace();
 			if (IBIOMESConfiguration.getInstance().isOutputErrorStackToConsole()){
 				e.printStackTrace();
 			}

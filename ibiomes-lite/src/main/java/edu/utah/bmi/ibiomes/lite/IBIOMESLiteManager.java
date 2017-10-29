@@ -208,7 +208,7 @@ public class IBIOMESLiteManager {
 	 * @throws Exception 
 	 */
 	public void publishExperiment(String experimentDirPath) throws Exception{
-		publishExperiment(experimentDirPath, null, null, false, 0);
+		publishExperiment(experimentDirPath, null, null, false, 0, null);
 	}
 
 	/**
@@ -219,7 +219,19 @@ public class IBIOMESLiteManager {
 	 * @throws Exception
 	 */
 	public void publishExperiment(String experimentDirPath, String software, String xmlDescPath, boolean isForceDescUpdate) throws Exception {
-		this.publishExperiment(experimentDirPath, software, xmlDescPath, isForceDescUpdate, 0);
+		this.publishExperiment(experimentDirPath, software, xmlDescPath, isForceDescUpdate, 0, null);
+	}
+	
+	/**
+	 * Publish experiment. Parse corresponding directory if descriptor files does not exist yet.
+	 * @param experimentDirPath Path to experiment directory
+	 * @param software Software context
+	 * @param xmlDescPath Path to XML file containing metadata generation rules
+	 * @param depth 
+	 * @throws Exception
+	 */
+	public void publishExperiment(String experimentDirPath, String software, String xmlDescPath, boolean isForceDescUpdate, int depth) throws Exception {
+		this.publishExperiment(experimentDirPath, software, xmlDescPath, isForceDescUpdate, depth, null);
 	}
 	
 	/**
@@ -230,7 +242,7 @@ public class IBIOMESLiteManager {
 	 * @param depth 
 	 * @throws Exception 
 	 */
-	public void publishExperiment(String experimentDirPath, String software, String xmlDescPath, boolean isForceDescUpdate, int depth) throws Exception
+	public void publishExperiment(String experimentDirPath, String software, String xmlDescPath, boolean isForceDescUpdate, int depth, String externalUrl) throws Exception
 	{
 		Locker experimentLocker = null;
 		Locker webdirLocker = null;
@@ -244,7 +256,7 @@ public class IBIOMESLiteManager {
 				File experimentDesc = new File(experimentDirPath + PATH_FOLDER_SEPARATOR + IBIOMES_DESC_FILE_TREE_FILE_NAME);
 				if (!experimentDesc.exists() || isForceDescUpdate){
 					//parse directory
-					this.parse(experimentDirPath, software, xmlDescPath, depth);
+					this.parse(experimentDirPath, software, xmlDescPath, depth, externalUrl);
 				}
 				else{
 					if (outputToConsole)
@@ -255,7 +267,7 @@ public class IBIOMESLiteManager {
 					System.out.println("Wating for other users to finish publishing...");
 				isLocked = webdirLocker.waitAndLock();
 				
-				//update XML file representing experiment list
+				//update XML file with list of experiments
 				XmlExperimentFile experimentXml = new XmlExperimentFile(experimentDesc.getAbsolutePath());
 				int id = experimentListXml.addNewExperiment(experimentXml);
 				experimentListXml.saveXml();
@@ -332,6 +344,19 @@ public class IBIOMESLiteManager {
 	 * @throws Exception
 	 */
 	public ExperimentFolder parse(String experimentDirPath, String software, String xmlDescPath, int depth) throws Exception{
+		return this.parse(experimentDirPath, software, xmlDescPath, depth, null);
+	}
+	
+	/**
+	 * Parse experiment directory and generate XML file
+	 * @param experimentDirPath Path to experiment directory
+	 * @param software Software context
+	 * @param xmlDescPath Path to XML file containing metadata generation rules
+	 * @param depth 
+	 * @param externalUrl
+	 * @throws Exception
+	 */
+	public ExperimentFolder parse(String experimentDirPath, String software, String xmlDescPath, int depth, String externalUrl) throws Exception{
 		//read descriptor file if exists
 		DirectoryStructureDescriptor desc = null; 
 		if (xmlDescPath != null && xmlDescPath.length()!=0){
@@ -353,8 +378,8 @@ public class IBIOMESLiteManager {
 			listeners = new ArrayList<IBIOMESListener>();
 			listeners.add((IBIOMESListener)new DirectoryParsingProgressBar(nFiles, "Parsing file"));
 		}
-		//parse	directory	
-		experimentFolder = expFactory.parseDirectoryForExperimentWorkflowAndMetadata( software, desc, listeners );
+		//parse	directory
+		experimentFolder = expFactory.parseDirectoryForExperimentWorkflowAndMetadata( software, desc, listeners, externalUrl);
 		//create XML descriptor
 		if (outputToConsole)
 			System.out.println("Saving experiment file tree descriptor ("+IBIOMESLiteManager.IBIOMES_DESC_FILE_TREE_FILE_NAME+")...");

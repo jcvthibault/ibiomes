@@ -48,6 +48,7 @@ public class Experiment
 	protected String publisher;
 	protected String publicationDate;
 	protected String description;
+	protected String externalURL;
 	protected String owner;
 	protected String rootDirectoryPath;
 	protected Long timestamp;
@@ -151,6 +152,14 @@ public class Experiment
 		return this.fileDirectory.getAbsolutePath();
 	}
 
+	public void setExternalURL(String externalUrl) {
+		this.externalURL = externalUrl;
+	}
+	
+	@XmlAttribute
+	public String getExternalURL() {
+		return this.externalURL;
+	}
 	/**
 	 * Get list of experiment process groups
 	 * @return list of experiment process groups

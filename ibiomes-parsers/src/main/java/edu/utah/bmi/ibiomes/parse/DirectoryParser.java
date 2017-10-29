@@ -40,6 +40,7 @@ public class DirectoryParser {
 
 	protected String name;
 	protected String rootDirectoryPath;
+	protected String externalURL;
 	protected String description;
 	protected DirectoryStructureDescriptor parserRuleSet;
 	private LocalFileFactory factory;
@@ -51,7 +52,7 @@ public class DirectoryParser {
 	 * @throws Exception
 	 */
 	public DirectoryParser(String rootDirectoryPath) throws Exception {
-		initCollection(rootDirectoryPath, null, null);
+		initCollection(rootDirectoryPath, null, null, null);
 	}
 
 	/**
@@ -61,7 +62,7 @@ public class DirectoryParser {
 	 * @throws Exception
 	 */
 	public DirectoryParser(String rootDirectoryPath, DirectoryStructureDescriptor descriptorFile) throws Exception{
-		initCollection(rootDirectoryPath, descriptorFile, null);
+		initCollection(rootDirectoryPath, descriptorFile, null, null);
 	}
 
 	/**
@@ -72,16 +73,30 @@ public class DirectoryParser {
 	 * @throws Exception
 	 */
 	public DirectoryParser(String rootDirectoryPath, DirectoryStructureDescriptor descriptorFile, List<IBIOMESListener> listeners) throws Exception{
-		initCollection(rootDirectoryPath, descriptorFile, listeners);
+		initCollection(rootDirectoryPath, descriptorFile, listeners, null);
+	}
+
+	/**
+	 * 
+	 * @param rootDirectoryPath Path to the root directory that needs to be parsed
+	 * @param descriptorFile Parsing rule file
+	 * @param listeners Listener to follow parsing progress
+	 * @param externalURL External URL to directory
+	 * @throws Exception
+	 */
+	public DirectoryParser(String rootDirectoryPath, DirectoryStructureDescriptor descriptorFile, List<IBIOMESListener> listeners, String externalURL) throws Exception{
+		initCollection(rootDirectoryPath, descriptorFile, listeners, externalURL);
 	}
 	
 	private void initCollection(
 			String localPath, 
 			DirectoryStructureDescriptor descriptorFile,
-			List<IBIOMESListener> listeners) throws Exception
+			List<IBIOMESListener> listeners,
+			String externalURL) throws Exception
 	{
 		File file = new File(localPath);
 		this.rootDirectoryPath = file.getCanonicalPath();
+		this.externalURL = externalURL;
 		this.name = rootDirectoryPath.substring(localPath.lastIndexOf('/')+1);
 		this.listeners = listeners;
 		this.parserRuleSet = descriptorFile;
@@ -105,6 +120,14 @@ public class DirectoryParser {
 		return this.name;
 	}
 
+	/**
+	 * Get externalURL
+	 * @return External URL
+	 */
+	public String getExternalURL(){
+		return this.externalURL;
+	}
+	
 	/**
 	 * Get description
 	 * @return Directory description
@@ -132,7 +155,6 @@ public class DirectoryParser {
 		File dir = new File(this.rootDirectoryPath);
 		String canonicalPath = dir.getCanonicalPath();
 		String relativePathFromTop = canonicalPath.substring(this.rootDirectoryPath.length(), canonicalPath.length());
-		
 		if (dir.exists() && dir.isDirectory())
 		{
 			return this.parseDirectoryRecursive(canonicalPath, relativePathFromTop, softwareContext);
@@ -159,6 +181,17 @@ public class DirectoryParser {
 		logger.info("Parsing directory '"+relativePathFromTop+"'");
 		LocalDirectoryImpl parsedDirectory = new LocalDirectoryImpl(canonicalPath, relativePathFromTop);
 		parsedDirectory.setSoftwareContext(softwareContext);
+
+		if (this.externalURL != null) {
+			String dirName = parsedDirectory.getName();
+			int idx = dirName.indexOf("/");
+			if (idx == -1) {
+				parsedDirectory.setExternalURL(this.externalURL);
+			}
+			else {
+				parsedDirectory.setExternalURL(this.externalURL + "/" + parsedDirectory.getName().substring(idx+1));
+			}
+		}
 		
 		String[] files = dir.list();
 		for (int f=0; f<files.length; f++)
@@ -187,9 +220,10 @@ public class DirectoryParser {
 						String canonicalFilePath = canonicalPath + "/" + filePath;
 						String relativeFilePath = "";
 						if (relativePathFromTop != null && relativePathFromTop.length()>0){
-							relativeFilePath = relativePathFromTop + "/"; 
+							relativeFilePath = relativePathFromTop + "/";
 						}
 						relativeFilePath += filePath;
+						
 						String fileFormat = null;
 						String fileDescription = null;
 						MetadataAVUList fileExtendedAttributes = null;
@@ -222,6 +256,10 @@ public class DirectoryParser {
 							
 							//add relative path
 							localFile.setRelativePathFromProjectRoot(canonicalFilePath.substring(this.rootDirectoryPath.length() + 1));
+
+							if (externalURL != null) { 
+								localFile.setExternalURL(externalURL + "/" + localFile.getRelativePathFromProjectRoot());
+							}
 	
 							//add file to directory
 							if (!parsedDirectory.getFilesByFormat().containsKey(localFile.getFormat())){

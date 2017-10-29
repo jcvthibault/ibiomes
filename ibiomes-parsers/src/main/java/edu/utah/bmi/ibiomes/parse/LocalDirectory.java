@@ -62,6 +62,18 @@ public interface LocalDirectory {
 	 * @return Publication date
 	 */
 	public String getPublicationDate() ;
+
+	/**
+	 * Set external URL from which the data an be directly accessed
+	 * @param externalURL URL
+	 */
+	public void setExternalURL(String externalURL);
+	
+	/**
+	 * Get external URL from which the data an be directly accessed
+	 * @return URL
+	 */
+	public String getExternalURL() ;
 	
 	/**
 	 * Get files
@@ -162,5 +174,5 @@ public interface LocalDirectory {
 	 * @throws Exception
 	 */
 	public void storeToHTML() throws Exception;
-	
+
 }

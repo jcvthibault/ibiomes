@@ -36,6 +36,7 @@ public abstract class AbstractCLICommandParse extends CLICommand implements Comm
 	protected final static String markerSoftware = "-s";
 	protected final static String markerDepthIndependentGroups = "-depth";
 	protected final static String markerXmlDesc = "-x";
+	protected final static String markerExternalURL = "-url";
 	protected final static String markerREMDGrouping = "-remd";
 	protected final static String markerSilent = "--silent";
 	
@@ -44,6 +45,7 @@ public abstract class AbstractCLICommandParse extends CLICommand implements Comm
 	protected String software = null;
 	protected String outputFormat = null;
 	protected String xmlDescPath = null;
+	protected String externalUrl = null;
 	protected int depth = 0;
 	protected String remdGrouping = null;
 	protected boolean outputToConsole = true;
@@ -69,6 +71,12 @@ public abstract class AbstractCLICommandParse extends CLICommand implements Comm
 				markerXmlDesc, 
 				"xml-descriptor", 
 				"Path to the XML descriptor defining the parsing rules", 
+				true, 
+				true));
+		this.arguments.put(markerExternalURL, new CLICommandArgument(
+				markerExternalURL, 
+				"external-url", 
+				"URL that points to root dir of eperiment (use only if directory is already available online)", 
 				true, 
 				true));
 		this.arguments.put(markerDepthIndependentGroups, new CLICommandArgument(
@@ -128,6 +136,12 @@ public abstract class AbstractCLICommandParse extends CLICommand implements Comm
 		    	if (args.length>i+1)
 		    		xmlDescPath = args[i+1];
 		    	else this.throwErrorMissingArgument(markerXmlDesc);
+		    	i++;
+			}
+		    else if (markerExternalURL.equals(args[i])) {
+		    	if (args.length>i+1)
+		    		externalUrl = args[i+1];
+		    	else this.throwErrorMissingArgument(markerExternalURL);
 		    	i++;
 			} 
 		    else if (markerSilent.equals(args[i])) {

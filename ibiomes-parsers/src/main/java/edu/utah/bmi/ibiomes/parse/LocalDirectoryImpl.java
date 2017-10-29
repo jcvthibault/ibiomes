@@ -74,6 +74,7 @@ public class LocalDirectoryImpl implements LocalDirectory {
 	protected String softwareContext;
 	protected String publisher;
 	protected String publicationDate;
+	protected String externalUrl;
 	
 	protected LocalDirectoryImpl(){	
 	}
@@ -87,7 +88,7 @@ public class LocalDirectoryImpl implements LocalDirectory {
 	public LocalDirectoryImpl(
 			String absolutePath, 
 			String relativePathFromTop) throws Exception {
-		initCollection(absolutePath, relativePathFromTop, null, null, null);
+		initCollection(absolutePath, relativePathFromTop, null, null, null, null);
 	}
 
 	/**
@@ -101,7 +102,7 @@ public class LocalDirectoryImpl implements LocalDirectory {
 			String absolutePath, 
 			String relativePathFromTop, 
 			String softwareContext) throws Exception{
-		initCollection(absolutePath, relativePathFromTop, softwareContext, null, null);
+		initCollection(absolutePath, relativePathFromTop, softwareContext, null, null, null);
 	}
 	
 	/**
@@ -117,7 +118,7 @@ public class LocalDirectoryImpl implements LocalDirectory {
 			String relativePathFromTop, 
 			String softwareContext, 
 			MetadataAVUList metadata) throws Exception{
-		initCollection(absolutePath, relativePathFromTop, softwareContext, null, null);
+		initCollection(absolutePath, relativePathFromTop, softwareContext, null, null, null);
 	}
 	
 	/**
@@ -135,7 +136,26 @@ public class LocalDirectoryImpl implements LocalDirectory {
 			String softwareContext, 
 			MetadataAVUList metadata,
 			DirectoryStructureDescriptor parserRuleSet) throws Exception{
-		initCollection(absolutePath, relativePathFromTop, softwareContext, null, parserRuleSet);
+		initCollection(absolutePath, relativePathFromTop, softwareContext, null, parserRuleSet, null);
+	}
+
+	/**
+	 * Constructor
+	 * @param absolutePath
+	 * @param relativePathFromTop
+	 * @param softwareContext
+	 * @param metadata
+	 * @param parserRuleSet Parser rule descriptor
+	 * @throws Exception
+	 */
+	protected LocalDirectoryImpl(
+			String absolutePath, 
+			String relativePathFromTop, 
+			String softwareContext, 
+			MetadataAVUList metadata,
+			DirectoryStructureDescriptor parserRuleSet,
+			String externalUrl) throws Exception{
+		initCollection(absolutePath, relativePathFromTop, softwareContext, null, parserRuleSet, externalUrl);
 	}
 	
 	private void initCollection(
@@ -143,7 +163,8 @@ public class LocalDirectoryImpl implements LocalDirectory {
 			String relativePathFromTop,
 			String softwareContext, 
 			MetadataAVUList metadata,
-			DirectoryStructureDescriptor parserRuleSet) throws Exception
+			DirectoryStructureDescriptor parserRuleSet,
+			String externalUrl) throws Exception
 	{
 		if (metadata != null)
 			this.metadata = metadata;
@@ -156,6 +177,7 @@ public class LocalDirectoryImpl implements LocalDirectory {
 		this.name = localPath.substring(localPath.lastIndexOf(IBIOMESConfiguration.PATH_FOLDER_SEPARATOR)+1);
 
 		this.softwareContext = softwareContext;
+		this.externalUrl = externalUrl;
 		this.parserRuleSet = parserRuleSet;
 		this.files = new HashMap<String, ArrayList<LocalFile>>();
 		this.subdirectories = new ArrayList<LocalDirectory>();
@@ -342,7 +364,16 @@ public class LocalDirectoryImpl implements LocalDirectory {
 	public void setRelativePathFromTop(String relativePath) {
 		this.relativePathFromTop = relativePath;
 	}
-	
+
+	@XmlAttribute
+	public String getExternalURL() {
+		return externalUrl;
+	}
+
+	public void setExternalURL(String externalUrl) {
+		this.externalUrl = externalUrl;
+	}
+		
 	@XmlAttribute
 	public String getPublisher() {
 		return publisher;
@@ -543,9 +574,9 @@ public class LocalDirectoryImpl implements LocalDirectory {
 		
 		//get XML representation
 		this.getXmlRepresentation(this, xmlDocument, rootElement);
-		
-		TransformerFactory transformerFactory = TransformerFactory.newInstance();
-		Transformer transformer = transformerFactory.newTransformer();
+
+		net.sf.saxon.TransformerFactoryImpl tFactory = new net.sf.saxon.TransformerFactoryImpl();
+		Transformer transformer = tFactory.newTransformer();
 		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 		transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
 		DOMSource source = new DOMSource(xmlDocument);
@@ -568,6 +599,7 @@ public class LocalDirectoryImpl implements LocalDirectory {
 		dirElement.setAttribute("publisher", collection.getPublisher());
 		dirElement.setAttribute("publicationDate", collection.getPublicationDate());
 		dirElement.setAttribute("parent", collection.getParent());
+		dirElement.setAttribute("externalURL", collection.getExternalURL());
 		
 		JAXBContext contextObj = JAXBContext.newInstance(MetadataAVUList.class);
 	    Marshaller marshallerObj = contextObj.createMarshaller();
@@ -590,6 +622,7 @@ public class LocalDirectoryImpl implements LocalDirectory {
 				fileNode.setAttribute("absolutePath", file.getCanonicalPath());
 				fileNode.setAttribute("parent", file.getParent());
 				fileNode.setAttribute("relativePath", file.getRelativePathFromProjectRoot());
+				fileNode.setAttribute("externalURL", file.getExternalURL());
 				fileNode.setAttribute("name", file.getName());
 				fileNode.setAttribute("size", String.valueOf(file.length()));
 				SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yy HH:mm");
@@ -646,8 +679,8 @@ public class LocalDirectoryImpl implements LocalDirectory {
 		//get XML representation
 		this.getXmlRepresentation(this, xmlDocument, rootElement);
 		//XSLT transformation
-		TransformerFactory transformerFactory = TransformerFactory.newInstance();
-		Transformer transformer = transformerFactory.newTransformer(new javax.xml.transform.stream.StreamSource(xslUrl));
+		net.sf.saxon.TransformerFactoryImpl tFactory = new net.sf.saxon.TransformerFactoryImpl();
+		Transformer transformer = tFactory.newTransformer(new javax.xml.transform.stream.StreamSource(xslUrl));
 		//format output
 		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 		transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");

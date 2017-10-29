@@ -148,15 +148,15 @@ public class CommandXML extends AbstractCLICommandParse {
 				listeners.add((IBIOMESListener)new DirectoryParsingProgressBar(nFiles, "Parsing file"));
 			}
 			//parse
-			exp = expFactory.parseDirectoryForExperimentWorkflow(software, desc, listeners);
+			exp = expFactory.parseDirectoryForExperimentWorkflow(software, desc, listeners, externalUrl);
 
 			//generate XML
 			if (outputToConsole)
 				System.out.println("Generating XML document...");
 			XMLConverter converter = new XMLConverter();
 			Document doc = converter.convertExperiment(exp);
-			TransformerFactory transformerFactory = TransformerFactory.newInstance();
-			Transformer transformer = transformerFactory.newTransformer();
+			net.sf.saxon.TransformerFactoryImpl tFactory = new net.sf.saxon.TransformerFactoryImpl();
+			Transformer transformer = tFactory.newTransformer();
 			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 			transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
 			DOMSource source = new DOMSource(doc);

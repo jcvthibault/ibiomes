@@ -54,6 +54,7 @@ public abstract class AbstractLocalFileImpl extends File implements LocalFile
 	protected String fileType;
 	protected String software;
 	protected String relativePathFromProjectRoot;
+	protected String externalURL;
 	protected MetadataAVUList extendedAttributes;
 	protected List<String> assignedClasses;
 	
@@ -119,7 +120,22 @@ public abstract class AbstractLocalFileImpl extends File implements LocalFile
 	public void setRelativePathFromProjectRoot(String relativePathFromProjectRoot) {
 		this.relativePathFromProjectRoot = relativePathFromProjectRoot;
 	}
-	
+
+	/**
+	 * Get external URL to file
+	 * @return external URL to file
+	 */
+	public String getExternalURL() {
+		return this.externalURL;
+	}
+
+	/**
+	 * Set external URL to file
+	 * @param externalURL external URL to file
+	 */
+	public void setExternalURL(String externalURL) {
+		this.externalURL = externalURL;
+	}
 	/**
 	 * Set software
 	 * @param software Software package name

@@ -250,7 +250,6 @@ public interface LocalFile {
 	 */
 	public String getFormat();
 
-
 	/**
 	 * Get relative path to file from project root directory
 	 * @return Relative path
@@ -262,6 +261,18 @@ public interface LocalFile {
 	 * @param relativePathFromProjectRoot Relative path
 	 */
 	public void setRelativePathFromProjectRoot(String relativePathFromProjectRoot);
+
+	/**
+	 * Get external URL to file
+	 * @return external URL to file
+	 */
+	public String getExternalURL();
+
+	/**
+	 * Set external URL to file
+	 * @param externalURL external URL to file
+	 */
+	public void setExternalURL(String externalURL);
 	
 	/**
 	 * Get description
